@@ -72,3 +72,11 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+
+KDTTeamProject/OUE/Binaries
+KDTTeamProject/OUE/Intermediate
+KDTTeamProject/OUE/saved
+KDTTeamProject/OUE/Content/Developers
+KDTTeamProject/OUE/*sln
+KDTTeamProject/OUE/.vsconfig
