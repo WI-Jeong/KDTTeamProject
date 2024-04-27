@@ -57,11 +57,23 @@
     <Filter Include="Source\OUE\Hero">
       <UniqueIdentifier>{75FFB712-B6B6-3D07-9DEE-0B11D4F620A0}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\OUE\Hero\HeroCharacter.cpp">
-      <Filter>Source\OUE\Hero</Filter>
+    <Filter Include="Source\OUE\Hero\Character">
+      <UniqueIdentifier>{18281A4D-C1DA-3B30-B43B-1E94C94BD0A0}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\Character\HeroCharacter.cpp">
+      <Filter>Source\OUE\Hero\Character</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\OUE\Hero\HeroCharacter.h">
-      <Filter>Source\OUE\Hero</Filter>
+    <ClInclude Include="..\..\Source\OUE\Hero\Character\HeroCharacter.h">
+      <Filter>Source\OUE\Hero\Character</Filter>
+    </ClInclude>
+    <Filter Include="Source\OUE\Hero\Character\AnimInstance">
+      <UniqueIdentifier>{B94CED00-CF49-34D8-B4BD-158DE1E8A2EE}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\Character\AnimInstance\HeroAnimInstance.cpp">
+      <Filter>Source\OUE\Hero\Character\AnimInstance</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\Character\AnimInstance\HeroAnimInstance.h">
+      <Filter>Source\OUE\Hero\Character\AnimInstance</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

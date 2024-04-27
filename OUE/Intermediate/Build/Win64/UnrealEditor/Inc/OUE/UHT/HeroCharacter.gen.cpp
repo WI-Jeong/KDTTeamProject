@@ -5,7 +5,7 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#include "Hero/HeroCharacter.h"
+#include "Hero/Character/HeroCharacter.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 // Cross Module References
@@ -68,8 +68,8 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHeroCharacter_Statics::Class_MetaDataParams[] = {
 		{ "HideCategories", "Navigation" },
-		{ "IncludePath", "Hero/HeroCharacter.h" },
-		{ "ModuleRelativePath", "Hero/HeroCharacter.h" },
+		{ "IncludePath", "Hero/Character/HeroCharacter.h" },
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
 	};
 #endif
 #if WITH_METADATA
@@ -80,7 +80,7 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 		{ "Comment", "/** Camera boom positioning the camera behind the character */" },
 #endif
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Hero/HeroCharacter.h" },
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Camera boom positioning the camera behind the character" },
 #endif
@@ -95,7 +95,7 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 		{ "Comment", "/** Follow camera */" },
 #endif
 		{ "EditInline", "true" },
-		{ "ModuleRelativePath", "Hero/HeroCharacter.h" },
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Follow camera" },
 #endif
@@ -109,7 +109,7 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/** MappingContext */" },
 #endif
-		{ "ModuleRelativePath", "Hero/HeroCharacter.h" },
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "MappingContext" },
 #endif
@@ -123,7 +123,7 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/** Jump Input Action */" },
 #endif
-		{ "ModuleRelativePath", "Hero/HeroCharacter.h" },
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Jump Input Action" },
 #endif
@@ -137,7 +137,7 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/** Move Input Action */" },
 #endif
-		{ "ModuleRelativePath", "Hero/HeroCharacter.h" },
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Move Input Action" },
 #endif
@@ -151,7 +151,7 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 #if !UE_BUILD_SHIPPING
 		{ "Comment", "/** Look Input Action */" },
 #endif
-		{ "ModuleRelativePath", "Hero/HeroCharacter.h" },
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
 #if !UE_BUILD_SHIPPING
 		{ "ToolTip", "Look Input Action" },
 #endif
@@ -199,15 +199,15 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AHeroCharacter);
 	AHeroCharacter::~AHeroCharacter() {}
-	struct Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_HeroCharacter_h_Statics
+	struct Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_HeroCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AHeroCharacter, AHeroCharacter::StaticClass, TEXT("AHeroCharacter"), &Z_Registration_Info_UClass_AHeroCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHeroCharacter), 2100519101U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_AHeroCharacter, AHeroCharacter::StaticClass, TEXT("AHeroCharacter"), &Z_Registration_Info_UClass_AHeroCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHeroCharacter), 1739039516U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_HeroCharacter_h_1646006957(TEXT("/Script/OUE"),
-		Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_HeroCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_HeroCharacter_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_888919614(TEXT("/Script/OUE"),
+		Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
