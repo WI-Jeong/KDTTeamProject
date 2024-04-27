@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\assortrock\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\oue.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\assortrock\\team\\oue\\intermediate\\build\\win64\\x64\\oueeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "c:\\assortrock\\team\\oue\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oue\\definitions.oue.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

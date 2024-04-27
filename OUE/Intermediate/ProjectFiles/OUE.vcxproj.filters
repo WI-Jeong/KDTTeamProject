@@ -54,5 +54,14 @@
     <ClInclude Include="..\..\Source\OUE\OUEGameMode.h">
       <Filter>Source\OUE</Filter>
     </ClInclude>
+    <Filter Include="Source\OUE\Hero">
+      <UniqueIdentifier>{75FFB712-B6B6-3D07-9DEE-0B11D4F620A0}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\HeroCharacter.cpp">
+      <Filter>Source\OUE\Hero</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\HeroCharacter.h">
+      <Filter>Source\OUE\Hero</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
