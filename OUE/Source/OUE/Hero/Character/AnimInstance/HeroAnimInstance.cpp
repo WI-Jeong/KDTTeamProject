@@ -47,5 +47,10 @@ void UHeroAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	{
 		IsShouldMove = false;
 	}
-	//IsShouldMove//
+
+	//IsCrouch//
+	if (HeroCharacter)
+	{
+		IsCrouch = HeroCharacter->GetIsCrouch();
+	}
 }

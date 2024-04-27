@@ -29,6 +29,9 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	bool IsShouldMove;
 
+	UPROPERTY(BlueprintReadOnly)
+	bool IsCrouch;
+
 protected:
 	virtual void NativeInitializeAnimation() override;
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;

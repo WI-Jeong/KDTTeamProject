@@ -48,6 +48,11 @@ void EmptyLinkFunctionForGeneratedCodeHeroAnimInstance() {}
 #endif
 		static void NewProp_IsShouldMove_SetBit(void* Obj);
 		static const UECodeGen_Private::FBoolPropertyParams NewProp_IsShouldMove;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_IsCrouch_MetaData[];
+#endif
+		static void NewProp_IsCrouch_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_IsCrouch;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -100,11 +105,23 @@ void EmptyLinkFunctionForGeneratedCodeHeroAnimInstance() {}
 		((UHeroAnimInstance*)Obj)->IsShouldMove = 1;
 	}
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsShouldMove = { "IsShouldMove", nullptr, (EPropertyFlags)0x0020080000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UHeroAnimInstance), &Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsShouldMove_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsShouldMove_MetaData), Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsShouldMove_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsCrouch_MetaData[] = {
+		{ "Category", "HeroAnimInstance" },
+		{ "ModuleRelativePath", "Hero/Character/AnimInstance/HeroAnimInstance.h" },
+	};
+#endif
+	void Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsCrouch_SetBit(void* Obj)
+	{
+		((UHeroAnimInstance*)Obj)->IsCrouch = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsCrouch = { "IsCrouch", nullptr, (EPropertyFlags)0x0020080000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UHeroAnimInstance), &Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsCrouch_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsCrouch_MetaData), Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsCrouch_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UHeroAnimInstance_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_Speed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsFalling,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_Velocity,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsShouldMove,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsCrouch,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UHeroAnimInstance_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UHeroAnimInstance>::IsAbstract,
@@ -145,9 +162,9 @@ void EmptyLinkFunctionForGeneratedCodeHeroAnimInstance() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_AnimInstance_HeroAnimInstance_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UHeroAnimInstance, UHeroAnimInstance::StaticClass, TEXT("UHeroAnimInstance"), &Z_Registration_Info_UClass_UHeroAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHeroAnimInstance), 4070689934U) },
+		{ Z_Construct_UClass_UHeroAnimInstance, UHeroAnimInstance::StaticClass, TEXT("UHeroAnimInstance"), &Z_Registration_Info_UClass_UHeroAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHeroAnimInstance), 2880198226U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_AnimInstance_HeroAnimInstance_h_293264402(TEXT("/Script/OUE"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_AnimInstance_HeroAnimInstance_h_1981895715(TEXT("/Script/OUE"),
 		Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_AnimInstance_HeroAnimInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_AnimInstance_HeroAnimInstance_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

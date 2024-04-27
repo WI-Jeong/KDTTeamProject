@@ -42,10 +42,29 @@ class OUE_API AHeroCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 
+	/** Crouch Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* CrouchAction;
+
+	/** Run Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* RunAction;
+
 public:
 	AHeroCharacter();
 
+protected:
+	UPROPERTY(BlueprintReadOnly)
+	bool IsCrouch = false;
 
+	float WalkSpeed = 200.f;
+
+	float CrouchSpeed = 200.f;
+
+	float RunSpeed = 500.f;
+
+public:
+	bool GetIsCrouch() { return IsCrouch; }
 protected:
 
 	/** Called for movement input */
@@ -53,6 +72,12 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
+
+	void StartCrouch(const FInputActionValue& Value);
+	void StopCrouch(const FInputActionValue& Value);
+
+	void StartRun(const FInputActionValue& Value);
+	void StopRun(const FInputActionValue& Value);
 
 
 protected:

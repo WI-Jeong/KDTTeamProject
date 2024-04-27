@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\assortrock\\team\\oue\\source\\oue\\hero\\herocharacter.cpp",
+        "Source": "c:\\assortrock\\team\\oue\\source\\oue\\hero\\character\\herocharacter.cpp",
         "ProvidedModule": "",
         "Includes": [
             "c:\\assortrock\\team\\oue\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oue\\definitions.oue.h",
             "c:\\assortrock\\team\\oue\\intermediate\\build\\win64\\x64\\oueeditor\\development\\engine\\shareddefinitions.engine.cpp20.h",
-            "c:\\assortrock\\team\\oue\\source\\oue\\hero\\herocharacter.h",
+            "c:\\assortrock\\team\\oue\\source\\oue\\hero\\character\\herocharacter.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\coreminimal.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\coretypes.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\hal\\platform.h",

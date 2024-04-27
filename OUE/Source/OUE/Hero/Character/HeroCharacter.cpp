@@ -35,7 +35,7 @@ AHeroCharacter::AHeroCharacter()
 	// instead of recompiling to adjust them
 	GetCharacterMovement()->JumpZVelocity = 700.f;
 	GetCharacterMovement()->AirControl = 0.35f;
-	GetCharacterMovement()->MaxWalkSpeed = 500.f;
+	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
 	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
@@ -87,6 +87,14 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AHeroCharacter::Look);
+
+		// Crouch
+		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Started, this, &AHeroCharacter::StartCrouch);
+		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Completed, this, &AHeroCharacter::StopCrouch);
+
+		// Run
+		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Started, this, &AHeroCharacter::StartRun);
+		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Completed, this, &AHeroCharacter::StopRun);
 	}
 	else
 	{
@@ -128,5 +136,29 @@ void AHeroCharacter::Look(const FInputActionValue& Value)
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
+}
+
+void AHeroCharacter::StartCrouch(const FInputActionValue& Value)
+{
+	IsCrouch = true;
+	GetCharacterMovement()->MaxWalkSpeed = CrouchSpeed;
+}
+
+void AHeroCharacter::StopCrouch(const FInputActionValue& Value)
+{
+	IsCrouch = false;
+	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+}
+
+void AHeroCharacter::StartRun(const FInputActionValue& Value)
+{
+	GetCharacterMovement()->MaxWalkSpeed = RunSpeed;
+	UE_LOG(LogTemp, Warning, TEXT("StartRun"));
+}
+
+void AHeroCharacter::StopRun(const FInputActionValue& Value)
+{
+	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+	UE_LOG(LogTemp, Warning, TEXT("StopRun"));
 }
 

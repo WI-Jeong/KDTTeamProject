@@ -56,6 +56,19 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_LookAction_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_LookAction;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CrouchAction_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_CrouchAction;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_RunAction_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_RunAction;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_IsCrouch_MetaData[];
+#endif
+		static void NewProp_IsCrouch_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_IsCrouch;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -158,6 +171,45 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHeroCharacter_Statics::NewProp_LookAction = { "LookAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AHeroCharacter, LookAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AHeroCharacter_Statics::NewProp_LookAction_MetaData), Z_Construct_UClass_AHeroCharacter_Statics::NewProp_LookAction_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHeroCharacter_Statics::NewProp_CrouchAction_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/** Crouch Input Action */" },
+#endif
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Crouch Input Action" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHeroCharacter_Statics::NewProp_CrouchAction = { "CrouchAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AHeroCharacter, CrouchAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AHeroCharacter_Statics::NewProp_CrouchAction_MetaData), Z_Construct_UClass_AHeroCharacter_Statics::NewProp_CrouchAction_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHeroCharacter_Statics::NewProp_RunAction_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/** Run Input Action */" },
+#endif
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Run Input Action" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHeroCharacter_Statics::NewProp_RunAction = { "RunAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AHeroCharacter, RunAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AHeroCharacter_Statics::NewProp_RunAction_MetaData), Z_Construct_UClass_AHeroCharacter_Statics::NewProp_RunAction_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch_MetaData[] = {
+		{ "Category", "HeroCharacter" },
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
+	};
+#endif
+	void Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch_SetBit(void* Obj)
+	{
+		((AHeroCharacter*)Obj)->IsCrouch = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch = { "IsCrouch", nullptr, (EPropertyFlags)0x0020080000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AHeroCharacter), &Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch_MetaData), Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AHeroCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_CameraBoom,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_FollowCamera,
@@ -165,6 +217,9 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_JumpAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_MoveAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_LookAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_CrouchAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_RunAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AHeroCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AHeroCharacter>::IsAbstract,
@@ -204,9 +259,9 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AHeroCharacter, AHeroCharacter::StaticClass, TEXT("AHeroCharacter"), &Z_Registration_Info_UClass_AHeroCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHeroCharacter), 1739039516U) },
+		{ Z_Construct_UClass_AHeroCharacter, AHeroCharacter::StaticClass, TEXT("AHeroCharacter"), &Z_Registration_Info_UClass_AHeroCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHeroCharacter), 2698606476U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_888919614(TEXT("/Script/OUE"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_2153453767(TEXT("/Script/OUE"),
 		Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
