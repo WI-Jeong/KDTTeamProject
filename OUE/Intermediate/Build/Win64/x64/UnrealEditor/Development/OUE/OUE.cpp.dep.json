@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\han\\kdtteamproject\\oue\\source\\oue\\oue.cpp",
+        "Source": "c:\\assortrock\\team\\oue\\source\\oue\\oue.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\han\\kdtteamproject\\oue\\intermediate\\build\\win64\\x64\\oueeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "PCH": "c:\\assortrock\\team\\oue\\intermediate\\build\\win64\\x64\\oueeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
         "Includes": [
-            "d:\\han\\kdtteamproject\\oue\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oue\\definitions.oue.h",
-            "d:\\han\\kdtteamproject\\oue\\source\\oue\\oue.h"
+            "c:\\assortrock\\team\\oue\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oue\\definitions.oue.h",
+            "c:\\assortrock\\team\\oue\\source\\oue\\oue.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
