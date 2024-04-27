@@ -3915,3 +3915,406 @@ LogConfig: CVar [[LogNamedEventFilters:Frame *]] deferred - dummy variable creat
 [2024.04.27-10.56.31:441][ 98]LogUObjectHash: Compacting FUObjectHashTables data took   1.56ms
 [2024.04.27-10.56.31:483][ 99]LogPlayLevel: Display: Destroying online subsystem :Context_108
 [2024.04.27-10.56.32:353][191]LogViewport: Scene viewport resized to 800x332, mode Windowed.
+[2024.04.27-10.57.35:269][607]LogViewport: Scene viewport resized to 1206x517, mode Windowed.
+[2024.04.27-10.57.47:446][353]LogSlate: Window '에셋을 다른 이름으로 복제' being destroyed
+[2024.04.27-10.57.47:497][353]LogUObjectHash: Compacting FUObjectHashTables data took   1.87ms
+[2024.04.27-10.57.47:501][353]LogOutputDevice: Warning: 
+
+Script Stack (0 frames) :
+
+[2024.04.27-10.57.47:611][353]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.110 s
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: === Handled ensure: ===
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: 
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: Ensure condition failed: OldSparseData == SparseData  [File:D:\build\++UE5\Sync\Engine\Source\Editor\UnrealEd\Private\Kismet2\BlueprintEditorUtils.cpp] [Line: 1732] 
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: 
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: Stack: 
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffef049ea59 UnrealEditor-UnrealEd.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffef236d5cc UnrealEditor-Engine.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefda0a1b4 UnrealEditor-CoreUObject.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffef0658261 UnrealEditor-UnrealEd.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffee53d8e96 UnrealEditor-AssetTools.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffee535c970 UnrealEditor-AssetTools.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffee535c78b UnrealEditor-AssetTools.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffebcf54a34 UnrealEditor-EngineAssetDefinitions.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffebcedb8ed UnrealEditor-EngineAssetDefinitions.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffee6d25520 UnrealEditor-ToolMenus.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffee6d3cced UnrealEditor-ToolMenus.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefafaaeb0 UnrealEditor-Slate.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefb1c7db0 UnrealEditor-Slate.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefb1cd690 UnrealEditor-Slate.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefb19979a UnrealEditor-Slate.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefb23a5fa UnrealEditor-Slate.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefb23df65 UnrealEditor-Slate.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefb25f3e8 UnrealEditor-Slate.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefb1d00dc UnrealEditor-Slate.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefafb3b5a UnrealEditor-Slate.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefb01e365 UnrealEditor-Slate.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefb00b562 UnrealEditor-Slate.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefaffe2fa UnrealEditor-Slate.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefd177dc6 UnrealEditor-ApplicationCore.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefd15b83f UnrealEditor-ApplicationCore.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefd17ab29 UnrealEditor-ApplicationCore.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefd1532e3 UnrealEditor-ApplicationCore.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007fffd14aef75 USER32.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007fffd14ae69d USER32.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ffefd17c226 UnrealEditor-ApplicationCore.dll!UnknownFunction []
+[2024.04.27-10.57.47:611][353]LogOutputDevice: Error: [Callstack] 0x00007ff6d1c376f2 UnrealEditor.exe!UnknownFunction []
+[2024.04.27-10.57.47:612][353]LogOutputDevice: Error: [Callstack] 0x00007ff6d1c5d28c UnrealEditor.exe!UnknownFunction []
+[2024.04.27-10.57.47:612][353]LogOutputDevice: Error: [Callstack] 0x00007ff6d1c5d37a UnrealEditor.exe!UnknownFunction []
+[2024.04.27-10.57.47:612][353]LogOutputDevice: Error: [Callstack] 0x00007ff6d1c60854 UnrealEditor.exe!UnknownFunction []
+[2024.04.27-10.57.47:612][353]LogOutputDevice: Error: [Callstack] 0x00007ff6d1c76984 UnrealEditor.exe!UnknownFunction []
+[2024.04.27-10.57.47:612][353]LogOutputDevice: Error: [Callstack] 0x00007ff6d1c79d7a UnrealEditor.exe!UnknownFunction []
+[2024.04.27-10.57.47:612][353]LogOutputDevice: Error: [Callstack] 0x00007fffd16c7344 KERNEL32.DLL!UnknownFunction []
+[2024.04.27-10.57.47:612][353]LogOutputDevice: Error: [Callstack] 0x00007fffd32e26b1 ntdll.dll!UnknownFunction []
+[2024.04.27-10.57.47:612][353]LogOutputDevice: Error: 
+[2024.04.27-10.57.47:622][353]LogStats:                SubmitErrorReport -  0.000 s
+[2024.04.27-10.57.49:704][353]LogStats:                    SendNewReport -  2.082 s
+[2024.04.27-10.57.49:704][353]LogStats:             FDebug::EnsureFailed -  2.202 s
+[2024.04.27-10.57.49:774][353]LogUObjectHash: Compacting FUObjectHashTables data took   1.26ms
+[2024.04.27-10.57.49:780][353]AnimBlueprintLog: New page: ABP_HeroCharacter_Template
+[2024.04.27-10.57.49:780][353]AnimBlueprintLog: [5833.47] ABP_HeroCharacter_Template 컴파일에 성공했습니다! [소요시간 40 ms] (/Game/Hero/Blueprint/Character/Animations/ABP_HeroCharacter_Template.ABP_HeroCharacter_Template)
+[2024.04.27-10.57.49:780][353]LogAssetEditorSubsystem: Opening Asset editor for AnimBlueprint /Game/Hero/Blueprint/Character/Animations/ABP_HeroCharacter_Template.ABP_HeroCharacter_Template
+[2024.04.27-10.57.49:781][353]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.27-10.57.49:781][353]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.04.27-10.57.49:803][353]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.27-10.57.49:804][353]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.04.27-10.57.50:347][353]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.27-10.57.50:347][353]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.04.27-10.57.50:498][353]LogViewport: Scene viewport resized to 476x411, mode Windowed.
+[2024.04.27-10.57.50:565][353]LogContentBrowser: Verbose: The majority of assets in the view are of type: /Script/Engine.AnimSequence
+[2024.04.27-10.57.52:368][469]LogViewport: Scene viewport resized to 439x276, mode Windowed.
+[2024.04.27-10.57.56:803][623]LogSlate: Window 'ABP_HeroCharacter_Template' being destroyed
+[2024.04.27-10.57.56:822][623]LogWorld: UWorld::CleanupWorld for World_83, bSessionEnded=true, bCleanupResources=true
+[2024.04.27-10.57.56:822][623]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-10.57.56:839][623]LogWorld: UWorld::CleanupWorld for World_84, bSessionEnded=true, bCleanupResources=true
+[2024.04.27-10.57.56:839][623]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-10.57.56:897][623]LogWorld: UWorld::CleanupWorld for World_85, bSessionEnded=true, bCleanupResources=true
+[2024.04.27-10.57.56:897][623]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-10.57.59:818][918]LogUObjectHash: Compacting FUObjectHashTables data took   1.46ms
+[2024.04.27-10.58.00:975][918]LogSlate: Window 'Delete Assets' being destroyed
+[2024.04.27-10.58.01:007][918]LogUObjectHash: Compacting FUObjectHashTables data took   1.36ms
+[2024.04.27-10.58.01:024][918]LogUObjectHash: Compacting FUObjectHashTables data took   1.53ms
+[2024.04.27-10.58.01:040][918]LogUObjectHash: Compacting FUObjectHashTables data took   0.50ms
+[2024.04.27-10.58.03:501][186]LogViewport: Scene viewport resized to 800x332, mode Windowed.
+[2024.04.27-10.58.04:204][257]LogViewport: Scene viewport resized to 1206x517, mode Windowed.
+[2024.04.27-10.58.04:957][337]LogDebuggerCommands: Repeating last play command: 선택된 뷰포트
+[2024.04.27-10.58.04:963][337]LogContentBundle: [ThirdPersonMap(독립형)] Generating Streaming for 0 Content Bundles.
+[2024.04.27-10.58.04:963][337]LogWorldPartition: Display: GenerateStreaming for 'ThirdPersonMap' started...
+[2024.04.27-10.58.04:965][337]LogWorldPartition: Display: GenerateStreaming for 'ThirdPersonMap' took 1 ms (total: 68 ms)
+[2024.04.27-10.58.04:965][337]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.04.27-10.58.04:965][337]PIE: New page: PIE 세션: ThirdPersonMap (2024. 4. 28. 오전 4:58:04)
+[2024.04.27-10.58.04:998][337]LogPlayLevel: Creating play world package: /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap
+[2024.04.27-10.58.05:002][337]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003792s)
+[2024.04.27-10.58.05:002][337]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap to /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap (0.003828s)
+[2024.04.27-10.58.05:016][337]LogUObjectHash: Compacting FUObjectHashTables data took   1.22ms
+[2024.04.27-10.58.05:017][337]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.27-10.58.05:017][337]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.04.27-10.58.05:018][337]LogAIModule: Creating AISystem for world ThirdPersonMap
+[2024.04.27-10.58.05:018][337]LogWorldPartition: ULevel::OnLevelLoaded(ThirdPersonMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.04.27-10.58.05:018][337]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.04.27-10.58.05:018][337]LogWorldPartition: UWorldPartition::Initialize : World = ThirdPersonMap, World Type = PIE, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 0, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2024.04.27-10.58.05:018][337]LogWorldPartition: UWorldPartition::Initialize Context : World NetMode = Standalone, IsServer = 0, IsDedicatedServer = 0, IsServerStreamingEnabled = 0, IsServerStreamingOutEnabled = 0, IsUsingMakingVisibleTransaction = 0, IsUsingMakingInvisibleTransaction = 0
+[2024.04.27-10.58.05:019][337]LogContentBundle: [ThirdPersonMap(독립형)] Creating new contrainer.
+[2024.04.27-10.58.05:019][337]LogWorldPartition: Display: WorldPartition initialize took 1 ms (total: 102 ms)
+[2024.04.27-10.58.05:019][337]LogPlayLevel: PIE: World Init took: (0.002192s)
+[2024.04.27-10.58.05:019][337]LogAudio: Display: Creating Audio Device:                 Id: 27, Scope: Unique, Realtime: True
+[2024.04.27-10.58.05:019][337]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.04.27-10.58.05:019][337]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.04.27-10.58.05:019][337]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.04.27-10.58.05:019][337]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.04.27-10.58.05:019][337]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.04.27-10.58.05:019][337]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.04.27-10.58.05:020][337]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.04.27-10.58.05:020][337]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.04.27-10.58.05:020][337]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.04.27-10.58.05:020][337]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.04.27-10.58.05:020][337]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.04.27-10.58.05:022][337]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.04.27-10.58.05:067][337]LogAudioMixer: Display: Using Audio Hardware Device BenQ GW2780(NVIDIA High Definition Audio)
+[2024.04.27-10.58.05:067][337]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.04.27-10.58.05:068][337]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.04.27-10.58.05:068][337]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.04.27-10.58.05:068][337]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=27
+[2024.04.27-10.58.05:068][337]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=27
+[2024.04.27-10.58.05:070][337]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=27
+[2024.04.27-10.58.05:070][337]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=27
+[2024.04.27-10.58.05:070][337]LogInit: FAudioDevice initialized with ID 27.
+[2024.04.27-10.58.05:070][337]LogAudio: Display: Audio Device (ID: 27) registered with world 'ThirdPersonMap'.
+[2024.04.27-10.58.05:070][337]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 27
+[2024.04.27-10.58.05:072][337]LogLoad: Game class is 'BP_GameMode_C'
+[2024.04.27-10.58.05:074][337]LogWorld: Bringing World /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap up for play (max tick rate 0) at 2024.04.27-19.58.05
+[2024.04.27-10.58.05:075][337]LogWorld: Bringing up level for play took: 0.001641
+[2024.04.27-10.58.05:077][337]LogOnline: OSS: Created online subsystem instance for: :Context_112
+[2024.04.27-10.58.05:080][337]PIE: 서버가 로그인했습니다.
+[2024.04.27-10.58.05:080][337]PIE: 에디터에서 플레이 총 시작 시간 0.117초입니다.
+[2024.04.27-10.58.08:679][744]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.04.27-10.58.08:679][744]LogWorld: BeginTearingDown for /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap
+[2024.04.27-10.58.08:680][744]LogWorld: UWorld::CleanupWorld for ThirdPersonMap, bSessionEnded=true, bCleanupResources=true
+[2024.04.27-10.58.08:680][744]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-10.58.08:680][744]LogContentBundle: [ThirdPersonMap(독립형)] Deleting container.
+[2024.04.27-10.58.08:682][744]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.04.27-10.58.08:687][744]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-10.58.08:703][744]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.04.27-10.58.08:704][744]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 27
+[2024.04.27-10.58.08:704][744]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=27
+[2024.04.27-10.58.08:706][744]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=27
+[2024.04.27-10.58.08:713][744]LogUObjectHash: Compacting FUObjectHashTables data took   1.60ms
+[2024.04.27-10.58.08:759][745]LogPlayLevel: Display: Destroying online subsystem :Context_112
+[2024.04.27-10.58.40:206][117]LogDebuggerCommands: Repeating last play command: 선택된 뷰포트
+[2024.04.27-10.58.40:212][117]LogContentBundle: [ThirdPersonMap(독립형)] Generating Streaming for 0 Content Bundles.
+[2024.04.27-10.58.40:212][117]LogWorldPartition: Display: GenerateStreaming for 'ThirdPersonMap' started...
+[2024.04.27-10.58.40:214][117]LogWorldPartition: Display: GenerateStreaming for 'ThirdPersonMap' took 1 ms (total: 69 ms)
+[2024.04.27-10.58.40:214][117]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.04.27-10.58.40:214][117]PIE: New page: PIE 세션: ThirdPersonMap (2024. 4. 28. 오전 4:58:40)
+[2024.04.27-10.58.40:238][117]LogPlayLevel: Creating play world package: /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap
+[2024.04.27-10.58.40:242][117]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003581s)
+[2024.04.27-10.58.40:242][117]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap to /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap (0.003614s)
+[2024.04.27-10.58.40:257][117]LogUObjectHash: Compacting FUObjectHashTables data took   1.24ms
+[2024.04.27-10.58.40:258][117]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.27-10.58.40:258][117]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.04.27-10.58.40:259][117]LogAIModule: Creating AISystem for world ThirdPersonMap
+[2024.04.27-10.58.40:259][117]LogWorldPartition: ULevel::OnLevelLoaded(ThirdPersonMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.04.27-10.58.40:259][117]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.04.27-10.58.40:259][117]LogWorldPartition: UWorldPartition::Initialize : World = ThirdPersonMap, World Type = PIE, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 0, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2024.04.27-10.58.40:259][117]LogWorldPartition: UWorldPartition::Initialize Context : World NetMode = Standalone, IsServer = 0, IsDedicatedServer = 0, IsServerStreamingEnabled = 0, IsServerStreamingOutEnabled = 0, IsUsingMakingVisibleTransaction = 0, IsUsingMakingInvisibleTransaction = 0
+[2024.04.27-10.58.40:260][117]LogContentBundle: [ThirdPersonMap(독립형)] Creating new contrainer.
+[2024.04.27-10.58.40:260][117]LogWorldPartition: Display: WorldPartition initialize took 1 ms (total: 103 ms)
+[2024.04.27-10.58.40:260][117]LogPlayLevel: PIE: World Init took: (0.002207s)
+[2024.04.27-10.58.40:260][117]LogAudio: Display: Creating Audio Device:                 Id: 28, Scope: Unique, Realtime: True
+[2024.04.27-10.58.40:261][117]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.04.27-10.58.40:261][117]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.04.27-10.58.40:261][117]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.04.27-10.58.40:261][117]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.04.27-10.58.40:261][117]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.04.27-10.58.40:261][117]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.04.27-10.58.40:261][117]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.04.27-10.58.40:261][117]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.04.27-10.58.40:261][117]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.04.27-10.58.40:261][117]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.04.27-10.58.40:261][117]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.04.27-10.58.40:263][117]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.04.27-10.58.40:302][117]LogAudioMixer: Display: Using Audio Hardware Device BenQ GW2780(NVIDIA High Definition Audio)
+[2024.04.27-10.58.40:302][117]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.04.27-10.58.40:302][117]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.04.27-10.58.40:302][117]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.04.27-10.58.40:302][117]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=28
+[2024.04.27-10.58.40:302][117]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=28
+[2024.04.27-10.58.40:304][117]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=28
+[2024.04.27-10.58.40:304][117]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=28
+[2024.04.27-10.58.40:304][117]LogInit: FAudioDevice initialized with ID 28.
+[2024.04.27-10.58.40:304][117]LogAudio: Display: Audio Device (ID: 28) registered with world 'ThirdPersonMap'.
+[2024.04.27-10.58.40:304][117]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 28
+[2024.04.27-10.58.40:306][117]LogLoad: Game class is 'BP_GameMode_C'
+[2024.04.27-10.58.40:308][117]LogWorld: Bringing World /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap up for play (max tick rate 0) at 2024.04.27-19.58.40
+[2024.04.27-10.58.40:308][117]LogWorld: Bringing up level for play took: 0.001546
+[2024.04.27-10.58.40:310][117]LogOnline: OSS: Created online subsystem instance for: :Context_113
+[2024.04.27-10.58.40:313][117]PIE: 서버가 로그인했습니다.
+[2024.04.27-10.58.40:313][117]PIE: 에디터에서 플레이 총 시작 시간 0.102초입니다.
+[2024.04.27-10.58.52:640][569]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.04.27-10.58.52:640][569]LogWorld: BeginTearingDown for /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap
+[2024.04.27-10.58.52:640][569]LogWorld: UWorld::CleanupWorld for ThirdPersonMap, bSessionEnded=true, bCleanupResources=true
+[2024.04.27-10.58.52:640][569]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-10.58.52:640][569]LogContentBundle: [ThirdPersonMap(독립형)] Deleting container.
+[2024.04.27-10.58.52:643][569]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.04.27-10.58.52:648][569]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-10.58.52:661][569]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.04.27-10.58.52:661][569]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 28
+[2024.04.27-10.58.52:661][569]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=28
+[2024.04.27-10.58.52:662][569]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=28
+[2024.04.27-10.58.52:669][569]LogUObjectHash: Compacting FUObjectHashTables data took   1.63ms
+[2024.04.27-10.58.52:723][570]LogPlayLevel: Display: Destroying online subsystem :Context_113
+[2024.04.27-10.59.39:237][178]LogDebuggerCommands: Repeating last play command: 선택된 뷰포트
+[2024.04.27-10.59.39:244][178]LogContentBundle: [ThirdPersonMap(독립형)] Generating Streaming for 0 Content Bundles.
+[2024.04.27-10.59.39:244][178]LogWorldPartition: Display: GenerateStreaming for 'ThirdPersonMap' started...
+[2024.04.27-10.59.39:255][178]LogWorldPartition: Display: GenerateStreaming for 'ThirdPersonMap' took 11 ms (total: 81 ms)
+[2024.04.27-10.59.39:255][178]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.04.27-10.59.39:255][178]PIE: New page: PIE 세션: ThirdPersonMap (2024. 4. 28. 오전 4:59:39)
+[2024.04.27-10.59.39:290][178]LogPlayLevel: Creating play world package: /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap
+[2024.04.27-10.59.39:293][178]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003564s)
+[2024.04.27-10.59.39:294][178]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap to /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap (0.003595s)
+[2024.04.27-10.59.39:309][178]LogUObjectHash: Compacting FUObjectHashTables data took   1.58ms
+[2024.04.27-10.59.39:310][178]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.27-10.59.39:310][178]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.04.27-10.59.39:311][178]LogAIModule: Creating AISystem for world ThirdPersonMap
+[2024.04.27-10.59.39:311][178]LogWorldPartition: ULevel::OnLevelLoaded(ThirdPersonMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.04.27-10.59.39:311][178]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.04.27-10.59.39:311][178]LogWorldPartition: UWorldPartition::Initialize : World = ThirdPersonMap, World Type = PIE, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 0, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2024.04.27-10.59.39:311][178]LogWorldPartition: UWorldPartition::Initialize Context : World NetMode = Standalone, IsServer = 0, IsDedicatedServer = 0, IsServerStreamingEnabled = 0, IsServerStreamingOutEnabled = 0, IsUsingMakingVisibleTransaction = 0, IsUsingMakingInvisibleTransaction = 0
+[2024.04.27-10.59.39:312][178]LogContentBundle: [ThirdPersonMap(독립형)] Creating new contrainer.
+[2024.04.27-10.59.39:313][178]LogWorldPartition: Display: WorldPartition initialize took 1 ms (total: 105 ms)
+[2024.04.27-10.59.39:313][178]LogPlayLevel: PIE: World Init took: (0.002551s)
+[2024.04.27-10.59.39:313][178]LogAudio: Display: Creating Audio Device:                 Id: 29, Scope: Unique, Realtime: True
+[2024.04.27-10.59.39:313][178]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.04.27-10.59.39:313][178]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.04.27-10.59.39:313][178]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.04.27-10.59.39:313][178]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.04.27-10.59.39:313][178]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.04.27-10.59.39:313][178]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.04.27-10.59.39:313][178]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.04.27-10.59.39:313][178]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.04.27-10.59.39:314][178]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.04.27-10.59.39:314][178]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.04.27-10.59.39:314][178]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.04.27-10.59.39:316][178]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.04.27-10.59.39:355][178]LogAudioMixer: Display: Using Audio Hardware Device BenQ GW2780(NVIDIA High Definition Audio)
+[2024.04.27-10.59.39:355][178]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.04.27-10.59.39:355][178]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.04.27-10.59.39:355][178]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.04.27-10.59.39:355][178]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=29
+[2024.04.27-10.59.39:355][178]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=29
+[2024.04.27-10.59.39:358][178]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=29
+[2024.04.27-10.59.39:358][178]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=29
+[2024.04.27-10.59.39:358][178]LogInit: FAudioDevice initialized with ID 29.
+[2024.04.27-10.59.39:358][178]LogAudio: Display: Audio Device (ID: 29) registered with world 'ThirdPersonMap'.
+[2024.04.27-10.59.39:358][178]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 29
+[2024.04.27-10.59.39:360][178]LogLoad: Game class is 'BP_GameMode_C'
+[2024.04.27-10.59.39:362][178]LogWorld: Bringing World /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap up for play (max tick rate 0) at 2024.04.27-19.59.39
+[2024.04.27-10.59.39:362][178]LogWorld: Bringing up level for play took: 0.001539
+[2024.04.27-10.59.39:364][178]LogOnline: OSS: Created online subsystem instance for: :Context_114
+[2024.04.27-10.59.39:366][178]PIE: 서버가 로그인했습니다.
+[2024.04.27-10.59.39:367][178]PIE: 에디터에서 플레이 총 시작 시간 0.123초입니다.
+[2024.04.27-11.00.22:621][326]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.04.27-11.00.22:621][326]LogWorld: BeginTearingDown for /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap
+[2024.04.27-11.00.22:621][326]LogWorld: UWorld::CleanupWorld for ThirdPersonMap, bSessionEnded=true, bCleanupResources=true
+[2024.04.27-11.00.22:621][326]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-11.00.22:621][326]LogContentBundle: [ThirdPersonMap(독립형)] Deleting container.
+[2024.04.27-11.00.22:625][326]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.04.27-11.00.22:629][326]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-11.00.22:649][326]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2024.04.27-11.00.22:649][326]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 29
+[2024.04.27-11.00.22:649][326]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=29
+[2024.04.27-11.00.22:651][326]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=29
+[2024.04.27-11.00.22:655][326]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.04.27-11.00.22:658][326]LogUObjectHash: Compacting FUObjectHashTables data took   1.60ms
+[2024.04.27-11.00.22:704][327]LogPlayLevel: Display: Destroying online subsystem :Context_114
+[2024.04.27-11.01.19:636][945]LogViewport: Scene viewport resized to 800x332, mode Windowed.
+[2024.04.27-11.03.17:434][479]LogDirectoryWatcher: Display: A directory notification failed for 'C:/assortrock/Team/OUE/Saved/Collections/' because it could not be accessed. Aborting watch request...
+[2024.04.27-11.03.17:434][479]LogDirectoryWatcher: Display: A directory notification failed for 'C:/assortrock/Team/OUE/Content/Collections/' because it could not be accessed. Aborting watch request...
+[2024.04.27-11.03.17:434][479]LogDirectoryWatcher: Display: A directory notification failed for 'C:/assortrock/Team/OUE/Content/Developers/한영웅/Collections/' because it could not be accessed. Aborting watch request...
+[2024.04.27-11.03.46:807][567]LogViewport: Scene viewport resized to 1206x517, mode Windowed.
+[2024.04.27-11.04.05:553][676]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Hero/Blueprint/Character/BP_HeroCharacter.BP_HeroCharacter
+[2024.04.27-11.04.05:554][676]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.27-11.04.05:554][676]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.04.27-11.04.07:514][818]LogSlate: Window 'BP_HeroCharacter' being destroyed
+[2024.04.27-11.04.07:562][818]LogWorld: UWorld::CleanupWorld for World_86, bSessionEnded=true, bCleanupResources=true
+[2024.04.27-11.04.07:562][818]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-11.04.07:581][818]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Hero/Blueprint/Character/BP_HeroCharacter.BP_HeroCharacter
+[2024.04.27-11.04.07:581][818]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.27-11.04.07:581][818]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.04.27-11.04.30:860][886]LogSkeletalMesh: Display: 스킨 입힌 에셋이 준비 되기를 기다리는 중 0/1 (SK_Sci_Fi_Character_08_Full_01)...
+[2024.04.27-11.04.30:929][886]LogTexture: Display: 텍스처 빌드 중: /Game/Sci_Fi_Character_08/Textures/Body/T_Sci_Fi_Character_08_Body_Emissive.T_Sci_Fi_Character_08_Body_Emissive(TFO_AutoDXT, 4096x4096 x1x1x1)(예상 필요 메모리: 1152.062484MB), 인코딩 속도: Fast
+[2024.04.27-11.04.31:202][886]LogTexture: Display: 텍스처 빌드 중: /Game/Sci_Fi_Character_08/Textures/Body/T_Sci_Fi_Character_08_Body_Ao.T_Sci_Fi_Character_08_Body_Ao(TFO_AutoDXT, 4096x4096 x1x1x1)(예상 필요 메모리: 1152.062484MB), 인코딩 속도: Fast
+[2024.04.27-11.04.31:317][886]LogTexture: Display: 텍스처 빌드 중: /Game/Sci_Fi_Character_08/Textures/Body/T_Sci_Fi_Character_08_Body_Albedo_01.T_Sci_Fi_Character_08_Body_Albedo_01(TFO_AutoDXT, 4096x4096 x1x1x1)(예상 필요 메모리: 1152.062484MB), 인코딩 속도: Fast
+[2024.04.27-11.04.32:074][886]LogSkeletalMesh: Building Skeletal Mesh SK_Sci_Fi_Character_08_Full_01...
+[2024.04.27-11.04.32:178][886]LogSkeletalMesh: Built Skeletal Mesh [0.10s] /Game/Sci_Fi_Character_08/Mesh/Character/SK_Sci_Fi_Character_08_Full_01.SK_Sci_Fi_Character_08_Full_01
+[2024.04.27-11.04.32:323][887]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.27-11.04.32:714][907]LogTexture: Display: 텍스처 빌드 중: /Game/Sci_Fi_Character_08/Textures/Details/T_Sci_Fi_Character_08_Details_Albedo_01.T_Sci_Fi_Character_08_Details_Albedo_01(TFO_AutoDXT, 4096x4096 x1x1x1)(예상 필요 메모리: 1152.062484MB), 인코딩 속도: Fast
+[2024.04.27-11.04.32:738][908]LogTexture: Display: 텍스처 빌드 중: /Game/Sci_Fi_Character_08/Textures/Body/T_Sci_Fi_Character_08_Body_Metallic.T_Sci_Fi_Character_08_Body_Metallic(TFO_AutoDXT, 4096x4096 x1x1x1)(예상 필요 메모리: 1152.062484MB), 인코딩 속도: Fast
+[2024.04.27-11.04.33:115][930]LogTexture: Display: 텍스처 빌드 중: /Game/Sci_Fi_Character_08/Textures/Body/T_Sci_Fi_Character_08_Body_Normals.T_Sci_Fi_Character_08_Body_Normals(TFO_BC5, 4096x4096 x1x1x1)(예상 필요 메모리: 1152.062484MB), 인코딩 속도: Fast
+[2024.04.27-11.04.33:523][954]BlueprintLog: New page: BP_HeroCharacter 컴파일
+[2024.04.27-11.04.33:631][954]LogUObjectHash: Compacting FUObjectHashTables data took   1.86ms
+[2024.04.27-11.04.34:230][981]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2024.04.27-11.04.34:279][981]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.27-11.04.34:333][981]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Hero/Blueprint/Character/BP_HeroCharacter" FILE="../../../../../../assortrock/Team/OUE/Content/Hero/Blueprint/Character/BP_HeroCharacter.uasset" SILENT=true
+[2024.04.27-11.04.34:343][981]LogSavePackage: Moving output files for package: /Game/Hero/Blueprint/Character/BP_HeroCharacter
+[2024.04.27-11.04.34:344][981]LogSavePackage: Moving '../../../../../../assortrock/Team/OUE/Saved/BP_HeroCharacterFB390F59466E7E9B0DE8838EE21711CA.tmp' to '../../../../../../assortrock/Team/OUE/Content/Hero/Blueprint/Character/BP_HeroCharacter.uasset'
+[2024.04.27-11.04.34:355][981]LogFileHelpers: InternalPromptForCheckoutAndSave took 124 ms (total: 4.76 sec)
+[2024.04.27-11.04.34:377][981]AssetCheck: New page: 에셋 저장:  BP_HeroCharacter
+[2024.04.27-11.04.34:377][981]LogContentValidation: Display: /Script/Engine.Blueprint /Game/Hero/Blueprint/Character/BP_HeroCharacter.BP_HeroCharacter 유효성 검사 중
+[2024.04.27-11.04.34:540][990]LogTexture: Display: 텍스처 빌드 중: /Game/Sci_Fi_Character_08/Textures/Details/T_Sci_Fi_Character_08_Details_Emissive.T_Sci_Fi_Character_08_Details_Emissive(TFO_AutoDXT, 4096x4096 x1x1x1)(예상 필요 메모리: 1152.062484MB), 인코딩 속도: Fast
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: ================================================
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Total job queries 48, among them cache hits 8 (16.67%)
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Tracking 31 distinct input hashes that result in 21 distinct outputs (67.74%)
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: RAM used: 710.00 KiB of 819.20 MiB budget. Usage: 0.08%
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Shaders Compiled: 1
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Jobs assigned 5, completed 1 (20.00%)
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Time job spent in pending queue: average 0.02 s, longest 0.03 s
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Job execution time: average 2.43 s, max 2.43 s
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Job life time (pending + execution): average 2.45 s, max 2.45
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Shader code size: average 4.465 KiB, min 4.465 KiB, max 4.465 KiB
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 2.45 s
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Jobs were issued in 5 batches (only local compilation was used), average 1.00 jobs/batch
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Average processing rate: 0.41 jobs/sec
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Total thread time: 0.968 s
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Total thread preprocess time: 0.595 s
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Percentage time preprocessing: 61.45%
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Effective parallelization: 0.40 (times faster than compiling all shaders on one thread). Compare with number of workers: 8
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Top 1 most expensive shader types by average time:
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display:                                                  FHitProxyPS (compiled    1 times, average 0.97 sec, max 0.97 sec, min 0.97 sec)
+[2024.04.27-11.04.34:747][  1]LogShaderCompilers: Display: Top 1 shader types by total compile time:
+[2024.04.27-11.04.34:748][  1]LogShaderCompilers: Display:                                                  FHitProxyPS - 100.00% of total time (compiled    1 times, average 0.97 sec, max 0.97 sec, min 0.97 sec)
+[2024.04.27-11.04.34:748][  1]LogShaderCompilers: Display: ================================================
+[2024.04.27-11.04.34:920][  5]LogTexture: Display: 텍스처 빌드 중: /Game/Sci_Fi_Character_08/Textures/Details/T_Sci_Fi_Character_08_Details_Ao.T_Sci_Fi_Character_08_Details_Ao(TFO_AutoDXT, 4096x4096 x1x1x1)(예상 필요 메모리: 1152.062484MB), 인코딩 속도: Fast
+[2024.04.27-11.04.35:088][ 12]LogTexture: Display: 텍스처 빌드 중: /Game/Sci_Fi_Character_08/Textures/Details/T_Sci_Fi_Character_08_Details_Metallic.T_Sci_Fi_Character_08_Details_Metallic(TFO_AutoDXT, 4096x4096 x1x1x1)(예상 필요 메모리: 1152.062484MB), 인코딩 속도: Fast
+[2024.04.27-11.04.35:802][ 26]LogTexture: Display: 텍스처 빌드 중: /Game/Sci_Fi_Character_08/Textures/Details/T_Sci_Fi_Character_08_Details_Normals.T_Sci_Fi_Character_08_Details_Normals(TFO_BC5, 4096x4096 x1x1x1)(예상 필요 메모리: 1152.062484MB), 인코딩 속도: Fast
+[2024.04.27-11.04.35:939][ 27]LogSlate: Window 'BP_HeroCharacter' being destroyed
+[2024.04.27-11.04.35:949][ 27]LogWorld: UWorld::CleanupWorld for World_87, bSessionEnded=true, bCleanupResources=true
+[2024.04.27-11.04.35:949][ 27]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-11.04.36:426][ 55]LogDebuggerCommands: Repeating last play command: 선택된 뷰포트
+[2024.04.27-11.04.36:434][ 55]LogContentBundle: [ThirdPersonMap(독립형)] Generating Streaming for 0 Content Bundles.
+[2024.04.27-11.04.36:434][ 55]LogWorldPartition: Display: GenerateStreaming for 'ThirdPersonMap' started...
+[2024.04.27-11.04.36:437][ 55]LogWorldPartition: Display: GenerateStreaming for 'ThirdPersonMap' took 2 ms (total: 83 ms)
+[2024.04.27-11.04.36:437][ 55]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2024.04.27-11.04.36:437][ 55]PIE: New page: PIE 세션: ThirdPersonMap (2024. 4. 28. 오전 5:04:36)
+[2024.04.27-11.04.36:463][ 55]LogPlayLevel: Creating play world package: /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap
+[2024.04.27-11.04.36:468][ 55]LogPlayLevel: PIE: StaticDuplicateObject took: (0.005123s)
+[2024.04.27-11.04.36:468][ 55]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/ThirdPerson/Maps/ThirdPersonMap.ThirdPersonMap to /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap (0.005169s)
+[2024.04.27-11.04.36:486][ 55]LogUObjectHash: Compacting FUObjectHashTables data took   1.46ms
+[2024.04.27-11.04.36:491][ 55]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.27-11.04.36:491][ 55]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2024.04.27-11.04.36:491][ 55]LogAIModule: Creating AISystem for world ThirdPersonMap
+[2024.04.27-11.04.36:492][ 55]LogWorldPartition: ULevel::OnLevelLoaded(ThirdPersonMap)(bIsOwningWorldGameWorld=1, bIsOwningWorldPartitioned=1, InitializeForMainWorld=1, InitializeForEditor=0, InitializeForGame=1)
+[2024.04.27-11.04.36:492][ 55]LogWorldPartition: Display: WorldPartition initialize started...
+[2024.04.27-11.04.36:492][ 55]LogWorldPartition: UWorldPartition::Initialize : World = ThirdPersonMap, World Type = PIE, IsMainWorldPartition = 1, Location = V(0), Rotation = R(0), IsEditor = 0, IsGame = 0, IsPIEWorldTravel = 0, IsCooking = 0
+[2024.04.27-11.04.36:492][ 55]LogWorldPartition: UWorldPartition::Initialize Context : World NetMode = Standalone, IsServer = 0, IsDedicatedServer = 0, IsServerStreamingEnabled = 0, IsServerStreamingOutEnabled = 0, IsUsingMakingVisibleTransaction = 0, IsUsingMakingInvisibleTransaction = 0
+[2024.04.27-11.04.36:493][ 55]LogContentBundle: [ThirdPersonMap(독립형)] Creating new contrainer.
+[2024.04.27-11.04.36:493][ 55]LogWorldPartition: Display: WorldPartition initialize took 1 ms (total: 106 ms)
+[2024.04.27-11.04.36:493][ 55]LogPlayLevel: PIE: World Init took: (0.003008s)
+[2024.04.27-11.04.36:494][ 55]LogAudio: Display: Creating Audio Device:                 Id: 30, Scope: Unique, Realtime: True
+[2024.04.27-11.04.36:494][ 55]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2024.04.27-11.04.36:494][ 55]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2024.04.27-11.04.36:494][ 55]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2024.04.27-11.04.36:494][ 55]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2024.04.27-11.04.36:494][ 55]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2024.04.27-11.04.36:494][ 55]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2024.04.27-11.04.36:494][ 55]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2024.04.27-11.04.36:494][ 55]LogAudio: Display: AudioDevice MaxSources: 32
+[2024.04.27-11.04.36:495][ 55]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2024.04.27-11.04.36:495][ 55]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2024.04.27-11.04.36:495][ 55]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2024.04.27-11.04.36:497][ 55]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2024.04.27-11.04.36:544][ 55]LogAudioMixer: Display: Using Audio Hardware Device BenQ GW2780(NVIDIA High Definition Audio)
+[2024.04.27-11.04.36:544][ 55]LogAudioMixer: Display: Initializing Sound Submixes...
+[2024.04.27-11.04.36:544][ 55]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2024.04.27-11.04.36:544][ 55]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2024.04.27-11.04.36:544][ 55]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=30
+[2024.04.27-11.04.36:544][ 55]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=30
+[2024.04.27-11.04.36:547][ 55]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=30
+[2024.04.27-11.04.36:547][ 55]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=30
+[2024.04.27-11.04.36:547][ 55]LogInit: FAudioDevice initialized with ID 30.
+[2024.04.27-11.04.36:547][ 55]LogAudio: Display: Audio Device (ID: 30) registered with world 'ThirdPersonMap'.
+[2024.04.27-11.04.36:547][ 55]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 30
+[2024.04.27-11.04.36:550][ 55]LogLoad: Game class is 'BP_GameMode_C'
+[2024.04.27-11.04.36:552][ 55]LogWorld: Bringing World /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap.ThirdPersonMap up for play (max tick rate 0) at 2024.04.27-20.04.36
+[2024.04.27-11.04.36:553][ 55]LogWorld: Bringing up level for play took: 0.001611
+[2024.04.27-11.04.36:555][ 55]LogOnline: OSS: Created online subsystem instance for: :Context_119
+[2024.04.27-11.04.36:557][ 55]PIE: 서버가 로그인했습니다.
+[2024.04.27-11.04.36:557][ 55]PIE: 에디터에서 플레이 총 시작 시간 0.124초입니다.
+[2024.04.27-11.04.49:283][488]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.04.27-11.04.49:283][488]LogWorld: BeginTearingDown for /Game/ThirdPerson/Maps/UEDPIE_0_ThirdPersonMap
+[2024.04.27-11.04.49:284][488]LogWorld: UWorld::CleanupWorld for ThirdPersonMap, bSessionEnded=true, bCleanupResources=true
+[2024.04.27-11.04.49:284][488]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-11.04.49:284][488]LogContentBundle: [ThirdPersonMap(독립형)] Deleting container.
+[2024.04.27-11.04.49:287][488]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2024.04.27-11.04.49:291][488]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2024.04.27-11.04.49:307][488]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2024.04.27-11.04.49:307][488]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 30
+[2024.04.27-11.04.49:307][488]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=30
+[2024.04.27-11.04.49:309][488]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=30
+[2024.04.27-11.04.49:316][488]LogUObjectHash: Compacting FUObjectHashTables data took   1.59ms
+[2024.04.27-11.04.49:387][490]LogPlayLevel: Display: Destroying online subsystem :Context_119
+[2024.04.27-11.04.50:372][596]LogViewport: Scene viewport resized to 800x332, mode Windowed.
+[2024.04.27-11.04.55:542][ 29]LogViewport: Scene viewport resized to 1206x517, mode Windowed.
+[2024.04.27-11.05.01:372][685]LogViewport: Scene viewport resized to 800x332, mode Windowed.

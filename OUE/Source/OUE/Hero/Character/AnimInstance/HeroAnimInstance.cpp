@@ -28,6 +28,8 @@ void UHeroAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 
 	Velocity = MovementComponent->Velocity;
 
+
+	//IsShouldMove//
 	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(Pawn);
 	FVector Acceleration;
 	if (HeroCharacter)
@@ -45,4 +47,5 @@ void UHeroAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	{
 		IsShouldMove = false;
 	}
+	//IsShouldMove//
 }
