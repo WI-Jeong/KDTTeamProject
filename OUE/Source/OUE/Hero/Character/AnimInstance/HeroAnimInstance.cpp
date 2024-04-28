@@ -5,6 +5,7 @@
 #include "GameFramework/PawnMovementComponent.h"
 #include "Hero/Character/HeroCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/KismetMathLibrary.h"
 
 void UHeroAnimInstance::NativeInitializeAnimation()
 {
@@ -53,4 +54,17 @@ void UHeroAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	{
 		IsCrouch = HeroCharacter->GetIsCrouch();
 	}
+
+	//에임 오프셋
+
+	FRotator ControlRotation = Pawn->GetControlRotation();
+	FRotator ActorRotation = Pawn->GetActorRotation();
+	FRotator TargetRotator = UKismetMathLibrary::NormalizedDeltaRotator(ControlRotation, ActorRotation);
+
+	FRotator CurrentRotator = FRotator(Pitch, Yaw, 0);
+
+	FRotator NewRotator = FMath::RInterpTo(CurrentRotator, TargetRotator, DeltaSeconds, 15.f);
+
+	Pitch = FMath::ClampAngle(NewRotator.Pitch, -90, 90);
+	Yaw = FMath::ClampAngle(NewRotator.Yaw, -90, 90);
 }

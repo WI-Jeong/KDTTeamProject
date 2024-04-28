@@ -32,6 +32,12 @@ protected:
 	UPROPERTY(BlueprintReadOnly)
 	bool IsCrouch;
 
+	UPROPERTY(BlueprintReadWrite)
+	float Pitch = 0.f;
+
+	UPROPERTY(BlueprintReadWrite)
+	float Yaw = 0.f;
+
 protected:
 	virtual void NativeInitializeAnimation() override;
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
