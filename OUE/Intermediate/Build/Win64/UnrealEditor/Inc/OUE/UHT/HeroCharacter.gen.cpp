@@ -6,18 +6,94 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "Hero/Character/HeroCharacter.h"
+#include "../../Source/Runtime/Engine/Classes/Engine/DataTable.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 // Cross Module References
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
+	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FDataTableRowHandle();
+	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FTableRowBase();
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 	ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
 	OUE_API UClass* Z_Construct_UClass_AHeroCharacter();
 	OUE_API UClass* Z_Construct_UClass_AHeroCharacter_NoRegister();
+	OUE_API UClass* Z_Construct_UClass_UHeroAnimInstance_NoRegister();
+	OUE_API UScriptStruct* Z_Construct_UScriptStruct_FWeaponDataTableRow();
 	UPackage* Z_Construct_UPackage__Script_OUE();
 // End Cross Module References
+
+static_assert(std::is_polymorphic<FWeaponDataTableRow>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FWeaponDataTableRow cannot be polymorphic unless super FTableRowBase is polymorphic");
+
+	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_WeaponDataTableRow;
+class UScriptStruct* FWeaponDataTableRow::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_WeaponDataTableRow.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_WeaponDataTableRow.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FWeaponDataTableRow, (UObject*)Z_Construct_UPackage__Script_OUE(), TEXT("WeaponDataTableRow"));
+	}
+	return Z_Registration_Info_UScriptStruct_WeaponDataTableRow.OuterSingleton;
+}
+template<> OUE_API UScriptStruct* StaticStruct<FWeaponDataTableRow>()
+{
+	return FWeaponDataTableRow::StaticStruct();
+}
+	struct Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
+#endif
+		static void* NewStructOps();
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_AnimBP_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_AnimBP;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UECodeGen_Private::FStructParams ReturnStructParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::Struct_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
+	};
+#endif
+	void* Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FWeaponDataTableRow>();
+	}
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_AnimBP_MetaData[] = {
+		{ "Category", "WeaponDataTableRow" },
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_AnimBP = { "AnimBP", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FWeaponDataTableRow, AnimBP), Z_Construct_UClass_UClass, Z_Construct_UClass_UHeroAnimInstance_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_AnimBP_MetaData), Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_AnimBP_MetaData) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_AnimBP,
+	};
+	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::ReturnStructParams = {
+		(UObject* (*)())Z_Construct_UPackage__Script_OUE,
+		Z_Construct_UScriptStruct_FTableRowBase,
+		&NewStructOps,
+		"WeaponDataTableRow",
+		Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::PropPointers,
+		UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::PropPointers),
+		sizeof(FWeaponDataTableRow),
+		alignof(FWeaponDataTableRow),
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EStructFlags(0x00000201),
+		METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::Struct_MetaDataParams), Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::Struct_MetaDataParams)
+	};
+	static_assert(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::PropPointers) < 2048);
+	UScriptStruct* Z_Construct_UScriptStruct_FWeaponDataTableRow()
+	{
+		if (!Z_Registration_Info_UScriptStruct_WeaponDataTableRow.InnerSingleton)
+		{
+			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_WeaponDataTableRow.InnerSingleton, Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::ReturnStructParams);
+		}
+		return Z_Registration_Info_UScriptStruct_WeaponDataTableRow.InnerSingleton;
+	}
 	void AHeroCharacter::StaticRegisterNativesAHeroCharacter()
 	{
 	}
@@ -69,6 +145,10 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 #endif
 		static void NewProp_IsCrouch_SetBit(void* Obj);
 		static const UECodeGen_Private::FBoolPropertyParams NewProp_IsCrouch;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_WeaponDataTableRowHandle_MetaData[];
+#endif
+		static const UECodeGen_Private::FStructPropertyParams NewProp_WeaponDataTableRowHandle;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -210,6 +290,14 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 		((AHeroCharacter*)Obj)->IsCrouch = 1;
 	}
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch = { "IsCrouch", nullptr, (EPropertyFlags)0x0020080000000014, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AHeroCharacter), &Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch_MetaData), Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHeroCharacter_Statics::NewProp_WeaponDataTableRowHandle_MetaData[] = {
+		{ "Category", "HeroCharacter" },
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
+		{ "RowType", "/Script/OUE.WeaponDataTableRow" },
+	};
+#endif
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AHeroCharacter_Statics::NewProp_WeaponDataTableRowHandle = { "WeaponDataTableRowHandle", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AHeroCharacter, WeaponDataTableRowHandle), Z_Construct_UScriptStruct_FDataTableRowHandle, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AHeroCharacter_Statics::NewProp_WeaponDataTableRowHandle_MetaData), Z_Construct_UClass_AHeroCharacter_Statics::NewProp_WeaponDataTableRowHandle_MetaData) }; // 1575649708
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AHeroCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_CameraBoom,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_FollowCamera,
@@ -220,6 +308,7 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_CrouchAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_RunAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_WeaponDataTableRowHandle,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AHeroCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AHeroCharacter>::IsAbstract,
@@ -256,13 +345,17 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 	AHeroCharacter::~AHeroCharacter() {}
 	struct Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics
 	{
+		static const FStructRegisterCompiledInInfo ScriptStructInfo[];
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AHeroCharacter, AHeroCharacter::StaticClass, TEXT("AHeroCharacter"), &Z_Registration_Info_UClass_AHeroCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHeroCharacter), 2698606476U) },
+	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ScriptStructInfo[] = {
+		{ FWeaponDataTableRow::StaticStruct, Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewStructOps, TEXT("WeaponDataTableRow"), &Z_Registration_Info_UScriptStruct_WeaponDataTableRow, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FWeaponDataTableRow), 976353008U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_2153453767(TEXT("/Script/OUE"),
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_AHeroCharacter, AHeroCharacter::StaticClass, TEXT("AHeroCharacter"), &Z_Registration_Info_UClass_AHeroCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHeroCharacter), 941498032U) },
+	};
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_3735899524(TEXT("/Script/OUE"),
 		Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo),
-		nullptr, 0,
+		Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ScriptStructInfo),
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -11,6 +11,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
+#include "Hero/Character/AnimInstance/HeroAnimInstance.h"
 
 //DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -160,5 +161,19 @@ void AHeroCharacter::StopRun(const FInputActionValue& Value)
 {
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 	UE_LOG(LogTemp, Warning, TEXT("StopRun"));
+}
+
+void AHeroCharacter::SetWeaponData()
+{
+
+	if (WeaponDataTableRowHandle.IsNull()) { return; }
+	if (WeaponDataTableRowHandle.RowName == NAME_None) { return; }
+	GetMesh()->SetAnimClass(WeaponDataTableRowHandle.GetRow<FWeaponDataTableRow>(TEXT(""))->AnimBP);
+}
+
+void AHeroCharacter::OnConstruction(const FTransform& Transform)
+{
+	Super::OnConstruction(Transform);
+	SetWeaponData();
 }
 

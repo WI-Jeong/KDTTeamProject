@@ -12,6 +12,16 @@ class UCameraComponent;
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
+class UHeroAnimInstance;
+
+USTRUCT()
+struct OUE_API FWeaponDataTableRow : public FTableRowBase
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UHeroAnimInstance> AnimBP;
+};
 
 UCLASS()
 class OUE_API AHeroCharacter : public ACharacter
@@ -63,8 +73,12 @@ protected:
 
 	float RunSpeed = 500.f;
 
+	UPROPERTY(EditAnywhere, meta = (RowType = "/Script/OUE.WeaponDataTableRow"))
+	FDataTableRowHandle WeaponDataTableRowHandle;
+
 public:
 	bool GetIsCrouch() { return IsCrouch; }
+
 protected:
 
 	/** Called for movement input */
@@ -79,8 +93,12 @@ protected:
 	void StartRun(const FInputActionValue& Value);
 	void StopRun(const FInputActionValue& Value);
 
+protected:
+	void SetWeaponData();
 
 protected:
+	virtual void OnConstruction(const FTransform& Transform) override;
+
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
