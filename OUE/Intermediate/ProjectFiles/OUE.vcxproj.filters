@@ -11,6 +11,7 @@
     <None Include="..\..\Source\OUEEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -52,6 +53,36 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\OUE\OUEGameMode.h">
       <Filter>Source\OUE</Filter>
+    </ClInclude>
+    <Filter Include="Source\OUE\Hero">
+      <UniqueIdentifier>{75FFB712-B6B6-3D07-9DEE-0B11D4F620A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\OUE\Hero\Character">
+      <UniqueIdentifier>{18281A4D-C1DA-3B30-B43B-1E94C94BD0A0}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\Character\HeroCharacter.cpp">
+      <Filter>Source\OUE\Hero\Character</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\Character\HeroCharacter.h">
+      <Filter>Source\OUE\Hero\Character</Filter>
+    </ClInclude>
+    <Filter Include="Source\OUE\Hero\Character\AnimInstance">
+      <UniqueIdentifier>{B94CED00-CF49-34D8-B4BD-158DE1E8A2EE}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\Character\AnimInstance\HeroAnimInstance.cpp">
+      <Filter>Source\OUE\Hero\Character\AnimInstance</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\Character\AnimInstance\HeroAnimInstance.h">
+      <Filter>Source\OUE\Hero\Character\AnimInstance</Filter>
+    </ClInclude>
+    <Filter Include="Source\OUE\Hero\Gun">
+      <UniqueIdentifier>{48DCF09A-57E5-3FEF-B8E7-DE9A19BFCF62}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\Gun\Gun.cpp">
+      <Filter>Source\OUE\Hero\Gun</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\Gun\Gun.h">
+      <Filter>Source\OUE\Hero\Gun</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -14,12 +14,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define OUE_OUECharacter_generated_h
 
-#define FID_OUE_Source_OUE_OUECharacter_h_21_SPARSE_DATA
-#define FID_OUE_Source_OUE_OUECharacter_h_21_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_OUE_Source_OUE_OUECharacter_h_21_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_OUE_Source_OUE_OUECharacter_h_21_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_OUE_Source_OUE_OUECharacter_h_21_ACCESSORS
-#define FID_OUE_Source_OUE_OUECharacter_h_21_INCLASS_NO_PURE_DECLS \
+#define FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_SPARSE_DATA
+#define FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_ACCESSORS
+#define FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAOUECharacter(); \
 	friend struct Z_Construct_UClass_AOUECharacter_Statics; \
@@ -28,7 +28,7 @@ public: \
 	DECLARE_SERIALIZER(AOUECharacter)
 
 
-#define FID_OUE_Source_OUE_OUECharacter_h_21_ENHANCED_CONSTRUCTORS \
+#define FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AOUECharacter(AOUECharacter&&); \
@@ -40,17 +40,17 @@ public: \
 	NO_API virtual ~AOUECharacter();
 
 
-#define FID_OUE_Source_OUE_OUECharacter_h_18_PROLOG
-#define FID_OUE_Source_OUE_OUECharacter_h_21_GENERATED_BODY \
+#define FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_18_PROLOG
+#define FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_OUE_Source_OUE_OUECharacter_h_21_SPARSE_DATA \
-	FID_OUE_Source_OUE_OUECharacter_h_21_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_OUE_Source_OUE_OUECharacter_h_21_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_OUE_Source_OUE_OUECharacter_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_OUE_Source_OUE_OUECharacter_h_21_ACCESSORS \
-	FID_OUE_Source_OUE_OUECharacter_h_21_INCLASS_NO_PURE_DECLS \
-	FID_OUE_Source_OUE_OUECharacter_h_21_ENHANCED_CONSTRUCTORS \
+	FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_SPARSE_DATA \
+	FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_ACCESSORS \
+	FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_INCLASS_NO_PURE_DECLS \
+	FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h_21_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -58,7 +58,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> OUE_API UClass* StaticClass<class AOUECharacter>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_OUE_Source_OUE_OUECharacter_h
+#define CURRENT_FILE_ID FID_assortrock_Team_OUE_Source_OUE_OUECharacter_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
