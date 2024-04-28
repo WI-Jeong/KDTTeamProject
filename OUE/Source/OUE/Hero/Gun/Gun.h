@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "Gun.generated.h"
 
+class UChildActorComponent;
+
 UCLASS()
 class OUE_API AGun : public AActor
 {
@@ -15,9 +17,14 @@ class OUE_API AGun : public AActor
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Gun, meta = (AllowPrivateAccess = "true"))
 	USkeletalMeshComponent* SkeletalMeshComponent;
 	
+	UPROPERTY(EditAnywhere)
+	UChildActorComponent* ChildActorComponent;
+
 public:	
 	// Sets default values for this actor's properties
 	AGun();
+
+	UChildActorComponent* GetChildActorComponent() { return ChildActorComponent; }
 
 protected:
 	// Called when the game starts or when spawned

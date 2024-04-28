@@ -11,6 +11,10 @@ AGun::AGun()
 
 	SkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Gun"));
 	SkeletalMeshComponent->SetupAttachment(RootComponent);
+
+	//카메라 액터 생성을 위한 자손 액터컴퍼넌트
+	ChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("ChildActorComponent"));
+	ChildActorComponent->SetupAttachment(SkeletalMeshComponent);
 }
 
 // Called when the game starts or when spawned

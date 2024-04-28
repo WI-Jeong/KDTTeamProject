@@ -14,6 +14,9 @@
 #include "Hero/Character/AnimInstance/HeroAnimInstance.h"
 #include "Hero/Gun/Gun.h"
 #include "Engine/SkeletalMeshSocket.h"
+#include "Components/ChildActorComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Kismet/KismetMathLibrary.h"
 
 //DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -80,6 +83,14 @@ void AHeroCharacter::BeginPlay()
 	}
 }
 
+void AHeroCharacter::Tick(float DeltaSeconds)
+{
+	if (bIsRotateBodyToAim)
+	{
+		RotateBodyToAim();
+	}
+}
+
 //////////////////////////////////////////////////////////////////////////
 // Input
 
@@ -105,6 +116,9 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		// Run
 		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Started, this, &AHeroCharacter::StartRun);
 		EnhancedInputComponent->BindAction(RunAction, ETriggerEvent::Completed, this, &AHeroCharacter::StopRun);
+
+		// Zoom
+		EnhancedInputComponent->BindAction(ZoomAction, ETriggerEvent::Completed, this, &AHeroCharacter::ZoomInOut);
 	}
 	else
 	{
@@ -172,6 +186,45 @@ void AHeroCharacter::StopRun(const FInputActionValue& Value)
 	UE_LOG(LogTemp, Warning, TEXT("StopRun"));
 }
 
+void AHeroCharacter::ZoomInOut()
+{
+	if (CanJump() == false) { return; }
+
+	if (IsZoomIn)
+	{
+		IsZoomIn = false;
+
+		FollowCamera->SetActive(true);
+
+		APlayerController* PlayerController = UGameplayStatics::GetPlayerController(this, 0);
+		PlayerController->SetViewTarget(MainCameraActor);
+
+		GetCharacterMovement()->bOrientRotationToMovement = true;
+
+		bIsRotateBodyToAim = false;
+	}
+	else
+	{
+		IsZoomIn = true;
+
+		FollowCamera->SetActive(false);
+		AActor* ZoomCamera = SpawnedGun->GetChildActorComponent()->GetChildActor();
+		ensure(ZoomCamera);
+		if (ZoomCamera)
+		{
+			FollowCamera->SetActive(false);
+
+			APlayerController* PlayerController = UGameplayStatics::GetPlayerController(this, 0);
+			MainCameraActor = PlayerController->GetViewTarget();
+			PlayerController->SetViewTarget(ZoomCamera);
+
+			GetCharacterMovement()->bOrientRotationToMovement = false;
+
+			bIsRotateBodyToAim = true;
+		}
+	}
+}
+
 void AHeroCharacter::SetWeaponData()
 {
 	if (WeaponDataTableRowHandle.IsNull()) { return; }
@@ -203,6 +256,27 @@ void AHeroCharacter::SpawnGun(TSubclassOf<AGun> InGun)
 	SpawnedGun->SetActorRelativeLocation(WeaponDataTableRow->GunLocation);
 
 	SpawnedGun->SetActorRelativeRotation(WeaponDataTableRow->GunRotation);
+}
+
+void AHeroCharacter::RotateBodyToAim()
+{
+	FRotator ControlRotation = GetControlRotation();
+	FRotator ActorRotation = GetActorRotation();
+	FRotator NewRotation = FRotator(ActorRotation.Pitch, ControlRotation.Yaw, ActorRotation.Roll);
+
+	NewRotation = UKismetMathLibrary::RLerp(ActorRotation, NewRotation, GetWorld()->GetDeltaSeconds() * AimSpeed, true);
+
+	SetActorRotation(NewRotation);
+}
+
+void AHeroCharacter::Jump()
+{
+	Super::Jump();
+
+	if (IsZoomIn)
+	{
+		ZoomInOut();
+	}
 }
 
 void AHeroCharacter::OnConstruction(const FTransform& Transform)

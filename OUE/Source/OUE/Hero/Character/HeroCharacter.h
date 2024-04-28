@@ -70,6 +70,10 @@ class OUE_API AHeroCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* RunAction;
 
+	/** Zoom Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* ZoomAction;
+
 public:
 	AHeroCharacter();
 
@@ -89,6 +93,13 @@ protected:
 
 	AGun* SpawnedGun;
 
+	AActor* MainCameraActor;
+
+	bool bIsRotateBodyToAim = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float AimSpeed = 10.f;
+
 public:
 	bool GetIsCrouch() { return IsCrouch; }
 
@@ -106,10 +117,18 @@ protected:
 	void StartRun(const FInputActionValue& Value);
 	void StopRun(const FInputActionValue& Value);
 
+	void ZoomInOut();
+	bool IsZoomIn = false;
+
 protected:
 	void SetWeaponData();
 
 	void SpawnGun(TSubclassOf<AGun> InGun);
+
+	void RotateBodyToAim();
+
+	virtual void Jump() override;
+
 protected:
 	virtual void OnConstruction(const FTransform& Transform) override;
 
@@ -118,6 +137,8 @@ protected:
 
 	// To add mapping context
 	virtual void BeginPlay();
+
+	virtual void Tick(float DeltaSeconds) override;
 
 public:
 	/** Returns CameraBoom subobject **/
