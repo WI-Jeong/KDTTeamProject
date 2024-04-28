@@ -65,7 +65,11 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\enhancedinputsubsysteminterface.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\plugins\\enhancedinput\\intermediate\\build\\win64\\unrealeditor\\inc\\enhancedinput\\uht\\enhancedinputsubsystems.generated.h",
             "c:\\assortrock\\team\\oue\\source\\oue\\hero\\character\\animinstance\\heroaniminstance.h",
-            "c:\\assortrock\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\heroaniminstance.generated.h"
+            "c:\\assortrock\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\heroaniminstance.generated.h",
+            "c:\\assortrock\\team\\oue\\source\\oue\\hero\\gun\\gun.h",
+            "c:\\assortrock\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\gun.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\skeletalmeshsocket.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\skeletalmeshsocket.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

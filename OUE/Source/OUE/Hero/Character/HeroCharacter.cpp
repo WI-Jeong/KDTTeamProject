@@ -12,6 +12,8 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "Hero/Character/AnimInstance/HeroAnimInstance.h"
+#include "Hero/Gun/Gun.h"
+#include "Engine/SkeletalMeshSocket.h"
 
 //DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -68,6 +70,13 @@ void AHeroCharacter::BeginPlay()
 		{
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
+	}
+
+	SetWeaponData();
+
+	if (WeaponDataTableRow)
+	{
+		SpawnGun(WeaponDataTableRow->Gun);
 	}
 }
 
@@ -165,10 +174,35 @@ void AHeroCharacter::StopRun(const FInputActionValue& Value)
 
 void AHeroCharacter::SetWeaponData()
 {
-
 	if (WeaponDataTableRowHandle.IsNull()) { return; }
 	if (WeaponDataTableRowHandle.RowName == NAME_None) { return; }
-	GetMesh()->SetAnimClass(WeaponDataTableRowHandle.GetRow<FWeaponDataTableRow>(TEXT(""))->AnimBP);
+	
+	WeaponDataTableRow = WeaponDataTableRowHandle.GetRow<FWeaponDataTableRow>(TEXT(""));
+	if (WeaponDataTableRow)
+	{
+		GetMesh()->SetAnimClass(WeaponDataTableRow->AnimBP);
+	}
+}
+
+void AHeroCharacter::SpawnGun(TSubclassOf<AGun> InGun)
+{
+	if(InGun == nullptr) { return; }
+
+	// SpawnActor를 통해 weapon 데이터를 기반으로 한 액터 생성
+	SpawnedGun = GetWorld()->SpawnActor<AGun>(InGun);
+
+	// 소켓 이름을 통해 현재 메시에서 소켓을 참조
+	const USkeletalMeshSocket* GunSocket = GetMesh()->GetSocketByName("GunSocket");
+
+	if (SpawnedGun && GunSocket)
+	{
+		// 소켓에 액터를 할당
+		GunSocket->AttachActor(SpawnedGun, GetMesh());
+	}
+
+	SpawnedGun->SetActorRelativeLocation(WeaponDataTableRow->GunLocation);
+
+	SpawnedGun->SetActorRelativeRotation(WeaponDataTableRow->GunRotation);
 }
 
 void AHeroCharacter::OnConstruction(const FTransform& Transform)

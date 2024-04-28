@@ -13,6 +13,7 @@ class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
 class UHeroAnimInstance;
+class AGun;
 
 USTRUCT()
 struct OUE_API FWeaponDataTableRow : public FTableRowBase
@@ -21,6 +22,15 @@ struct OUE_API FWeaponDataTableRow : public FTableRowBase
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UHeroAnimInstance> AnimBP;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AGun> Gun;
+
+	UPROPERTY(EditAnywhere)
+	FVector GunLocation;
+
+	UPROPERTY(EditAnywhere)
+	FRotator GunRotation;
 };
 
 UCLASS()
@@ -75,6 +85,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, meta = (RowType = "/Script/OUE.WeaponDataTableRow"))
 	FDataTableRowHandle WeaponDataTableRowHandle;
+	FWeaponDataTableRow* WeaponDataTableRow;
+
+	AGun* SpawnedGun;
 
 public:
 	bool GetIsCrouch() { return IsCrouch; }
@@ -96,6 +109,7 @@ protected:
 protected:
 	void SetWeaponData();
 
+	void SpawnGun(TSubclassOf<AGun> InGun);
 protected:
 	virtual void OnConstruction(const FTransform& Transform) override;
 

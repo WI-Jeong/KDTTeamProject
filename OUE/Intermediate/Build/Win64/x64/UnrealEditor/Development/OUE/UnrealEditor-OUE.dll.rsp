@@ -35,6 +35,7 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN:6
 "C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\OUEEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
+"C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Gun.gen.cpp.obj"
 "C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\HeroAnimInstance.gen.cpp.obj"
 "C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\HeroCharacter.gen.cpp.obj"
 "C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\OUE.init.gen.cpp.obj"
@@ -45,6 +46,7 @@
 "C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\OUEGameMode.cpp.obj"
 "C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\HeroCharacter.cpp.obj"
 "C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\HeroAnimInstance.cpp.obj"
+"C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Gun.cpp.obj"
 "C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\UnrealEditor-Engine.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
