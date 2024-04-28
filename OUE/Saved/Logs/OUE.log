@@ -1810,3 +1810,49 @@ LogConfig: CVar [[framepro.ScopeMinTimeMicroseconds:10]] deferred - dummy variab
 [2024.04.28-08.41.57:835][292]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=4
 [2024.04.28-08.41.57:840][292]LogUObjectHash: Compacting FUObjectHashTables data took   0.59ms
 [2024.04.28-08.41.57:925][294]LogPlayLevel: Display: Destroying online subsystem :Context_14
+[2024.04.28-08.42.39:433][664]LogViewport: Scene viewport resized to 759x357, mode Windowed.
+[2024.04.28-08.45.50:571][445]LogViewport: Scene viewport resized to 1144x556, mode Windowed.
+[2024.04.28-08.45.57:759][220]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.28-08.47.30:070][655]LogDirectoryWatcher: Display: A directory notification failed for 'C:/assortrock/Team/OUE/Content/Collections/' because it could not be accessed. Aborting watch request...
+[2024.04.28-08.47.30:071][655]LogDirectoryWatcher: Display: A directory notification failed for 'C:/assortrock/Team/OUE/Saved/Collections/' because it could not be accessed. Aborting watch request...
+[2024.04.28-08.47.30:071][655]LogDirectoryWatcher: Display: A directory notification failed for 'C:/assortrock/Team/OUE/Content/Developers/한영웅/Collections/' because it could not be accessed. Aborting watch request...
+[2024.04.28-08.47.30:587][656]LogSkeletalMesh: Display: 스킨 입힌 에셋이 준비 되기를 기다리는 중 0/1 (SK_Mannequin)...
+[2024.04.28-08.47.31:252][658]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.28-08.47.31:595][659]LogShaderCompilers: Display: ================================================
+[2024.04.28-08.47.31:595][659]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2024.04.28-08.47.31:595][659]LogShaderCompilers: Display: Total job queries 103, among them cache hits 39 (37.86%)
+[2024.04.28-08.47.31:595][659]LogShaderCompilers: Display: Tracking 24 distinct input hashes that result in 14 distinct outputs (58.33%)
+[2024.04.28-08.47.31:595][659]LogShaderCompilers: Display: RAM used: 545.77 KiB of 819.20 MiB budget. Usage: 0.07%
+[2024.04.28-08.47.31:595][659]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Shaders Compiled: 5
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Jobs assigned 5, completed 5 (100%)
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Time job spent in pending queue: average 0.07 s, longest 0.12 s
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Job execution time: average 2.42 s, max 2.58 s
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Job life time (pending + execution): average 2.49 s, max 2.70
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Shader code size: average 31.662 KiB, min 4.465 KiB, max 42.328 KiB
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 2.81 s
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Jobs were issued in 5 batches (only local compilation was used), average 1.00 jobs/batch
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Average processing rate: 1.78 jobs/sec
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Total thread time: 5.097 s
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Total thread preprocess time: 2.442 s
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Percentage time preprocessing: 47.90%
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Effective parallelization: 1.81 (times faster than compiling all shaders on one thread). Compare with number of workers: 8
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Top 5 most expensive shader types by average time:
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy (compiled    1 times, average 1.16 sec, max 1.16 sec, min 1.16 sec)
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display:                                                  FHitProxyVS (compiled    1 times, average 1.01 sec, max 1.01 sec, min 1.01 sec)
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display:                                 TBasePassVSFNoLightMapPolicy (compiled    1 times, average 0.99 sec, max 0.99 sec, min 0.99 sec)
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display:                                                  FVelocityPS (compiled    1 times, average 0.77 sec, max 0.77 sec, min 0.77 sec)
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display:                                                  FHitProxyPS (compiled    1 times, average 0.72 sec, max 0.72 sec, min 0.72 sec)
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: Top 5 shader types by total compile time:
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy - 22.85% of total time (compiled    1 times, average 1.16 sec, max 1.16 sec, min 1.16 sec)
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display:                                                  FHitProxyVS - 19.88% of total time (compiled    1 times, average 1.01 sec, max 1.01 sec, min 1.01 sec)
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display:                                 TBasePassVSFNoLightMapPolicy - 19.45% of total time (compiled    1 times, average 0.99 sec, max 0.99 sec, min 0.99 sec)
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display:                                                  FVelocityPS - 15.20% of total time (compiled    1 times, average 0.77 sec, max 0.77 sec, min 0.77 sec)
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display:                                                  FHitProxyPS - 14.12% of total time (compiled    1 times, average 0.72 sec, max 0.72 sec, min 0.72 sec)
+[2024.04.28-08.47.31:596][659]LogShaderCompilers: Display: ================================================
+[2024.04.28-08.47.33:253][664]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.28-08.47.34:524][688]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.28-08.47.34:667][697]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.28-08.47.34:745][699]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.28-08.47.34:787][701]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2024.04.28-08.47.34:814][702]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
