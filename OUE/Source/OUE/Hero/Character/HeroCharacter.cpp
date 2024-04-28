@@ -174,6 +174,6 @@ void AHeroCharacter::SetWeaponData()
 void AHeroCharacter::OnConstruction(const FTransform& Transform)
 {
 	Super::OnConstruction(Transform);
-	SetWeaponData();
+	//SetWeaponData();
 }
 
