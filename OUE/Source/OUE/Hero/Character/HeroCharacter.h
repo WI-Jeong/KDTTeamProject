@@ -74,6 +74,10 @@ class OUE_API AHeroCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* ZoomAction;
 
+	/** Aim Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* AimAction;
+
 public:
 	AHeroCharacter();
 
@@ -119,6 +123,9 @@ protected:
 
 	void ZoomInOut();
 	bool IsZoomIn = false;
+
+	void StartAim();
+	void StopAim();
 
 protected:
 	void SetWeaponData();

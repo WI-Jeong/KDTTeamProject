@@ -85,6 +85,8 @@ void AHeroCharacter::BeginPlay()
 
 void AHeroCharacter::Tick(float DeltaSeconds)
 {
+	Super::Tick(DeltaSeconds);
+
 	if (bIsRotateBodyToAim)
 	{
 		RotateBodyToAim();
@@ -119,6 +121,10 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 		// Zoom
 		EnhancedInputComponent->BindAction(ZoomAction, ETriggerEvent::Completed, this, &AHeroCharacter::ZoomInOut);
+
+		// Aim
+		EnhancedInputComponent->BindAction(ZoomAction, ETriggerEvent::Started, this, &AHeroCharacter::StartAim);
+		EnhancedInputComponent->BindAction(ZoomAction, ETriggerEvent::Completed, this, &AHeroCharacter::StopAim);
 	}
 	else
 	{
@@ -223,6 +229,22 @@ void AHeroCharacter::ZoomInOut()
 			bIsRotateBodyToAim = true;
 		}
 	}
+}
+
+void AHeroCharacter::StartAim()
+{
+	GetCharacterMovement()->bOrientRotationToMovement = false;
+
+	bIsRotateBodyToAim = true;
+}
+
+void AHeroCharacter::StopAim()
+{
+	if (IsZoomIn) { return; }
+
+	GetCharacterMovement()->bOrientRotationToMovement = true;
+
+	bIsRotateBodyToAim = false;
 }
 
 void AHeroCharacter::SetWeaponData()
