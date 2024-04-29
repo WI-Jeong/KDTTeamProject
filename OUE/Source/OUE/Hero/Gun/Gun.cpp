@@ -12,7 +12,7 @@ AGun::AGun()
 	SkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Gun"));
 	SkeletalMeshComponent->SetupAttachment(RootComponent);
 
-	//Ä«¸Þ¶ó ¾×ÅÍ »ý¼ºÀ» À§ÇÑ ÀÚ¼Õ ¾×ÅÍÄÄÆÛ³ÍÆ®
+	//Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û³ï¿½Æ®
 	ChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("ChildActorComponent"));
 	ChildActorComponent->SetupAttachment(SkeletalMeshComponent);
 }
@@ -24,10 +24,53 @@ void AGun::BeginPlay()
 	
 }
 
+void AGun::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	Super::EndPlay(EndPlayReason);
+	GetWorld()->GetTimerManager().ClearTimer(FireTimerHandle);
+}
+
 // Called every frame
 void AGun::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (IsTriggered)
+	{
+		if (IsAutoFire)
+		{
+			Fire();
+		}
+		else
+		{
+			Fire();
+			ReleaseTrigger();
+		}
+	}
+
+}
+
+void AGun::Fire()
+{
+	bool bTimer = GetWorld()->GetTimerManager().IsTimerActive(FireTimerHandle);
+	if (bTimer) { return; }
+
+	ensure(FireDelay > 0.f);
+	GetWorld()->GetTimerManager().SetTimer(FireTimerHandle, FireDelay, false);
+
+	UE_LOG(LogTemp, Warning, TEXT("Fire"));
+}
+
+void AGun::PullTrigger()
+{
+	if (IsTriggered == false)
+	{
+		IsTriggered = true;
+	}
+}
+
+void AGun::ReleaseTrigger()
+{
+	IsTriggered = false;
 }
 

@@ -13,7 +13,7 @@ class OUE_API AGun : public AActor
 {
 	GENERATED_BODY()
 
-	//ÃÑ ½ºÄÌ·¹Å» ¸Þ½¬°¡Á®¿Í¼­ ÃÑ±¸ ¼ÒÄÏ Ã£Àº´ÙÀ½ °Å±â¼­ ¼ÒÈ¯ÇÏµµ·Ï
+	//ï¿½ï¿½ ï¿½ï¿½ï¿½Ì·ï¿½Å» ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ ï¿½Ñ±ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å±â¼­ ï¿½ï¿½È¯ï¿½Ïµï¿½ï¿½ï¿½
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Gun, meta = (AllowPrivateAccess = "true"))
 	USkeletalMeshComponent* SkeletalMeshComponent;
 	
@@ -30,8 +30,21 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	virtual void EndPlay(const EEndPlayReason::Type EndPlayReason);
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+protected:
+	FTimerHandle FireTimerHandle;
+	float FireDelay = 0.2f;
+	bool IsTriggered = false;
+	bool IsAutoFire = true;
+	void Fire();
+
+public:
+	void PullTrigger();
+	void ReleaseTrigger();
 
 };
