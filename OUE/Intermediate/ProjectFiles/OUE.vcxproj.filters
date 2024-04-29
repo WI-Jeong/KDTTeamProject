@@ -78,6 +78,12 @@
     <Filter Include="Source\OUE\Hero\Gun">
       <UniqueIdentifier>{48DCF09A-57E5-3FEF-B8E7-DE9A19BFCF62}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\Gun\Bullet.cpp">
+      <Filter>Source\OUE\Hero\Gun</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\Gun\Bullet.h">
+      <Filter>Source\OUE\Hero\Gun</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\OUE\Hero\Gun\Gun.cpp">
       <Filter>Source\OUE\Hero\Gun</Filter>
     </ClCompile>

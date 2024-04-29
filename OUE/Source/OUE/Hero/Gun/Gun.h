@@ -41,10 +41,16 @@ protected:
 	float FireDelay = 0.2f;
 	bool IsTriggered = false;
 	bool IsAutoFire = true;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Gun, meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class ABullet> Bullet;
+
 	void Fire();
 
 public:
 	void PullTrigger();
 	void ReleaseTrigger();
+	void SpawnBullet(TSubclassOf<ABullet> InBullet);
+	void ChangeFireMode();
 
 };

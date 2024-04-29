@@ -7,7 +7,11 @@
         "Includes": [
             "d:\\han\\team\\oue\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oue\\definitions.oue.h",
             "d:\\han\\team\\oue\\source\\oue\\hero\\gun\\gun.h",
-            "d:\\han\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\gun.generated.h"
+            "d:\\han\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\gun.generated.h",
+            "d:\\han\\team\\oue\\source\\oue\\hero\\gun\\bullet.h",
+            "d:\\han\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\bullet.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\skeletalmeshsocket.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\skeletalmeshsocket.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

@@ -2,6 +2,8 @@
 
 
 #include "Hero/Gun/Gun.h"
+#include "Hero/Gun/Bullet.h"
+#include "Engine/SkeletalMeshSocket.h"
 
 // Sets default values
 AGun::AGun()
@@ -59,6 +61,8 @@ void AGun::Fire()
 	GetWorld()->GetTimerManager().SetTimer(FireTimerHandle, FireDelay, false);
 
 	UE_LOG(LogTemp, Warning, TEXT("Fire"));
+
+	SpawnBullet(Bullet);
 }
 
 void AGun::PullTrigger()
@@ -72,5 +76,31 @@ void AGun::PullTrigger()
 void AGun::ReleaseTrigger()
 {
 	IsTriggered = false;
+}
+
+void AGun::SpawnBullet(TSubclassOf<ABullet> InBullet)
+{
+	if (InBullet)
+	{
+		// 소켓 이름을 통해 현재 메시에서 소켓을 참조
+		const USkeletalMeshSocket* Muzzle = SkeletalMeshComponent->GetSocketByName("Muzzle");
+
+		if (Muzzle)
+		{
+			ABullet* SpawnBullet = GetWorld()->SpawnActor<ABullet>(InBullet, Muzzle->GetSocketTransform(SkeletalMeshComponent));
+		}
+	}
+}
+
+void AGun::ChangeFireMode()
+{
+	if (IsAutoFire)
+	{
+		IsAutoFire = false;
+	}
+	else
+	{
+		IsAutoFire = true;
+	}
 }
 

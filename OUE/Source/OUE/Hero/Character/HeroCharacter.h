@@ -82,6 +82,10 @@ class OUE_API AHeroCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* TriggerAction;
 
+	/** ChangeFireMode Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* ChangeFireModeAction;
+
 public:
 	AHeroCharacter();
 
@@ -139,6 +143,8 @@ protected:
 
 	void PullTrigger();
 	void ReleaseTrigger();
+
+	void ChangeFireMode();
 
 protected:
 	void SetWeaponData();

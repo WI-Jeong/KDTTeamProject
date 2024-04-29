@@ -131,6 +131,9 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		// Trigger
 		EnhancedInputComponent->BindAction(TriggerAction, ETriggerEvent::Started, this, &AHeroCharacter::PullTrigger);
 		EnhancedInputComponent->BindAction(TriggerAction, ETriggerEvent::Completed, this, &AHeroCharacter::ReleaseTrigger);
+
+		// ChangeFireMode
+		EnhancedInputComponent->BindAction(ChangeFireModeAction, ETriggerEvent::Completed, this, &AHeroCharacter::ChangeFireMode);
 	}
 	else
 	{
@@ -267,6 +270,13 @@ void AHeroCharacter::ReleaseTrigger()
 	if (SpawnedGun == nullptr) { return; }
 
 	SpawnedGun->ReleaseTrigger();
+}
+
+void AHeroCharacter::ChangeFireMode()
+{
+	if (SpawnedGun == nullptr) { return; }
+
+	SpawnedGun->ChangeFireMode();
 }
 
 void AHeroCharacter::SetWeaponData()
