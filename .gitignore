@@ -74,9 +74,9 @@ Plugins/*/Intermediate/*
 DerivedDataCache/*
 
 
-/OUE/Binaries
-/OUE/Intermediate
-/OUE/saved
-/OUE/Content/Developers
-/OUE/*sln
-/OUE/.vsconfig
+OUE/Binaries
+OUE/Intermediate
+OUE/saved
+OUE/Content/Developers
+OUE/*sln
+OUE/.vsconfig
