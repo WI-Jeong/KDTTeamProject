@@ -89,8 +89,10 @@ void AHeroCharacter::Tick(float DeltaSeconds)
 
 	if (bIsRotateBodyToAim)
 	{
-		RotateBodyToAim();
+		RotateBodyToAim(DeltaSeconds);
 	}
+
+	CloseUpAim(DeltaSeconds);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -123,8 +125,8 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		EnhancedInputComponent->BindAction(ZoomAction, ETriggerEvent::Completed, this, &AHeroCharacter::ZoomInOut);
 
 		// Aim
-		EnhancedInputComponent->BindAction(ZoomAction, ETriggerEvent::Started, this, &AHeroCharacter::StartAim);
-		EnhancedInputComponent->BindAction(ZoomAction, ETriggerEvent::Completed, this, &AHeroCharacter::StopAim);
+		EnhancedInputComponent->BindAction(AimAction, ETriggerEvent::Started, this, &AHeroCharacter::StartAim);
+		EnhancedInputComponent->BindAction(AimAction, ETriggerEvent::Completed, this, &AHeroCharacter::StopAim);
 	}
 	else
 	{
@@ -240,7 +242,7 @@ void AHeroCharacter::StartAim()
 
 void AHeroCharacter::StopAim()
 {
-	if (IsZoomIn) { return; }
+	//if (IsZoomIn) { return; }
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 
@@ -263,15 +265,15 @@ void AHeroCharacter::SpawnGun(TSubclassOf<AGun> InGun)
 {
 	if(InGun == nullptr) { return; }
 
-	// SpawnActor¸¦ ÅëÇØ weapon µ¥ÀÌÅÍ¸¦ ±â¹ÝÀ¸·Î ÇÑ ¾×ÅÍ »ý¼º
+	// SpawnActorï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ weapon ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	SpawnedGun = GetWorld()->SpawnActor<AGun>(InGun);
 
-	// ¼ÒÄÏ ÀÌ¸§À» ÅëÇØ ÇöÀç ¸Þ½Ã¿¡¼­ ¼ÒÄÏÀ» ÂüÁ¶
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½Ã¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	const USkeletalMeshSocket* GunSocket = GetMesh()->GetSocketByName("GunSocket");
 
 	if (SpawnedGun && GunSocket)
 	{
-		// ¼ÒÄÏ¿¡ ¾×ÅÍ¸¦ ÇÒ´ç
+		// ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½Ò´ï¿½
 		GunSocket->AttachActor(SpawnedGun, GetMesh());
 	}
 
@@ -280,13 +282,16 @@ void AHeroCharacter::SpawnGun(TSubclassOf<AGun> InGun)
 	SpawnedGun->SetActorRelativeRotation(WeaponDataTableRow->GunRotation);
 }
 
-void AHeroCharacter::RotateBodyToAim()
+void AHeroCharacter::RotateBodyToAim(float DeltaSeconds)
 {
 	FRotator ControlRotation = GetControlRotation();
 	FRotator ActorRotation = GetActorRotation();
 	FRotator NewRotation = FRotator(ActorRotation.Pitch, ControlRotation.Yaw, ActorRotation.Roll);
 
-	NewRotation = UKismetMathLibrary::RLerp(ActorRotation, NewRotation, GetWorld()->GetDeltaSeconds() * AimSpeed, true);
+	if (IsZoomIn == false)
+	{
+		NewRotation = UKismetMathLibrary::RLerp(ActorRotation, NewRotation, DeltaSeconds * AimSpeed, true);
+	}
 
 	SetActorRotation(NewRotation);
 }
@@ -298,6 +303,18 @@ void AHeroCharacter::Jump()
 	if (IsZoomIn)
 	{
 		ZoomInOut();
+	}
+}
+
+void AHeroCharacter::CloseUpAim(float DeltaSeconds)
+{
+	if (bIsRotateBodyToAim)
+	{
+		CameraBoom->TargetArmLength = FMath::Lerp(CameraBoom->TargetArmLength, TargetArmLengthAim, DeltaSeconds * CloseUpSpeed);
+	}
+	else
+	{
+		CameraBoom->TargetArmLength = FMath::Lerp(CameraBoom->TargetArmLength, TargetArmLengthDefault, DeltaSeconds * CloseUpSpeed);
 	}
 }
 

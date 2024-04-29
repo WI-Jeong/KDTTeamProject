@@ -104,6 +104,13 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float AimSpeed = 10.f;
 
+	bool IsZoomIn = false;
+
+	float TargetArmLengthDefault = 200.f;
+	float TargetArmLengthAim = 100.f;
+
+	float CloseUpSpeed = 7.f;
+
 public:
 	bool GetIsCrouch() { return IsCrouch; }
 
@@ -122,7 +129,6 @@ protected:
 	void StopRun(const FInputActionValue& Value);
 
 	void ZoomInOut();
-	bool IsZoomIn = false;
 
 	void StartAim();
 	void StopAim();
@@ -132,9 +138,11 @@ protected:
 
 	void SpawnGun(TSubclassOf<AGun> InGun);
 
-	void RotateBodyToAim();
+	void RotateBodyToAim(float DeltaSeconds);
 
 	virtual void Jump() override;
+
+	void CloseUpAim(float DeltaSeconds);
 
 protected:
 	virtual void OnConstruction(const FTransform& Transform) override;
