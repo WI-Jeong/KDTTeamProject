@@ -188,6 +188,10 @@ template<> OUE_API UScriptStruct* StaticStruct<FWeaponDataTableRow>()
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_AimAction;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_TriggerAction_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_TriggerAction;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_IsCrouch_MetaData[];
 #endif
 		static void NewProp_IsCrouch_SetBit(void* Obj);
@@ -359,6 +363,20 @@ template<> OUE_API UScriptStruct* StaticStruct<FWeaponDataTableRow>()
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHeroCharacter_Statics::NewProp_AimAction = { "AimAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AHeroCharacter, AimAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AHeroCharacter_Statics::NewProp_AimAction_MetaData), Z_Construct_UClass_AHeroCharacter_Statics::NewProp_AimAction_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHeroCharacter_Statics::NewProp_TriggerAction_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Input" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/** Trigger Input Action */" },
+#endif
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Trigger Input Action" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AHeroCharacter_Statics::NewProp_TriggerAction = { "TriggerAction", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AHeroCharacter, TriggerAction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AHeroCharacter_Statics::NewProp_TriggerAction_MetaData), Z_Construct_UClass_AHeroCharacter_Statics::NewProp_TriggerAction_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch_MetaData[] = {
 		{ "Category", "HeroCharacter" },
 		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
@@ -395,6 +413,7 @@ template<> OUE_API UScriptStruct* StaticStruct<FWeaponDataTableRow>()
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_RunAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_ZoomAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_AimAction,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_TriggerAction,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_IsCrouch,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_WeaponDataTableRowHandle,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AHeroCharacter_Statics::NewProp_AimSpeed,
@@ -441,9 +460,9 @@ template<> OUE_API UScriptStruct* StaticStruct<FWeaponDataTableRow>()
 		{ FWeaponDataTableRow::StaticStruct, Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewStructOps, TEXT("WeaponDataTableRow"), &Z_Registration_Info_UScriptStruct_WeaponDataTableRow, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FWeaponDataTableRow), 3698189605U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AHeroCharacter, AHeroCharacter::StaticClass, TEXT("AHeroCharacter"), &Z_Registration_Info_UClass_AHeroCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHeroCharacter), 3390532727U) },
+		{ Z_Construct_UClass_AHeroCharacter, AHeroCharacter::StaticClass, TEXT("AHeroCharacter"), &Z_Registration_Info_UClass_AHeroCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHeroCharacter), 4126494755U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_3607462344(TEXT("/Script/OUE"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_405655638(TEXT("/Script/OUE"),
 		Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ScriptStructInfo),
 		nullptr, 0);

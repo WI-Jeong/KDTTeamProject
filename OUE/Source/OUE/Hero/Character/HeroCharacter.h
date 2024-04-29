@@ -78,6 +78,10 @@ class OUE_API AHeroCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* AimAction;
 
+	/** Trigger Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* TriggerAction;
+
 public:
 	AHeroCharacter();
 
@@ -122,16 +126,19 @@ protected:
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
 
-	void StartCrouch(const FInputActionValue& Value);
-	void StopCrouch(const FInputActionValue& Value);
+	void StartCrouch();
+	void StopCrouch();
 
-	void StartRun(const FInputActionValue& Value);
-	void StopRun(const FInputActionValue& Value);
+	void StartRun();
+	void StopRun();
 
 	void ZoomInOut();
 
 	void StartAim();
 	void StopAim();
+
+	void PullTrigger();
+	void ReleaseTrigger();
 
 protected:
 	void SetWeaponData();

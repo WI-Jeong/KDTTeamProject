@@ -127,6 +127,10 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		// Aim
 		EnhancedInputComponent->BindAction(AimAction, ETriggerEvent::Started, this, &AHeroCharacter::StartAim);
 		EnhancedInputComponent->BindAction(AimAction, ETriggerEvent::Completed, this, &AHeroCharacter::StopAim);
+
+		// Trigger
+		EnhancedInputComponent->BindAction(TriggerAction, ETriggerEvent::Started, this, &AHeroCharacter::PullTrigger);
+		EnhancedInputComponent->BindAction(TriggerAction, ETriggerEvent::Completed, this, &AHeroCharacter::ReleaseTrigger);
 	}
 	else
 	{
@@ -170,28 +174,28 @@ void AHeroCharacter::Look(const FInputActionValue& Value)
 	}
 }
 
-void AHeroCharacter::StartCrouch(const FInputActionValue& Value)
+void AHeroCharacter::StartCrouch()
 {
 	IsCrouch = true;
 	GetCharacterMovement()->MaxWalkSpeed = CrouchSpeed;
 }
 
-void AHeroCharacter::StopCrouch(const FInputActionValue& Value)
+void AHeroCharacter::StopCrouch()
 {
 	IsCrouch = false;
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 }
 
-void AHeroCharacter::StartRun(const FInputActionValue& Value)
+void AHeroCharacter::StartRun()
 {
 	GetCharacterMovement()->MaxWalkSpeed = RunSpeed;
-	UE_LOG(LogTemp, Warning, TEXT("StartRun"));
+	//UE_LOG(LogTemp, Warning, TEXT("StartRun"));
 }
 
-void AHeroCharacter::StopRun(const FInputActionValue& Value)
+void AHeroCharacter::StopRun()
 {
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
-	UE_LOG(LogTemp, Warning, TEXT("StopRun"));
+	//UE_LOG(LogTemp, Warning, TEXT("StopRun"));
 }
 
 void AHeroCharacter::ZoomInOut()
@@ -247,6 +251,22 @@ void AHeroCharacter::StopAim()
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 
 	bIsRotateBodyToAim = false;
+}
+
+void AHeroCharacter::PullTrigger()
+{
+	//UE_LOG(LogTemp, Warning, TEXT("PullTrigger"));
+	if (SpawnedGun == nullptr) { return; }
+
+	SpawnedGun->PullTrigger();
+}
+
+void AHeroCharacter::ReleaseTrigger()
+{
+	//UE_LOG(LogTemp, Warning, TEXT("ReleaseTrigger"));
+	if (SpawnedGun == nullptr) { return; }
+
+	SpawnedGun->ReleaseTrigger();
 }
 
 void AHeroCharacter::SetWeaponData()
