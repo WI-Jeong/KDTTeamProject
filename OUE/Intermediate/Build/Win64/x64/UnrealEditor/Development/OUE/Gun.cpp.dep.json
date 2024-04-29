@@ -11,7 +11,14 @@
             "d:\\han\\team\\oue\\source\\oue\\hero\\gun\\bullet.h",
             "d:\\han\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\bullet.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\skeletalmeshsocket.h",
-            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\skeletalmeshsocket.generated.h"
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\skeletalmeshsocket.generated.h",
+            "d:\\han\\team\\oue\\source\\oue\\hero\\gamemode\\herogamemodebase.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "d:\\han\\team\\oue\\source\\oue\\hero\\actorpool\\actorpool.h",
+            "d:\\han\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\herogamemodebase.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

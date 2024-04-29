@@ -7,6 +7,7 @@
 #include "Gun.generated.h"
 
 class UChildActorComponent;
+struct FBulletTableRow;
 
 UCLASS()
 class OUE_API AGun : public AActor
@@ -42,8 +43,8 @@ protected:
 	bool IsTriggered = false;
 	bool IsAutoFire = true;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Gun, meta = (AllowPrivateAccess = "true"))
-	TSubclassOf<class ABullet> Bullet;
+	//UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Gun, meta = (AllowPrivateAccess = "true"))
+	//TSubclassOf<class ABullet> Bullet;
 
 	void Fire();
 
@@ -52,5 +53,11 @@ public:
 	void ReleaseTrigger();
 	void SpawnBullet(TSubclassOf<ABullet> InBullet);
 	void ChangeFireMode();
+
+protected:
+	UPROPERTY(EditAnywhere)
+	FDataTableRowHandle BulletDataTableRowHandle;
+
+	FBulletTableRow* BulletTableRow;
 
 };

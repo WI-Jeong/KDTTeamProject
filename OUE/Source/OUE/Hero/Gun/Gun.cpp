@@ -4,6 +4,7 @@
 #include "Hero/Gun/Gun.h"
 #include "Hero/Gun/Bullet.h"
 #include "Engine/SkeletalMeshSocket.h"
+#include "Hero/GameMode/HeroGameModeBase.h"
 
 // Sets default values
 AGun::AGun()
@@ -23,7 +24,8 @@ AGun::AGun()
 void AGun::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	BulletTableRow = BulletDataTableRowHandle.GetRow<FBulletTableRow>(TEXT(""));
 }
 
 void AGun::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -62,7 +64,7 @@ void AGun::Fire()
 
 	UE_LOG(LogTemp, Warning, TEXT("Fire"));
 
-	SpawnBullet(Bullet);
+	SpawnBullet(ABullet::StaticClass());
 }
 
 void AGun::PullTrigger()
@@ -87,7 +89,16 @@ void AGun::SpawnBullet(TSubclassOf<ABullet> InBullet)
 
 		if (Muzzle)
 		{
-			ABullet* SpawnBullet = GetWorld()->SpawnActor<ABullet>(InBullet, Muzzle->GetSocketTransform(SkeletalMeshComponent));
+			/*ABullet* SpawnBullet = GetWorld()->SpawnActor<ABullet>(InBullet, Muzzle->GetSocketTransform(SkeletalMeshComponent));*/
+			AHeroGameModeBase* GameMode = Cast<AHeroGameModeBase>(GetWorld()->GetAuthGameMode());
+			ensure(GameMode);
+			ABullet* NewBullet = GameMode->GetBulletPool().New<ABullet>(Muzzle->GetSocketTransform(SkeletalMeshComponent),
+				[this](ABullet* NewActor)
+				{
+					/*NewActor->SetProjectileData(ProjectileRow);*/
+					NewActor->SetBullet(BulletTableRow);
+				}
+			, true, nullptr, nullptr);
 		}
 	}
 }

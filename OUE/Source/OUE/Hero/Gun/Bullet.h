@@ -6,6 +6,25 @@
 #include "GameFramework/Actor.h"
 #include "Bullet.generated.h"
 
+USTRUCT()
+struct FBulletTableRow : public FTableRowBase
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere)
+	UStaticMesh* StaticMesh;
+
+	UPROPERTY(EditAnywhere)
+	float BulletSpeed = 1000.f;
+
+	UPROPERTY(EditAnywhere)
+	float BulletGravityScale = 1.f;
+
+	UPROPERTY(EditAnywhere)
+	float InitialLifeSpan = 1.f;
+};
+
 UCLASS()
 class OUE_API ABullet : public AActor
 {
@@ -14,6 +33,8 @@ class OUE_API ABullet : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ABullet();
+
+	void SetBullet(FBulletTableRow* InTableRow);
 
 protected:
 	// Called when the game starts or when spawned
@@ -25,15 +46,22 @@ public:
 
 protected:
 	UPROPERTY(EditAnywhere)
-	float MaxSpeed = 6000.f;
+	float MaxSpeed = 1000.f;
 
 	UPROPERTY(EditAnywhere)
-	float InitialSpeed = 6000.f;
+	float InitialSpeed = 1000.f;
 
 	UPROPERTY(EditAnywhere)
 	class UProjectileMovementComponent* ProjectileMovement;
 
 	UPROPERTY(EditAnywhere)
+	UStaticMeshComponent* StaticMeshComponent;
+
+	UPROPERTY(EditAnywhere)
+	class USphereComponent* SphereComponent;
+
+	UPROPERTY(EditAnywhere)
 	float Damage = 1.f;
 
+	FTimerHandle InitialLifeSpanTimer;
 };
