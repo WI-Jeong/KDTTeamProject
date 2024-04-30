@@ -35,9 +35,9 @@ void AItem::Tick(float DeltaTime)
 
 void AItem::MeshRotate()
 {
-	FRotator NewRotator = FRotator(0, 0, ItemDataTableRow->RotateSpeed);
-	FQuat NewQuat = NewRotator.Quaternion();
-	SetActorRelativeRotation(NewQuat);
+	const FRotator NewRotator = FRotator(0.f, ItemDataTableRow->RotateSpeed, 0.f);
+	const FQuat NewQuat = NewRotator.Quaternion();
+	SkeletalMeshComponent->AddRelativeRotation(NewQuat);
 }
 
 void AItem::SetItemData()
