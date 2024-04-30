@@ -19,7 +19,7 @@ private:
 	TObjectPtr<class UMainWidget>	mMainWidget;
 
 protected:
-	virtual void BeginPlay();
+	virtual void BeginPlay() override;
 };
 
 
