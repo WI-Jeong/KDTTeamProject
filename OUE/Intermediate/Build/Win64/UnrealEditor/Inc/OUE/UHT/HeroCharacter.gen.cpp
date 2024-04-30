@@ -14,6 +14,7 @@ void EmptyLinkFunctionForGeneratedCodeHeroCharacter() {}
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
+	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FDataTableRowHandle();
@@ -65,6 +66,10 @@ template<> OUE_API UScriptStruct* StaticStruct<FWeaponDataTableRow>()
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_GunRotation_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_GunRotation;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_RecoilMontage_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_RecoilMontage;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UECodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -105,11 +110,19 @@ template<> OUE_API UScriptStruct* StaticStruct<FWeaponDataTableRow>()
 	};
 #endif
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_GunRotation = { "GunRotation", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FWeaponDataTableRow, GunRotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_GunRotation_MetaData), Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_GunRotation_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_RecoilMontage_MetaData[] = {
+		{ "Category", "WeaponDataTableRow" },
+		{ "ModuleRelativePath", "Hero/Character/HeroCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_RecoilMontage = { "RecoilMontage", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FWeaponDataTableRow, RecoilMontage), Z_Construct_UClass_UAnimMontage_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_RecoilMontage_MetaData), Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_RecoilMontage_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_AnimBP,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_Gun,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_GunLocation,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_GunRotation,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewProp_RecoilMontage,
 	};
 	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_OUE,
@@ -476,12 +489,12 @@ template<> OUE_API UScriptStruct* StaticStruct<FWeaponDataTableRow>()
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ScriptStructInfo[] = {
-		{ FWeaponDataTableRow::StaticStruct, Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewStructOps, TEXT("WeaponDataTableRow"), &Z_Registration_Info_UScriptStruct_WeaponDataTableRow, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FWeaponDataTableRow), 3698189605U) },
+		{ FWeaponDataTableRow::StaticStruct, Z_Construct_UScriptStruct_FWeaponDataTableRow_Statics::NewStructOps, TEXT("WeaponDataTableRow"), &Z_Registration_Info_UScriptStruct_WeaponDataTableRow, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FWeaponDataTableRow), 4184415809U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_AHeroCharacter, AHeroCharacter::StaticClass, TEXT("AHeroCharacter"), &Z_Registration_Info_UClass_AHeroCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AHeroCharacter), 366718198U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_925809417(TEXT("/Script/OUE"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_3132685128(TEXT("/Script/OUE"),
 		Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_HeroCharacter_h_Statics::ScriptStructInfo),
 		nullptr, 0);

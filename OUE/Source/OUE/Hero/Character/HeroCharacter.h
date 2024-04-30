@@ -31,6 +31,9 @@ struct OUE_API FWeaponDataTableRow : public FTableRowBase
 
 	UPROPERTY(EditAnywhere)
 	FRotator GunRotation;
+
+	UPROPERTY(EditAnywhere)
+	UAnimMontage* RecoilMontage;
 };
 
 UCLASS()
@@ -122,6 +125,8 @@ protected:
 public:
 	bool GetIsCrouch() { return IsCrouch; }
 	bool GetIsRotateBodyToAim() { return IsRotateBodyToAim; }
+	//FWeaponDataTableRow* GetWeaponDataTableRow() { return WeaponDataTableRow; }
+	void PlayRecoilMontage();
 
 protected:
 

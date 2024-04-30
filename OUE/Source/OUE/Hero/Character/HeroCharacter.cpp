@@ -141,6 +141,12 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	}
 }
 
+void AHeroCharacter::PlayRecoilMontage()
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	AnimInstance->Montage_Play(WeaponDataTableRow->RecoilMontage);
+}
+
 void AHeroCharacter::Move(const FInputActionValue& Value)
 {
 	// input is a Vector2D

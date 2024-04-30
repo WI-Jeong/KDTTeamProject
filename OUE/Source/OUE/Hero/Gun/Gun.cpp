@@ -5,6 +5,7 @@
 #include "Hero/Gun/Bullet.h"
 #include "Engine/SkeletalMeshSocket.h"
 #include "Hero/GameMode/HeroGameModeBase.h"
+#include "Hero/Character/HeroCharacter.h"
 
 // Sets default values
 AGun::AGun()
@@ -65,6 +66,12 @@ void AGun::Fire()
 	UE_LOG(LogTemp, Warning, TEXT("Fire"));
 
 	SpawnBullet(ABullet::StaticClass());
+
+	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(GetWorld()->GetFirstPlayerController()->GetCharacter());
+	if (HeroCharacter)
+	{
+		HeroCharacter->PlayRecoilMontage();
+	}
 }
 
 void AGun::PullTrigger()
