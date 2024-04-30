@@ -34,6 +34,9 @@ struct OUE_API FWeaponDataTableRow : public FTableRowBase
 
 	UPROPERTY(EditAnywhere)
 	UAnimMontage* RecoilMontage;
+
+	UPROPERTY(EditAnywhere)
+	UAnimMontage* ReloadingMontage;
 };
 
 UCLASS()
@@ -89,6 +92,10 @@ class OUE_API AHeroCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* ChangeFireModeAction;
 
+	/** Reload Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* ReloadModeAction;
+
 public:
 	AHeroCharacter();
 
@@ -126,7 +133,11 @@ public:
 	bool GetIsCrouch() { return IsCrouch; }
 	bool GetIsRotateBodyToAim() { return IsRotateBodyToAim; }
 	//FWeaponDataTableRow* GetWeaponDataTableRow() { return WeaponDataTableRow; }
+	AGun* GetSpawnedGun() { return SpawnedGun; }
+
 	void PlayRecoilMontage();
+
+	void PlayReloadingMontage();
 
 protected:
 

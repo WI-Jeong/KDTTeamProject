@@ -134,6 +134,9 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 		// ChangeFireMode
 		EnhancedInputComponent->BindAction(ChangeFireModeAction, ETriggerEvent::Completed, this, &AHeroCharacter::ChangeFireMode);
+
+		// Reload
+		EnhancedInputComponent->BindAction(ReloadModeAction, ETriggerEvent::Completed, this, &AHeroCharacter::PlayReloadingMontage);
 	}
 	else
 	{
@@ -145,6 +148,12 @@ void AHeroCharacter::PlayRecoilMontage()
 {
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
 	AnimInstance->Montage_Play(WeaponDataTableRow->RecoilMontage);
+}
+
+void AHeroCharacter::PlayReloadingMontage()
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	AnimInstance->Montage_Play(WeaponDataTableRow->ReloadingMontage);
 }
 
 void AHeroCharacter::Move(const FInputActionValue& Value)

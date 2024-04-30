@@ -43,6 +43,9 @@ protected:
 	float FireDelay = 0.2f;
 	bool IsTriggered = false;
 	bool IsAutoFire = true;
+	
+	int MaxAmmo = 30;
+	int CurrentAmmo = MaxAmmo;
 
 	//UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Gun, meta = (AllowPrivateAccess = "true"))
 	//TSubclassOf<class ABullet> Bullet;
@@ -54,6 +57,7 @@ public:
 	void ReleaseTrigger();
 	void SpawnBullet(TSubclassOf<ABullet> InBullet);
 	void ChangeFireMode();
+	void Reload();
 
 protected:
 	UPROPERTY(EditAnywhere)

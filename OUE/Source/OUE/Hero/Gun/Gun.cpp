@@ -65,6 +65,10 @@ void AGun::Fire()
 
 	UE_LOG(LogTemp, Warning, TEXT("Fire"));
 
+	if (CurrentAmmo <= 0) { return; }
+
+	--CurrentAmmo;
+
 	SpawnBullet(ABullet::StaticClass());
 
 	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(GetWorld()->GetFirstPlayerController()->GetCharacter());
@@ -120,5 +124,10 @@ void AGun::ChangeFireMode()
 	{
 		IsAutoFire = true;
 	}
+}
+
+void AGun::Reload()
+{
+	CurrentAmmo = MaxAmmo;
 }
 

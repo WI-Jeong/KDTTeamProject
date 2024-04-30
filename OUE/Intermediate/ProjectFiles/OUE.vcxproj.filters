@@ -66,6 +66,15 @@
     <ClInclude Include="..\..\Source\OUE\Hero\ActorPool\ActorPool.h">
       <Filter>Source\OUE\Hero\ActorPool</Filter>
     </ClInclude>
+    <Filter Include="Source\OUE\Hero\AnimNotify">
+      <UniqueIdentifier>{8196E992-424C-3735-8AA8-A25C5DB2AB79}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\AnimNotify\ReloadAnimNotify.cpp">
+      <Filter>Source\OUE\Hero\AnimNotify</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\AnimNotify\ReloadAnimNotify.h">
+      <Filter>Source\OUE\Hero\AnimNotify</Filter>
+    </ClInclude>
     <Filter Include="Source\OUE\Hero\Character">
       <UniqueIdentifier>{18281A4D-C1DA-3B30-B43B-1E94C94BD0A0}</UniqueIdentifier>
     </Filter>
