@@ -61,6 +61,11 @@ void EmptyLinkFunctionForGeneratedCodeHeroAnimInstance() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Yaw_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_Yaw;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_IsRotateBodyToAim_MetaData[];
+#endif
+		static void NewProp_IsRotateBodyToAim_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_IsRotateBodyToAim;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -138,6 +143,17 @@ void EmptyLinkFunctionForGeneratedCodeHeroAnimInstance() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_Yaw = { "Yaw", nullptr, (EPropertyFlags)0x0020080000000004, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UHeroAnimInstance, Yaw), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_Yaw_MetaData), Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_Yaw_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsRotateBodyToAim_MetaData[] = {
+		{ "Category", "HeroAnimInstance" },
+		{ "ModuleRelativePath", "Hero/Character/AnimInstance/HeroAnimInstance.h" },
+	};
+#endif
+	void Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsRotateBodyToAim_SetBit(void* Obj)
+	{
+		((UHeroAnimInstance*)Obj)->IsRotateBodyToAim = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsRotateBodyToAim = { "IsRotateBodyToAim", nullptr, (EPropertyFlags)0x0020080000000004, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(UHeroAnimInstance), &Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsRotateBodyToAim_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsRotateBodyToAim_MetaData), Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsRotateBodyToAim_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UHeroAnimInstance_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_Speed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsFalling,
@@ -146,6 +162,7 @@ void EmptyLinkFunctionForGeneratedCodeHeroAnimInstance() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsCrouch,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_Pitch,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_Yaw,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UHeroAnimInstance_Statics::NewProp_IsRotateBodyToAim,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UHeroAnimInstance_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UHeroAnimInstance>::IsAbstract,
@@ -186,9 +203,9 @@ void EmptyLinkFunctionForGeneratedCodeHeroAnimInstance() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_AnimInstance_HeroAnimInstance_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UHeroAnimInstance, UHeroAnimInstance::StaticClass, TEXT("UHeroAnimInstance"), &Z_Registration_Info_UClass_UHeroAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHeroAnimInstance), 3684027430U) },
+		{ Z_Construct_UClass_UHeroAnimInstance, UHeroAnimInstance::StaticClass, TEXT("UHeroAnimInstance"), &Z_Registration_Info_UClass_UHeroAnimInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHeroAnimInstance), 568583494U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_AnimInstance_HeroAnimInstance_h_2489799180(TEXT("/Script/OUE"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_AnimInstance_HeroAnimInstance_h_658261085(TEXT("/Script/OUE"),
 		Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_AnimInstance_HeroAnimInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Character_AnimInstance_HeroAnimInstance_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

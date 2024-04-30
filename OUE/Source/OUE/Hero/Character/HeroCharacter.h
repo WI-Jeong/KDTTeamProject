@@ -107,7 +107,7 @@ protected:
 
 	AActor* MainCameraActor;
 
-	bool bIsRotateBodyToAim = false;
+	bool IsRotateBodyToAim = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float AimSpeed = 10.f;
@@ -121,6 +121,7 @@ protected:
 
 public:
 	bool GetIsCrouch() { return IsCrouch; }
+	bool GetIsRotateBodyToAim() { return IsRotateBodyToAim; }
 
 protected:
 

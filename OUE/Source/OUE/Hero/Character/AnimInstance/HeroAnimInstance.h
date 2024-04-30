@@ -38,6 +38,9 @@ protected:
 	UPROPERTY(BlueprintReadWrite)
 	float Yaw = 0.f;
 
+	UPROPERTY(BlueprintReadWrite)
+	bool IsRotateBodyToAim = false;
+
 protected:
 	virtual void NativeInitializeAnimation() override;
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;

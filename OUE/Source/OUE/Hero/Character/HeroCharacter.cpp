@@ -87,7 +87,7 @@ void AHeroCharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 
-	if (bIsRotateBodyToAim)
+	if (IsRotateBodyToAim)
 	{
 		RotateBodyToAim(DeltaSeconds);
 	}
@@ -203,6 +203,8 @@ void AHeroCharacter::StopRun()
 
 void AHeroCharacter::ZoomInOut()
 {
+	if (SpawnedGun == nullptr) { return; }
+
 	if (CanJump() == false) { return; }
 
 	if (IsZoomIn)
@@ -216,7 +218,7 @@ void AHeroCharacter::ZoomInOut()
 
 		GetCharacterMovement()->bOrientRotationToMovement = true;
 
-		bIsRotateBodyToAim = false;
+		IsRotateBodyToAim = false;
 	}
 	else
 	{
@@ -235,7 +237,7 @@ void AHeroCharacter::ZoomInOut()
 
 			GetCharacterMovement()->bOrientRotationToMovement = false;
 
-			bIsRotateBodyToAim = true;
+			IsRotateBodyToAim = true;
 		}
 	}
 }
@@ -244,7 +246,7 @@ void AHeroCharacter::StartAim()
 {
 	GetCharacterMovement()->bOrientRotationToMovement = false;
 
-	bIsRotateBodyToAim = true;
+	IsRotateBodyToAim = true;
 }
 
 void AHeroCharacter::StopAim()
@@ -253,7 +255,7 @@ void AHeroCharacter::StopAim()
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 
-	bIsRotateBodyToAim = false;
+	IsRotateBodyToAim = false;
 }
 
 void AHeroCharacter::PullTrigger()
@@ -338,7 +340,7 @@ void AHeroCharacter::Jump()
 
 void AHeroCharacter::CloseUpAim(float DeltaSeconds)
 {
-	if (bIsRotateBodyToAim)
+	if (IsRotateBodyToAim)
 	{
 		CameraBoom->TargetArmLength = FMath::Lerp(CameraBoom->TargetArmLength, TargetArmLengthAim, DeltaSeconds * CloseUpSpeed);
 	}
