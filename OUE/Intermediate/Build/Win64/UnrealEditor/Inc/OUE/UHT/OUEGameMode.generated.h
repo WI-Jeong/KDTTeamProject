@@ -14,12 +14,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define OUE_OUEGameMode_generated_h
 
-#define FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_SPARSE_DATA
-#define FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_ACCESSORS
-#define FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_OUE_Source_OUE_OUEGameMode_h_12_SPARSE_DATA
+#define FID_OUE_Source_OUE_OUEGameMode_h_12_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_OUE_Source_OUE_OUEGameMode_h_12_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_OUE_Source_OUE_OUEGameMode_h_12_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_OUE_Source_OUE_OUEGameMode_h_12_ACCESSORS
+#define FID_OUE_Source_OUE_OUEGameMode_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAOUEGameMode(); \
 	friend struct Z_Construct_UClass_AOUEGameMode_Statics; \
@@ -28,7 +28,7 @@ public: \
 	DECLARE_SERIALIZER(AOUEGameMode)
 
 
-#define FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_OUE_Source_OUE_OUEGameMode_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	OUE_API AOUEGameMode(AOUEGameMode&&); \
@@ -40,17 +40,17 @@ public: \
 	OUE_API virtual ~AOUEGameMode();
 
 
-#define FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_9_PROLOG
-#define FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_GENERATED_BODY \
+#define FID_OUE_Source_OUE_OUEGameMode_h_9_PROLOG
+#define FID_OUE_Source_OUE_OUEGameMode_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_SPARSE_DATA \
-	FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_ACCESSORS \
-	FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_INCLASS_NO_PURE_DECLS \
-	FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h_12_ENHANCED_CONSTRUCTORS \
+	FID_OUE_Source_OUE_OUEGameMode_h_12_SPARSE_DATA \
+	FID_OUE_Source_OUE_OUEGameMode_h_12_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_OUE_Source_OUE_OUEGameMode_h_12_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_OUE_Source_OUE_OUEGameMode_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_OUE_Source_OUE_OUEGameMode_h_12_ACCESSORS \
+	FID_OUE_Source_OUE_OUEGameMode_h_12_INCLASS_NO_PURE_DECLS \
+	FID_OUE_Source_OUE_OUEGameMode_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -58,7 +58,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> OUE_API UClass* StaticClass<class AOUEGameMode>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_assortrock_Team_OUE_Source_OUE_OUEGameMode_h
+#define CURRENT_FILE_ID FID_OUE_Source_OUE_OUEGameMode_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

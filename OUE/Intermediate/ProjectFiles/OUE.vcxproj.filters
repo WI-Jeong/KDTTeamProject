@@ -57,6 +57,15 @@
     <Filter Include="Source\OUE\Hero">
       <UniqueIdentifier>{75FFB712-B6B6-3D07-9DEE-0B11D4F620A0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\OUE\Hero\ActorPool">
+      <UniqueIdentifier>{7CCD297D-13C3-3B34-9F9C-6BDB3054911D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\ActorPool\ActorPool.cpp">
+      <Filter>Source\OUE\Hero\ActorPool</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\ActorPool\ActorPool.h">
+      <Filter>Source\OUE\Hero\ActorPool</Filter>
+    </ClInclude>
     <Filter Include="Source\OUE\Hero\Character">
       <UniqueIdentifier>{18281A4D-C1DA-3B30-B43B-1E94C94BD0A0}</UniqueIdentifier>
     </Filter>
@@ -75,9 +84,24 @@
     <ClInclude Include="..\..\Source\OUE\Hero\Character\AnimInstance\HeroAnimInstance.h">
       <Filter>Source\OUE\Hero\Character\AnimInstance</Filter>
     </ClInclude>
+    <Filter Include="Source\OUE\Hero\GameMode">
+      <UniqueIdentifier>{5E7E9431-C7A0-325C-B46E-5158E4BFE2A8}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\GameMode\HeroGameModeBase.cpp">
+      <Filter>Source\OUE\Hero\GameMode</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\GameMode\HeroGameModeBase.h">
+      <Filter>Source\OUE\Hero\GameMode</Filter>
+    </ClInclude>
     <Filter Include="Source\OUE\Hero\Gun">
       <UniqueIdentifier>{48DCF09A-57E5-3FEF-B8E7-DE9A19BFCF62}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\Gun\Bullet.cpp">
+      <Filter>Source\OUE\Hero\Gun</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\Gun\Bullet.h">
+      <Filter>Source\OUE\Hero\Gun</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\OUE\Hero\Gun\Gun.cpp">
       <Filter>Source\OUE\Hero\Gun</Filter>
     </ClCompile>

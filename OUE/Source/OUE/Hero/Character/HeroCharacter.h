@@ -31,6 +31,9 @@ struct OUE_API FWeaponDataTableRow : public FTableRowBase
 
 	UPROPERTY(EditAnywhere)
 	FRotator GunRotation;
+
+	UPROPERTY(EditAnywhere)
+	UAnimMontage* RecoilMontage;
 };
 
 UCLASS()
@@ -78,6 +81,14 @@ class OUE_API AHeroCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* AimAction;
 
+	/** Trigger Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* TriggerAction;
+
+	/** ChangeFireMode Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* ChangeFireModeAction;
+
 public:
 	AHeroCharacter();
 
@@ -99,13 +110,23 @@ protected:
 
 	AActor* MainCameraActor;
 
-	bool bIsRotateBodyToAim = false;
+	bool IsRotateBodyToAim = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float AimSpeed = 10.f;
 
+	bool IsZoomIn = false;
+
+	float TargetArmLengthDefault = 200.f;
+	float TargetArmLengthAim = 100.f;
+
+	float CloseUpSpeed = 7.f;
+
 public:
 	bool GetIsCrouch() { return IsCrouch; }
+	bool GetIsRotateBodyToAim() { return IsRotateBodyToAim; }
+	//FWeaponDataTableRow* GetWeaponDataTableRow() { return WeaponDataTableRow; }
+	void PlayRecoilMontage();
 
 protected:
 
@@ -115,26 +136,32 @@ protected:
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
 
-	void StartCrouch(const FInputActionValue& Value);
-	void StopCrouch(const FInputActionValue& Value);
+	void StartCrouch();
+	void StopCrouch();
 
-	void StartRun(const FInputActionValue& Value);
-	void StopRun(const FInputActionValue& Value);
+	void StartRun();
+	void StopRun();
 
 	void ZoomInOut();
-	bool IsZoomIn = false;
 
 	void StartAim();
 	void StopAim();
+
+	void PullTrigger();
+	void ReleaseTrigger();
+
+	void ChangeFireMode();
 
 protected:
 	void SetWeaponData();
 
 	void SpawnGun(TSubclassOf<AGun> InGun);
 
-	void RotateBodyToAim();
+	void RotateBodyToAim(float DeltaSeconds);
 
 	virtual void Jump() override;
+
+	void CloseUpAim(float DeltaSeconds);
 
 protected:
 	virtual void OnConstruction(const FTransform& Transform) override;

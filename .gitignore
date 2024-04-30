@@ -74,9 +74,9 @@ Plugins/*/Intermediate/*
 DerivedDataCache/*
 
 
-KDTTeamProject/OUE/Binaries
-KDTTeamProject/OUE/Intermediate
-KDTTeamProject/OUE/saved
-KDTTeamProject/OUE/Content/Developers
-KDTTeamProject/OUE/*sln
-KDTTeamProject/OUE/.vsconfig
+OUE/Binaries
+OUE/Intermediate
+OUE/saved
+OUE/Content/Developers
+OUE/*sln
+OUE/.vsconfig

@@ -2,6 +2,10 @@
 
 
 #include "Hero/Gun/Gun.h"
+#include "Hero/Gun/Bullet.h"
+#include "Engine/SkeletalMeshSocket.h"
+#include "Hero/GameMode/HeroGameModeBase.h"
+#include "Hero/Character/HeroCharacter.h"
 
 // Sets default values
 AGun::AGun()
@@ -12,7 +16,7 @@ AGun::AGun()
 	SkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Gun"));
 	SkeletalMeshComponent->SetupAttachment(RootComponent);
 
-	//Ä«¸Þ¶ó ¾×ÅÍ »ý¼ºÀ» À§ÇÑ ÀÚ¼Õ ¾×ÅÍÄÄÆÛ³ÍÆ®
+	//Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û³ï¿½Æ®
 	ChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("ChildActorComponent"));
 	ChildActorComponent->SetupAttachment(SkeletalMeshComponent);
 }
@@ -21,7 +25,14 @@ AGun::AGun()
 void AGun::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	BulletTableRow = BulletDataTableRowHandle.GetRow<FBulletTableRow>(TEXT(""));
+}
+
+void AGun::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+	Super::EndPlay(EndPlayReason);
+	GetWorld()->GetTimerManager().ClearTimer(FireTimerHandle);
 }
 
 // Called every frame
@@ -29,5 +40,85 @@ void AGun::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (IsTriggered)
+	{
+		if (IsAutoFire)
+		{
+			Fire();
+		}
+		else
+		{
+			Fire();
+			ReleaseTrigger();
+		}
+	}
+
+}
+
+void AGun::Fire()
+{
+	bool bTimer = GetWorld()->GetTimerManager().IsTimerActive(FireTimerHandle);
+	if (bTimer) { return; }
+
+	ensure(FireDelay > 0.f);
+	GetWorld()->GetTimerManager().SetTimer(FireTimerHandle, FireDelay, false);
+
+	UE_LOG(LogTemp, Warning, TEXT("Fire"));
+
+	SpawnBullet(ABullet::StaticClass());
+
+	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(GetWorld()->GetFirstPlayerController()->GetCharacter());
+	if (HeroCharacter)
+	{
+		HeroCharacter->PlayRecoilMontage();
+	}
+}
+
+void AGun::PullTrigger()
+{
+	if (IsTriggered == false)
+	{
+		IsTriggered = true;
+	}
+}
+
+void AGun::ReleaseTrigger()
+{
+	IsTriggered = false;
+}
+
+void AGun::SpawnBullet(TSubclassOf<ABullet> InBullet)
+{
+	if (InBullet)
+	{
+		// ì†Œì¼“ ì´ë¦„ì„ í†µí•´ í˜„ìž¬ ë©”ì‹œì—ì„œ ì†Œì¼“ì„ ì°¸ì¡°
+		const USkeletalMeshSocket* Muzzle = SkeletalMeshComponent->GetSocketByName("Muzzle");
+
+		if (Muzzle)
+		{
+			/*ABullet* SpawnBullet = GetWorld()->SpawnActor<ABullet>(InBullet, Muzzle->GetSocketTransform(SkeletalMeshComponent));*/
+			AHeroGameModeBase* GameMode = Cast<AHeroGameModeBase>(GetWorld()->GetAuthGameMode());
+			ensure(GameMode);
+			ABullet* NewBullet = GameMode->GetBulletPool().New<ABullet>(Muzzle->GetSocketTransform(SkeletalMeshComponent),
+				[this](ABullet* NewActor)
+				{
+					/*NewActor->SetProjectileData(ProjectileRow);*/
+					NewActor->SetBullet(BulletTableRow);
+				}
+			, true, nullptr, nullptr);
+		}
+	}
+}
+
+void AGun::ChangeFireMode()
+{
+	if (IsAutoFire)
+	{
+		IsAutoFire = false;
+	}
+	else
+	{
+		IsAutoFire = true;
+	}
 }
 
