@@ -117,5 +117,14 @@
     <ClInclude Include="..\..\Source\OUE\Hero\Gun\Gun.h">
       <Filter>Source\OUE\Hero\Gun</Filter>
     </ClInclude>
+    <Filter Include="Source\OUE\Hero\Item">
+      <UniqueIdentifier>{0038C217-F969-3651-9122-C92F7FAA1794}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\Item\Item.cpp">
+      <Filter>Source\OUE\Hero\Item</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\Item\Item.h">
+      <Filter>Source\OUE\Hero\Item</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
