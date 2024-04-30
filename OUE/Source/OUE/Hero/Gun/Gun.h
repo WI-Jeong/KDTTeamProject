@@ -8,6 +8,7 @@
 
 class UChildActorComponent;
 struct FBulletTableRow;
+class ABullet;
 
 UCLASS()
 class OUE_API AGun : public AActor

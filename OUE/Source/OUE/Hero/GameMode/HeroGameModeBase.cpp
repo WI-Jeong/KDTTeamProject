@@ -7,7 +7,7 @@
 void AHeroGameModeBase::BeginPlay()
 {
 	Super::BeginPlay();
-	BulletPool.Create(GetWorld(), ABullet::StaticClass(), 2);
+	BulletPool.Create(GetWorld(), ABullet::StaticClass(), 30);
 	//EffectPool.Create(GetWorld(), AEffect::StaticClass(), 5);
 }
 
