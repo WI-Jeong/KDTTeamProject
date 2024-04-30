@@ -73,4 +73,7 @@ void UHeroAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	{
 		IsRotateBodyToAim = HeroCharacter->GetIsRotateBodyToAim();
 	}
+
+	// Rotator
+	Rotator = Pawn->GetActorRotation();
 }
