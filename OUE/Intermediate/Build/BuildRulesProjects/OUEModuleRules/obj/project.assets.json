@@ -8047,11 +8047,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TeamProject\\KDTTeamProject\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\OUEModuleRules.csproj",
+      "projectUniqueName": "D:\\Han\\Team\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\OUEModuleRules.csproj",
       "projectName": "OUEModuleRules",
-      "projectPath": "D:\\TeamProject\\KDTTeamProject\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\OUEModuleRules.csproj",
+      "projectPath": "D:\\Han\\Team\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\OUEModuleRules.csproj",
       "packagesPath": "C:\\Users\\AR student\\.nuget\\packages\\",
-      "outputPath": "D:\\TeamProject\\KDTTeamProject\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\obj\\",
+      "outputPath": "D:\\Han\\Team\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AR student\\AppData\\Roaming\\NuGet\\NuGet.Config",
