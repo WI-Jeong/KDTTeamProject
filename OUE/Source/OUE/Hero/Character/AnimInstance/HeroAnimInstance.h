@@ -18,13 +18,16 @@ protected:
 	UPawnMovementComponent* MovementComponent;
 
 	UPROPERTY(BlueprintReadOnly)
+	FRotator Rotator;
+
+	UPROPERTY(BlueprintReadOnly)
+	FVector Velocity;
+
+	UPROPERTY(BlueprintReadOnly)
 	float Speed;
 
 	UPROPERTY(BlueprintReadOnly)
 	bool IsFalling = false;
-
-	UPROPERTY(BlueprintReadOnly)
-	FVector Velocity;
 
 	UPROPERTY(BlueprintReadOnly)
 	bool IsShouldMove;
@@ -37,6 +40,9 @@ protected:
 
 	UPROPERTY(BlueprintReadWrite)
 	float Yaw = 0.f;
+
+	UPROPERTY(BlueprintReadWrite)
+	bool IsRotateBodyToAim = false;
 
 protected:
 	virtual void NativeInitializeAnimation() override;

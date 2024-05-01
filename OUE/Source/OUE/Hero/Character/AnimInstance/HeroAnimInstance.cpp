@@ -49,13 +49,13 @@ void UHeroAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 		IsShouldMove = false;
 	}
 
-	//IsCrouch//
+	//IsCrouch
 	if (HeroCharacter)
 	{
 		IsCrouch = HeroCharacter->GetIsCrouch();
 	}
 
-	//¿¡ÀÓ ¿ÀÇÁ¼Â
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	FRotator ControlRotation = Pawn->GetControlRotation();
 	FRotator ActorRotation = Pawn->GetActorRotation();
@@ -67,4 +67,13 @@ void UHeroAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 
 	Pitch = FMath::ClampAngle(NewRotator.Pitch, -90, 90);
 	Yaw = FMath::ClampAngle(NewRotator.Yaw, -90, 90);
+
+	//IsRotateBodyToAim
+	if (HeroCharacter)
+	{
+		IsRotateBodyToAim = HeroCharacter->GetIsRotateBodyToAim();
+	}
+
+	// Rotator
+	Rotator = Pawn->GetActorRotation();
 }

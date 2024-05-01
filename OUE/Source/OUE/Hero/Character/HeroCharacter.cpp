@@ -87,7 +87,7 @@ void AHeroCharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 
-	if (bIsRotateBodyToAim)
+	if (IsRotateBodyToAim)
 	{
 		RotateBodyToAim(DeltaSeconds);
 	}
@@ -131,11 +131,29 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		// Trigger
 		EnhancedInputComponent->BindAction(TriggerAction, ETriggerEvent::Started, this, &AHeroCharacter::PullTrigger);
 		EnhancedInputComponent->BindAction(TriggerAction, ETriggerEvent::Completed, this, &AHeroCharacter::ReleaseTrigger);
+
+		// ChangeFireMode
+		EnhancedInputComponent->BindAction(ChangeFireModeAction, ETriggerEvent::Completed, this, &AHeroCharacter::ChangeFireMode);
+
+		// Reload
+		EnhancedInputComponent->BindAction(ReloadModeAction, ETriggerEvent::Completed, this, &AHeroCharacter::PlayReloadingMontage);
 	}
 	else
 	{
 		//UE_LOG(LogTemplateCharacter, Error, TEXT("'%s' Failed to find an Enhanced Input component! This template is built to use the Enhanced Input system. If you intend to use the legacy system, then you will need to update this C++ file."), *GetNameSafe(this));
 	}
+}
+
+void AHeroCharacter::PlayRecoilMontage()
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	AnimInstance->Montage_Play(WeaponDataTableRow->RecoilMontage);
+}
+
+void AHeroCharacter::PlayReloadingMontage()
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	AnimInstance->Montage_Play(WeaponDataTableRow->ReloadingMontage);
 }
 
 void AHeroCharacter::Move(const FInputActionValue& Value)
@@ -200,6 +218,8 @@ void AHeroCharacter::StopRun()
 
 void AHeroCharacter::ZoomInOut()
 {
+	if (SpawnedGun == nullptr) { return; }
+
 	if (CanJump() == false) { return; }
 
 	if (IsZoomIn)
@@ -213,7 +233,7 @@ void AHeroCharacter::ZoomInOut()
 
 		GetCharacterMovement()->bOrientRotationToMovement = true;
 
-		bIsRotateBodyToAim = false;
+		IsRotateBodyToAim = false;
 	}
 	else
 	{
@@ -232,7 +252,7 @@ void AHeroCharacter::ZoomInOut()
 
 			GetCharacterMovement()->bOrientRotationToMovement = false;
 
-			bIsRotateBodyToAim = true;
+			IsRotateBodyToAim = true;
 		}
 	}
 }
@@ -241,7 +261,7 @@ void AHeroCharacter::StartAim()
 {
 	GetCharacterMovement()->bOrientRotationToMovement = false;
 
-	bIsRotateBodyToAim = true;
+	IsRotateBodyToAim = true;
 }
 
 void AHeroCharacter::StopAim()
@@ -250,7 +270,7 @@ void AHeroCharacter::StopAim()
 
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 
-	bIsRotateBodyToAim = false;
+	IsRotateBodyToAim = false;
 }
 
 void AHeroCharacter::PullTrigger()
@@ -267,6 +287,13 @@ void AHeroCharacter::ReleaseTrigger()
 	if (SpawnedGun == nullptr) { return; }
 
 	SpawnedGun->ReleaseTrigger();
+}
+
+void AHeroCharacter::ChangeFireMode()
+{
+	if (SpawnedGun == nullptr) { return; }
+
+	SpawnedGun->ChangeFireMode();
 }
 
 void AHeroCharacter::SetWeaponData()
@@ -328,7 +355,7 @@ void AHeroCharacter::Jump()
 
 void AHeroCharacter::CloseUpAim(float DeltaSeconds)
 {
-	if (bIsRotateBodyToAim)
+	if (IsRotateBodyToAim)
 	{
 		CameraBoom->TargetArmLength = FMath::Lerp(CameraBoom->TargetArmLength, TargetArmLengthAim, DeltaSeconds * CloseUpSpeed);
 	}

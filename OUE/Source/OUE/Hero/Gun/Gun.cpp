@@ -2,6 +2,10 @@
 
 
 #include "Hero/Gun/Gun.h"
+#include "Hero/Gun/Bullet.h"
+#include "Engine/SkeletalMeshSocket.h"
+#include "Hero/GameMode/HeroGameModeBase.h"
+#include "Hero/Character/HeroCharacter.h"
 
 // Sets default values
 AGun::AGun()
@@ -21,7 +25,8 @@ AGun::AGun()
 void AGun::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	BulletTableRow = BulletDataTableRowHandle.GetRow<FBulletTableRow>(TEXT(""));
 }
 
 void AGun::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -59,6 +64,18 @@ void AGun::Fire()
 	GetWorld()->GetTimerManager().SetTimer(FireTimerHandle, FireDelay, false);
 
 	UE_LOG(LogTemp, Warning, TEXT("Fire"));
+
+	if (CurrentAmmo <= 0) { return; }
+
+	--CurrentAmmo;
+
+	SpawnBullet(ABullet::StaticClass());
+
+	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(GetWorld()->GetFirstPlayerController()->GetCharacter());
+	if (HeroCharacter)
+	{
+		HeroCharacter->PlayRecoilMontage();
+	}
 }
 
 void AGun::PullTrigger()
@@ -72,5 +89,45 @@ void AGun::PullTrigger()
 void AGun::ReleaseTrigger()
 {
 	IsTriggered = false;
+}
+
+void AGun::SpawnBullet(TSubclassOf<ABullet> InBullet)
+{
+	if (InBullet)
+	{
+		// 소켓 이름을 통해 현재 메시에서 소켓을 참조
+		const USkeletalMeshSocket* Muzzle = SkeletalMeshComponent->GetSocketByName("Muzzle");
+
+		if (Muzzle)
+		{
+			/*ABullet* SpawnBullet = GetWorld()->SpawnActor<ABullet>(InBullet, Muzzle->GetSocketTransform(SkeletalMeshComponent));*/
+			AHeroGameModeBase* GameMode = Cast<AHeroGameModeBase>(GetWorld()->GetAuthGameMode());
+			ensure(GameMode);
+			ABullet* NewBullet = GameMode->GetBulletPool().New<ABullet>(Muzzle->GetSocketTransform(SkeletalMeshComponent),
+				[this](ABullet* NewActor)
+				{
+					/*NewActor->SetProjectileData(ProjectileRow);*/
+					NewActor->SetBullet(BulletTableRow);
+				}
+			, true, nullptr, nullptr);
+		}
+	}
+}
+
+void AGun::ChangeFireMode()
+{
+	if (IsAutoFire)
+	{
+		IsAutoFire = false;
+	}
+	else
+	{
+		IsAutoFire = true;
+	}
+}
+
+void AGun::Reload()
+{
+	CurrentAmmo = MaxAmmo;
 }
 
