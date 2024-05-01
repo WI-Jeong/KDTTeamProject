@@ -138,6 +138,12 @@
     <ClInclude Include="..\..\Source\OUE\Hero\Item\ItemNoWeapon.h">
       <Filter>Source\OUE\Hero\Item</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\OUE\Hero\Item\ItemSMG.cpp">
+      <Filter>Source\OUE\Hero\Item</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\Item\ItemSMG.h">
+      <Filter>Source\OUE\Hero\Item</Filter>
+    </ClInclude>
     <Filter Include="Source\OUE\UI">
       <UniqueIdentifier>{54696ACC-C974-37C2-B862-7F5EA438E9D9}</UniqueIdentifier>
     </Filter>

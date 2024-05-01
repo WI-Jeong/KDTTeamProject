@@ -53,6 +53,7 @@ void AItem::SetItemData()
 	if (ItemDataTableRow)
 	{
 		SkeletalMeshComponent->SetSkeletalMesh(ItemDataTableRow->USkeletalMesh);
+		WeaponName = ItemDataTableRow->WeaponName;
 	}
 }
 
@@ -68,5 +69,8 @@ void AItem::OnCollisionBeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 	{
 		HeroCharacter->GetSpawnedGun()->Destroy();
 	}
+
+	HeroCharacter->SetWeaponData(WeaponName);
+	HeroCharacter->SpawnGun(HeroCharacter->GetWeaponDataTableRow()->Gun);
 }
 
