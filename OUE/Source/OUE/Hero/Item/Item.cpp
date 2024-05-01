@@ -3,6 +3,8 @@
 
 #include "Hero/Item/Item.h"
 #include "Components/SphereComponent.h"
+#include "Hero/Character/HeroCharacter.h"
+#include "Hero/Gun/Gun.h"
 
 
 // Sets default values
@@ -57,5 +59,14 @@ void AItem::SetItemData()
 void AItem::OnCollisionBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	UE_LOG(LogTemp, Warning, TEXT("OnCollisionBeginOverlap"));
+
+	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(OtherActor);
+	ensure(HeroCharacter);
+	if (HeroCharacter == nullptr) { return; }
+
+	if (HeroCharacter->GetSpawnedGun())
+	{
+		HeroCharacter->GetSpawnedGun()->Destroy();
+	}
 }
 

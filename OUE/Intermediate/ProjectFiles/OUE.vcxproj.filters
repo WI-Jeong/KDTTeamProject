@@ -132,5 +132,32 @@
     <ClInclude Include="..\..\Source\OUE\Hero\Item\ItemAK47.h">
       <Filter>Source\OUE\Hero\Item</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\OUE\Hero\Item\ItemNoWeapon.cpp">
+      <Filter>Source\OUE\Hero\Item</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\Item\ItemNoWeapon.h">
+      <Filter>Source\OUE\Hero\Item</Filter>
+    </ClInclude>
+    <Filter Include="Source\OUE\UI">
+      <UniqueIdentifier>{54696ACC-C974-37C2-B862-7F5EA438E9D9}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\UI\MainWidget.cpp">
+      <Filter>Source\OUE\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\UI\MainWidget.h">
+      <Filter>Source\OUE\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\OUE\UI\StartGameModeBase.cpp">
+      <Filter>Source\OUE\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\UI\StartGameModeBase.h">
+      <Filter>Source\OUE\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\OUE\UI\StartWidget.cpp">
+      <Filter>Source\OUE\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\UI\StartWidget.h">
+      <Filter>Source\OUE\UI</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
