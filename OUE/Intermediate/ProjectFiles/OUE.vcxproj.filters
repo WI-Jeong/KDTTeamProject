@@ -75,5 +75,29 @@
     <ClInclude Include="..\..\Source\OUE\Hero\Character\AnimInstance\HeroAnimInstance.h">
       <Filter>Source\OUE\Hero\Character\AnimInstance</Filter>
     </ClInclude>
+    <Filter Include="Source\OUE\Junglae">
+      <UniqueIdentifier>{1C5BFED1-6DD3-30CB-81A9-AF847867AC1D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\OUE\Junglae\Item">
+      <UniqueIdentifier>{3FC53661-F095-3B75-9ECF-2709FA36A919}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\OUE\Junglae\Item\Item.h">
+      <Filter>Source\OUE\Junglae\Item</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\OUE\Junglae\Item\ItemData.cpp">
+      <Filter>Source\OUE\Junglae\Item</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Junglae\Item\ItemData.h">
+      <Filter>Source\OUE\Junglae\Item</Filter>
+    </ClInclude>
+    <Filter Include="Source\OUE\Junglae\Subsystem">
+      <UniqueIdentifier>{CA62937E-4AB0-3D4C-94FC-A28F5802FDDC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Junglae\Subsystem\InventorySubsystem.cpp">
+      <Filter>Source\OUE\Junglae\Subsystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Junglae\Subsystem\InventorySubsystem.h">
+      <Filter>Source\OUE\Junglae\Subsystem</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

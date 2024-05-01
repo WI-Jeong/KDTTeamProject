@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\projectkdt\\oue\\source\\oue\\junglae\\item\\itemdata.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\projectkdt\\oue\\intermediate\\build\\win64\\x64\\oueeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\projectkdt\\oue\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oue\\definitions.oue.h",
+            "d:\\projectkdt\\oue\\source\\oue\\junglae\\item\\itemdata.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

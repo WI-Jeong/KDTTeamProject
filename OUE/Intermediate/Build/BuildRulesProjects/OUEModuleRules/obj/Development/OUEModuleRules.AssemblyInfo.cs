@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OUEModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73df44def7b484853d4d0f792152d8e02fd85f57")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6109a742900495d33e9464ccd7f6856baf43f1ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("OUEModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OUEModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

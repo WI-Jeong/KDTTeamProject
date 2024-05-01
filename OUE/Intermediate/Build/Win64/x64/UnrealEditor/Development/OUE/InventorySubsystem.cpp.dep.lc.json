@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\projectkdt\\oue\\source\\oue\\junglae\\subsystem\\inventorysubsystem.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\projectkdt\\oue\\intermediate\\build\\win64\\x64\\oueeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\projectkdt\\oue\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oue\\definitions.oue.h",
+            "d:\\projectkdt\\oue\\source\\oue\\junglae\\subsystem\\inventorysubsystem.h",
+            "d:\\projectkdt\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\inventorysubsystem.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
