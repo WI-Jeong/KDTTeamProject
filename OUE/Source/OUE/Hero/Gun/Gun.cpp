@@ -27,6 +27,9 @@ void AGun::BeginPlay()
 	Super::BeginPlay();
 
 	BulletTableRow = BulletDataTableRowHandle.GetRow<FBulletTableRow>(TEXT(""));
+	GunDataTableRow = GunDataTableRowHandle.GetRow<FGunDataTableRow>(TEXT(""));
+
+	SetGunData();
 }
 
 void AGun::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -129,5 +132,11 @@ void AGun::ChangeFireMode()
 void AGun::Reload()
 {
 	CurrentAmmo = MaxAmmo;
+}
+
+void AGun::SetGunData()
+{
+	FireDelay = GunDataTableRow->FireDelay;
+	MaxAmmo = GunDataTableRow->MaxAmmo;
 }
 
