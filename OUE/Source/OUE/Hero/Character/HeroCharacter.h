@@ -132,7 +132,7 @@ protected:
 public:
 	bool GetIsCrouch() { return IsCrouch; }
 	bool GetIsRotateBodyToAim() { return IsRotateBodyToAim; }
-	//FWeaponDataTableRow* GetWeaponDataTableRow() { return WeaponDataTableRow; }
+	FWeaponDataTableRow* GetWeaponDataTableRow() { return WeaponDataTableRow; }
 	AGun* GetSpawnedGun() { return SpawnedGun; }
 
 	void PlayRecoilMontage();
@@ -163,11 +163,11 @@ protected:
 
 	void ChangeFireMode();
 
-protected:
-	void SetWeaponData();
+public:
+	void SetWeaponData(FName InRowName = FName("NoWeapon"));
 
 	void SpawnGun(TSubclassOf<AGun> InGun);
-
+protected:
 	void RotateBodyToAim(float DeltaSeconds);
 
 	virtual void Jump() override;
