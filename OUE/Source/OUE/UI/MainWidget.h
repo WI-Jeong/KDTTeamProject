@@ -9,6 +9,8 @@
 #include "Components/ProgressBar.h"
 #include "Blueprint/WidgetBlueprintGeneratedClass.h"
 #include "Animation/WidgetAnimation.h"
+#include "Kismet/KismetSystemLibrary.h"
+#include "Kismet/GameplayStatics.h"
 #include "MainWidget.generated.h"
 
 /**

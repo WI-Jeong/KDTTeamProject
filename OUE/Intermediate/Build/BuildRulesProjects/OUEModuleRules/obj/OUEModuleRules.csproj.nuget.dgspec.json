@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Han\\Team\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\OUEModuleRules.csproj": {}
+    "D:\\TeamProject\\KDTTeamProject\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\OUEModuleRules.csproj": {}
   },
   "projects": {
     "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj": {
@@ -953,14 +953,14 @@
         }
       }
     },
-    "D:\\Han\\Team\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\OUEModuleRules.csproj": {
+    "D:\\TeamProject\\KDTTeamProject\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\OUEModuleRules.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Han\\Team\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\OUEModuleRules.csproj",
+        "projectUniqueName": "D:\\TeamProject\\KDTTeamProject\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\OUEModuleRules.csproj",
         "projectName": "OUEModuleRules",
-        "projectPath": "D:\\Han\\Team\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\OUEModuleRules.csproj",
+        "projectPath": "D:\\TeamProject\\KDTTeamProject\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\OUEModuleRules.csproj",
         "packagesPath": "C:\\Users\\AR student\\.nuget\\packages\\",
-        "outputPath": "D:\\Han\\Team\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\obj\\",
+        "outputPath": "D:\\TeamProject\\KDTTeamProject\\OUE\\Intermediate\\Build\\BuildRulesProjects\\OUEModuleRules\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AR student\\AppData\\Roaming\\NuGet\\NuGet.Config",
