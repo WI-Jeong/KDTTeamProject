@@ -222,6 +222,9 @@ void AHeroCharacter::ZoomInOut()
 
 	if (CanJump() == false) { return; }
 
+	AActor* ZoomCamera = SpawnedGun->GetChildActorComponent()->GetChildActor();
+	if (ZoomCamera == nullptr) { return; }
+
 	if (IsZoomIn)
 	{
 		IsZoomIn = false;
@@ -240,8 +243,7 @@ void AHeroCharacter::ZoomInOut()
 		IsZoomIn = true;
 
 		FollowCamera->SetActive(false);
-		AActor* ZoomCamera = SpawnedGun->GetChildActorComponent()->GetChildActor();
-		ensure(ZoomCamera);
+
 		if (ZoomCamera)
 		{
 			FollowCamera->SetActive(false);
