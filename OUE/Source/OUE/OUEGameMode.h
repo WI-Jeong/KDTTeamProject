@@ -13,6 +13,13 @@ class AOUEGameMode : public AGameModeBase
 
 public:
 	AOUEGameMode();
+
+private:
+	TSubclassOf<UUserWidget>	mMainUIClass;
+	TObjectPtr<class UMainWidget>	mMainWidget;
+
+protected:
+	virtual void BeginPlay() override;
 };
 
 
