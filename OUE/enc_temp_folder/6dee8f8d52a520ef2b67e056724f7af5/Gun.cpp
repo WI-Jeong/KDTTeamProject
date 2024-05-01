@@ -97,7 +97,7 @@ void AGun::SpawnBullet(TSubclassOf<ABullet> InBullet)
 	{
 		// 소켓 이름을 통해 현재 메시에서 소켓을 참조
 		const USkeletalMeshSocket* Muzzle = SkeletalMeshComponent->GetSocketByName("Muzzle");
-		ensure(Muzzle);
+
 		if (Muzzle)
 		{
 			/*ABullet* SpawnBullet = GetWorld()->SpawnActor<ABullet>(InBullet, Muzzle->GetSocketTransform(SkeletalMeshComponent));*/
