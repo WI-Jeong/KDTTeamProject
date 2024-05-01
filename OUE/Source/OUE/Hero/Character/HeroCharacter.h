@@ -12,6 +12,32 @@ class UCameraComponent;
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
+class UHeroAnimInstance;
+class AGun;
+
+USTRUCT()
+struct OUE_API FWeaponDataTableRow : public FTableRowBase
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UHeroAnimInstance> AnimBP;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AGun> Gun;
+
+	UPROPERTY(EditAnywhere)
+	FVector GunLocation;
+
+	UPROPERTY(EditAnywhere)
+	FRotator GunRotation;
+
+	UPROPERTY(EditAnywhere)
+	UAnimMontage* RecoilMontage;
+
+	UPROPERTY(EditAnywhere)
+	UAnimMontage* ReloadingMontage;
+};
 
 UCLASS()
 class OUE_API AHeroCharacter : public ACharacter
@@ -42,9 +68,76 @@ class OUE_API AHeroCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 
+	/** Crouch Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* CrouchAction;
+
+	/** Run Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* RunAction;
+
+	/** Zoom Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* ZoomAction;
+
+	/** Aim Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* AimAction;
+
+	/** Trigger Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* TriggerAction;
+
+	/** ChangeFireMode Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* ChangeFireModeAction;
+
+	/** Reload Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* ReloadModeAction;
+
 public:
 	AHeroCharacter();
 
+protected:
+	UPROPERTY(BlueprintReadOnly)
+	bool IsCrouch = false;
+
+	float WalkSpeed = 200.f;
+
+	float CrouchSpeed = 200.f;
+
+	float RunSpeed = 500.f;
+
+	UPROPERTY(EditAnywhere, meta = (RowType = "/Script/OUE.WeaponDataTableRow"))
+	FDataTableRowHandle WeaponDataTableRowHandle;
+	FWeaponDataTableRow* WeaponDataTableRow;
+
+	AGun* SpawnedGun;
+
+	AActor* MainCameraActor;
+
+	bool IsRotateBodyToAim = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float AimSpeed = 10.f;
+
+	bool IsZoomIn = false;
+
+	float TargetArmLengthDefault = 200.f;
+	float TargetArmLengthAim = 100.f;
+
+	float CloseUpSpeed = 7.f;
+
+public:
+	bool GetIsCrouch() { return IsCrouch; }
+	bool GetIsRotateBodyToAim() { return IsRotateBodyToAim; }
+	//FWeaponDataTableRow* GetWeaponDataTableRow() { return WeaponDataTableRow; }
+	AGun* GetSpawnedGun() { return SpawnedGun; }
+
+	void PlayRecoilMontage();
+
+	void PlayReloadingMontage();
 
 protected:
 
@@ -54,13 +147,43 @@ protected:
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
 
+	void StartCrouch();
+	void StopCrouch();
+
+	void StartRun();
+	void StopRun();
+
+	void ZoomInOut();
+
+	void StartAim();
+	void StopAim();
+
+	void PullTrigger();
+	void ReleaseTrigger();
+
+	void ChangeFireMode();
 
 protected:
+	void SetWeaponData();
+
+	void SpawnGun(TSubclassOf<AGun> InGun);
+
+	void RotateBodyToAim(float DeltaSeconds);
+
+	virtual void Jump() override;
+
+	void CloseUpAim(float DeltaSeconds);
+
+protected:
+	virtual void OnConstruction(const FTransform& Transform) override;
+
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	// To add mapping context
 	virtual void BeginPlay();
+
+	virtual void Tick(float DeltaSeconds) override;
 
 public:
 	/** Returns CameraBoom subobject **/

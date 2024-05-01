@@ -5,6 +5,7 @@
 #include "GameFramework/PawnMovementComponent.h"
 #include "Hero/Character/HeroCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/KismetMathLibrary.h"
 
 void UHeroAnimInstance::NativeInitializeAnimation()
 {
@@ -28,6 +29,8 @@ void UHeroAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 
 	Velocity = MovementComponent->Velocity;
 
+
+	//IsShouldMove//
 	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(Pawn);
 	FVector Acceleration;
 	if (HeroCharacter)
@@ -45,4 +48,32 @@ void UHeroAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	{
 		IsShouldMove = false;
 	}
+
+	//IsCrouch
+	if (HeroCharacter)
+	{
+		IsCrouch = HeroCharacter->GetIsCrouch();
+	}
+
+	//���� ������
+
+	FRotator ControlRotation = Pawn->GetControlRotation();
+	FRotator ActorRotation = Pawn->GetActorRotation();
+	FRotator TargetRotator = UKismetMathLibrary::NormalizedDeltaRotator(ControlRotation, ActorRotation);
+
+	FRotator CurrentRotator = FRotator(Pitch, Yaw, 0);
+
+	FRotator NewRotator = FMath::RInterpTo(CurrentRotator, TargetRotator, DeltaSeconds, 15.f);
+
+	Pitch = FMath::ClampAngle(NewRotator.Pitch, -90, 90);
+	Yaw = FMath::ClampAngle(NewRotator.Yaw, -90, 90);
+
+	//IsRotateBodyToAim
+	if (HeroCharacter)
+	{
+		IsRotateBodyToAim = HeroCharacter->GetIsRotateBodyToAim();
+	}
+
+	// Rotator
+	Rotator = Pawn->GetActorRotation();
 }
