@@ -126,5 +126,11 @@
     <ClInclude Include="..\..\Source\OUE\Hero\Item\Item.h">
       <Filter>Source\OUE\Hero\Item</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\OUE\Hero\Item\ItemAK47.cpp">
+      <Filter>Source\OUE\Hero\Item</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\Item\ItemAK47.h">
+      <Filter>Source\OUE\Hero\Item</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

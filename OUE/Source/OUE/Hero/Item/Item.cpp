@@ -16,6 +16,8 @@ AItem::AItem()
 
 	SetRootComponent(SphereComponent);
 	SkeletalMeshComponent->SetupAttachment(SphereComponent);
+
+	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &ThisClass::OnCollisionBeginOverlap);
 }
 
 // Called when the game starts or when spawned
@@ -50,5 +52,10 @@ void AItem::SetItemData()
 	{
 		SkeletalMeshComponent->SetSkeletalMesh(ItemDataTableRow->USkeletalMesh);
 	}
+}
+
+void AItem::OnCollisionBeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	UE_LOG(LogTemp, Warning, TEXT("OnCollisionBeginOverlap"));
 }
 
