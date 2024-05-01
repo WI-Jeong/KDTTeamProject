@@ -10,6 +10,19 @@ class UChildActorComponent;
 struct FBulletTableRow;
 class ABullet;
 
+USTRUCT()
+struct FGunDataTableRow : public FTableRowBase
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere)
+	float FireDelay = 0.2f;
+
+	UPROPERTY(EditAnywhere)
+	int MaxAmmo = 30;
+};
+
 UCLASS()
 class OUE_API AGun : public AActor
 {
@@ -60,9 +73,17 @@ public:
 	void Reload();
 
 protected:
+	void SetGunData();
+
+protected:
 	UPROPERTY(EditAnywhere)
 	FDataTableRowHandle BulletDataTableRowHandle;
 
 	FBulletTableRow* BulletTableRow;
+
+	UPROPERTY(EditAnywhere)
+	FDataTableRowHandle GunDataTableRowHandle;
+
+	FGunDataTableRow* GunDataTableRow;
 
 };
