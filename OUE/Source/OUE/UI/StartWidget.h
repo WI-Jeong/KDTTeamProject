@@ -4,15 +4,23 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "MainWidget.h"
 #include "StartWidget.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class OUE_API UStartWidget : public UUserWidget
 {
 	GENERATED_BODY()
+
+private:
+	UButton* mStartButton;
+	UButton* mExitButton;
+
+	UPROPERTY(meta = (BindWidgetAnim), Transient)
+	UWidgetAnimation* StartButtonScaleAnim;
 
 public:
 	virtual void NativeOnInitialized();
@@ -46,5 +54,25 @@ protected:
 	virtual FReply NativeOnTouchEnded(const FGeometry& InGeometry, const FPointerEvent& InGestureEvent);
 	virtual FReply NativeOnMotionDetected(const FGeometry& InGeometry, const FMotionEvent& InMotionEvent);
 	virtual FReply NativeOnTouchForceChanged(const FGeometry& MyGeometry, const FPointerEvent& TouchEvent);
-	
+
+
+private:
+	UFUNCTION()
+	void StartButtonClick();
+
+	UFUNCTION()
+	void StartButtonHovered();
+
+	UFUNCTION()
+	void StartButtonUnHovered();
+
+	UFUNCTION()
+	void ExitButtonClick();
+
+	UFUNCTION()
+	void ExitButtonHovered();
+
+	UFUNCTION()
+	void ExitButtonUnHovered();
+
 };
