@@ -27,6 +27,9 @@ void AGun::BeginPlay()
 	Super::BeginPlay();
 
 	BulletTableRow = BulletDataTableRowHandle.GetRow<FBulletTableRow>(TEXT(""));
+	GunDataTableRow = GunDataTableRowHandle.GetRow<FGunDataTableRow>(TEXT(""));
+
+	SetGunData();
 }
 
 void AGun::EndPlay(const EEndPlayReason::Type EndPlayReason)
@@ -97,7 +100,7 @@ void AGun::SpawnBullet(TSubclassOf<ABullet> InBullet)
 	{
 		// 소켓 이름을 통해 현재 메시에서 소켓을 참조
 		const USkeletalMeshSocket* Muzzle = SkeletalMeshComponent->GetSocketByName("Muzzle");
-
+		ensure(Muzzle);
 		if (Muzzle)
 		{
 			/*ABullet* SpawnBullet = GetWorld()->SpawnActor<ABullet>(InBullet, Muzzle->GetSocketTransform(SkeletalMeshComponent));*/
@@ -129,5 +132,11 @@ void AGun::ChangeFireMode()
 void AGun::Reload()
 {
 	CurrentAmmo = MaxAmmo;
+}
+
+void AGun::SetGunData()
+{
+	FireDelay = GunDataTableRow->FireDelay;
+	MaxAmmo = GunDataTableRow->MaxAmmo;
 }
 
