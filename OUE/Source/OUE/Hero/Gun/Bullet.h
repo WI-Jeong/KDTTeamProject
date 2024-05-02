@@ -16,6 +16,9 @@ public:
 	UStaticMesh* StaticMesh;
 
 	UPROPERTY(EditAnywhere)
+	UMaterial* Material;
+
+	UPROPERTY(EditAnywhere)
 	float BulletSpeed = 1000.f;
 
 	UPROPERTY(EditAnywhere)

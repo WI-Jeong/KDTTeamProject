@@ -18,6 +18,7 @@ ABullet::ABullet()
 
 	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent"));
 	StaticMeshComponent->SetupAttachment(SphereComponent);
+	StaticMeshComponent->SetCollisionProfileName("HeroBullet");
 
 	// Use a ProjectileMovementComponent to govern this projectile's movement
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileComp"));
@@ -57,6 +58,7 @@ void ABullet::SetBullet(FBulletTableRow* InTableRow)
 	GetWorld()->GetTimerManager().SetTimer(InitialLifeSpanTimer, TimerDelegate, InTableRow->InitialLifeSpan, false);
 
 	StaticMeshComponent->SetStaticMesh(InTableRow->StaticMesh);
+	StaticMeshComponent->SetMaterial(0, InTableRow->Material);
 
 	ProjectileMovement->Velocity = FVector(1.f, 0.f, 0.f);
 	ProjectileMovement->MaxSpeed = InTableRow->BulletSpeed;

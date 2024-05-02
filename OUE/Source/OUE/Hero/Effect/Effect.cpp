@@ -15,7 +15,7 @@ AEffect::AEffect()
 	ParticleSystemComponent = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticleSystemComponent"));
 
 	{
-		ConstructorHelpers::FObjectFinder<UParticleSystem> Finder(TEXT("/Script/Engine.ParticleSystem'/Engine/Tutorial/SubEditors/TutorialAssets/TutorialParticleSystem.TutorialParticleSystem'"));
+		ConstructorHelpers::FObjectFinder<UParticleSystem> Finder(TEXT("/Script/Engine.ParticleSystem'/Game/StarterContent/Particles/P_Explosion.P_Explosion'"));
 		ensure(Finder.Object);
 		ParticleSystem = Finder.Object;
 	}
@@ -57,7 +57,7 @@ void AEffect::SetEffect()
 
 	ParticleSystemComponent->SetTemplate(ParticleSystem);
 
-	FVector NewScale = FVector(0.2f, 0.2f, 1.f);
+	FVector NewScale = FVector(0.1f, 0.1f, 0.1f);
 	ParticleSystemComponent->SetRelativeScale3D(NewScale);
 }
 
