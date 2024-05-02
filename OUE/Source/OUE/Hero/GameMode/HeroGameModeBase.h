@@ -18,11 +18,11 @@ class OUE_API AHeroGameModeBase : public AGameModeBase
 
 protected:
 	FActorPool BulletPool;
-	//FActorPool EffectPool;
+	FActorPool EffectPool;
 
 public:
 	FActorPool& GetBulletPool() { return BulletPool; }
-	//FActorPool& GetEffectPool() { return EffectPool; }
+	FActorPool& GetEffectPool() { return EffectPool; }
 
 protected:
 	virtual void BeginPlay() override;

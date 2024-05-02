@@ -9,6 +9,7 @@
 class UChildActorComponent;
 struct FBulletTableRow;
 class ABullet;
+class AEffect;
 
 USTRUCT()
 struct FGunDataTableRow : public FTableRowBase
@@ -21,6 +22,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	int MaxAmmo = 30;
+
+	//UPROPERTY(EditAnywhere)
+	//TSubclassOf<AEffect> Effect;
 };
 
 UCLASS()
@@ -68,12 +72,17 @@ protected:
 public:
 	void PullTrigger();
 	void ReleaseTrigger();
-	void SpawnBullet(TSubclassOf<ABullet> InBullet);
+
 	void ChangeFireMode();
+
 	void Reload();
 
 protected:
 	void SetGunData();
+
+	void SpawnBullet(TSubclassOf<ABullet> InBullet);
+
+	void SpawnEffect();
 
 protected:
 	UPROPERTY(EditAnywhere)
