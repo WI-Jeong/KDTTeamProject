@@ -67,4 +67,8 @@ protected:
 	float Damage = 1.f;
 
 	FTimerHandle InitialLifeSpanTimer;
+
+protected:
+	UFUNCTION()
+	void OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
 };

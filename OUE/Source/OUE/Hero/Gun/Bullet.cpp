@@ -5,6 +5,8 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
 #include "Hero/GameMode/HeroGameModeBase.h"
+#include "OUECharacter.h" //나중에 enemy로 이름 수정하자
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ABullet::ABullet()
@@ -29,12 +31,7 @@ ABullet::ABullet()
 	ProjectileMovement->bRotationFollowsVelocity = true;
 	ProjectileMovement->bShouldBounce = true;
 
-	//프로젝타일 무브먼트 컴포넌트에 발사체를 자체로 딜리트 하는가?
-
-	// Die after 3 seconds by default
-	//InitialLifeSpan = 0;
-
-	//OnActorHit.AddDynamic(this, &ThisClass::OnActorHitFunction);
+	OnActorHit.AddDynamic(this, &ThisClass::OnActorHitFunction);
 }
 
 void ABullet::SetBullet(FBulletTableRow* InTableRow)
@@ -78,5 +75,16 @@ void ABullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
+{
+	//SetActorEnableCollision(false);
+
+	AOUECharacter* Enemy = Cast<AOUECharacter>(OtherActor);
+	if (IsValid(Enemy))
+	{
+		UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr);
+	}
 }
 
