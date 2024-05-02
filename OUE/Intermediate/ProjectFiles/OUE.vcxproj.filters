@@ -11,7 +11,6 @@
     <None Include="..\..\Source\OUEEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
-    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -33,6 +32,12 @@
     <Filter Include="Source\OUE">
       <UniqueIdentifier>{1E49A211-0C1C-3D14-A670-9AB3E33AC1AE}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\OUE\CharacterSelectGameMode.cpp">
+      <Filter>Source\OUE</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\CharacterSelectGameMode.h">
+      <Filter>Source\OUE</Filter>
+    </ClInclude>
     <None Include="..\..\Source\OUE\OUE.Build.cs">
       <Filter>Source\OUE</Filter>
     </None>
@@ -135,9 +140,39 @@
     <ClInclude Include="..\..\Source\OUE\Hero\Item\Item.h">
       <Filter>Source\OUE\Hero\Item</Filter>
     </ClInclude>
+    <Filter Include="Source\OUE\Junglae">
+      <UniqueIdentifier>{1C5BFED1-6DD3-30CB-81A9-AF847867AC1D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\OUE\Junglae\Subsystem">
+      <UniqueIdentifier>{CA62937E-4AB0-3D4C-94FC-A28F5802FDDC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Junglae\Subsystem\InventorySubsystem.cpp">
+      <Filter>Source\OUE\Junglae\Subsystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Junglae\Subsystem\InventorySubsystem.h">
+      <Filter>Source\OUE\Junglae\Subsystem</Filter>
+    </ClInclude>
+    <Filter Include="Source\OUE\JWI">
+      <UniqueIdentifier>{4CABCD43-E988-3051-B972-DBD724EC87AF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\OUE\JWI\PlayerSelect">
+      <UniqueIdentifier>{CD2F514B-6F9A-3ABC-AD08-6010CB6B050A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\JWI\PlayerSelect\SelectPlayer.cpp">
+      <Filter>Source\OUE\JWI\PlayerSelect</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\JWI\PlayerSelect\SelectPlayer.h">
+      <Filter>Source\OUE\JWI\PlayerSelect</Filter>
+    </ClInclude>
     <Filter Include="Source\OUE\UI">
       <UniqueIdentifier>{54696ACC-C974-37C2-B862-7F5EA438E9D9}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\OUE\UI\CharacterSelectWidget.cpp">
+      <Filter>Source\OUE\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\UI\CharacterSelectWidget.h">
+      <Filter>Source\OUE\UI</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\OUE\UI\MainWidget.cpp">
       <Filter>Source\OUE\UI</Filter>
     </ClCompile>
