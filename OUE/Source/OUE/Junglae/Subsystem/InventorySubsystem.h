@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Subsystems/LocalPlayerSubsystem.h"
+#include "Junglae/ChoItem/ChoItemData.h"
+#include "Junglae/ChoItem/ChoItem.h"
 #include "InventorySubsystem.generated.h"
 
 /**
