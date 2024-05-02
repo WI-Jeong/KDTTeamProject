@@ -56,5 +56,8 @@ void AEffect::SetEffect()
 	GetWorld()->GetTimerManager().SetTimer(InitialLifeSpanTimer, TimerDelegate, EffectInitialLifeSpan, false);
 
 	ParticleSystemComponent->SetTemplate(ParticleSystem);
+
+	FVector NewScale = FVector(0.2f, 0.2f, 1.f);
+	ParticleSystemComponent->SetRelativeScale3D(NewScale);
 }
 

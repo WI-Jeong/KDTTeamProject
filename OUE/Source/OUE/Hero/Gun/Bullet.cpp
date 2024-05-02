@@ -13,7 +13,7 @@ ABullet::ABullet()
 	PrimaryActorTick.bCanEverTick = true;
 
 	SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComponent"));
-	SphereComponent->SetCollisionProfileName("BlockAll");
+	SphereComponent->SetCollisionProfileName("HeroBullet");
 	SetRootComponent(SphereComponent);
 
 	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent"));
