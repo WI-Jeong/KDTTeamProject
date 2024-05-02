@@ -75,7 +75,7 @@ void AGun::Fire()
 
 	SpawnBullet(ABullet::StaticClass());
 
-	SpawnEffect(GunDataTableRow->Effect);
+	SpawnEffect(/*GunDataTableRow->Effect*/);
 
 	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(GetWorld()->GetFirstPlayerController()->GetCharacter());
 	if (HeroCharacter)
@@ -120,10 +120,10 @@ void AGun::SpawnBullet(TSubclassOf<ABullet> InBullet)
 	}
 }
 
-void AGun::SpawnEffect(TSubclassOf<AEffect> InEffect)
+void AGun::SpawnEffect()
 {
-	if (InEffect)
-	{
+	//if (/*InEffect*/)
+	//{
 		// 소켓 이름을 통해 현재 메시에서 소켓을 참조
 		const USkeletalMeshSocket* Muzzle = SkeletalMeshComponent->GetSocketByName("Muzzle");
 		ensure(Muzzle);
@@ -140,7 +140,7 @@ void AGun::SpawnEffect(TSubclassOf<AEffect> InEffect)
 				}
 			, true, nullptr, nullptr);
 		}
-	}
+	//}
 }
 
 void AGun::ChangeFireMode()

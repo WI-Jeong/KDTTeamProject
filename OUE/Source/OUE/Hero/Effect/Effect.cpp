@@ -13,6 +13,12 @@ AEffect::AEffect()
 	PrimaryActorTick.bCanEverTick = true;
 
 	ParticleSystemComponent = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticleSystemComponent"));
+
+	{
+		ConstructorHelpers::FObjectFinder<UParticleSystem> Finder(TEXT("/Script/Engine.ParticleSystem'/Engine/Tutorial/SubEditors/TutorialAssets/TutorialParticleSystem.TutorialParticleSystem'"));
+		ensure(Finder.Object);
+		ParticleSystem = Finder.Object;
+	}
 }
 
 // Called when the game starts or when spawned
@@ -49,6 +55,6 @@ void AEffect::SetEffect()
 
 	GetWorld()->GetTimerManager().SetTimer(InitialLifeSpanTimer, TimerDelegate, EffectInitialLifeSpan, false);
 
-	ParticleSystemComponent->Template = ParticleSystem;
+	ParticleSystemComponent->SetTemplate(ParticleSystem);
 }
 

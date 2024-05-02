@@ -23,8 +23,8 @@ public:
 	UPROPERTY(EditAnywhere)
 	int MaxAmmo = 30;
 
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<AEffect> Effect;
+	//UPROPERTY(EditAnywhere)
+	//TSubclassOf<AEffect> Effect;
 };
 
 UCLASS()
@@ -82,7 +82,7 @@ protected:
 
 	void SpawnBullet(TSubclassOf<ABullet> InBullet);
 
-	void SpawnEffect(TSubclassOf<AEffect> InEffect);
+	void SpawnEffect();
 
 protected:
 	UPROPERTY(EditAnywhere)
