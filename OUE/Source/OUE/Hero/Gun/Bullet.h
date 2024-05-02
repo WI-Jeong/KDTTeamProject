@@ -16,6 +16,9 @@ public:
 	UStaticMesh* StaticMesh;
 
 	UPROPERTY(EditAnywhere)
+	UMaterial* Material;
+
+	UPROPERTY(EditAnywhere)
 	float BulletSpeed = 1000.f;
 
 	UPROPERTY(EditAnywhere)
@@ -64,4 +67,8 @@ protected:
 	float Damage = 1.f;
 
 	FTimerHandle InitialLifeSpanTimer;
+
+protected:
+	UFUNCTION()
+	void OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
 };
