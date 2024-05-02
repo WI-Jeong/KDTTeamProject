@@ -28,7 +28,9 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
-            "d:\\han\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\herocharacter.generated.h"
+            "d:\\han\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\herocharacter.generated.h",
+            "d:\\han\\team\\oue\\source\\oue\\hero\\effect\\effect.h",
+            "d:\\han\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\effect.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

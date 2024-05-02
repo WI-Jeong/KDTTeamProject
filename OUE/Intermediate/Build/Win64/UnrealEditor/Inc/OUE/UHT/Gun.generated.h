@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define OUE_Gun_generated_h
 
-#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_16_GENERATED_BODY \
+#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_17_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FGunDataTableRow_Statics; \
 	OUE_API static class UScriptStruct* StaticStruct(); \
 	typedef FTableRowBase Super;
@@ -22,12 +22,12 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 template<> OUE_API UScriptStruct* StaticStruct<struct FGunDataTableRow>();
 
-#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_SPARSE_DATA
-#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_ACCESSORS
-#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_INCLASS_NO_PURE_DECLS \
+#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_SPARSE_DATA
+#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_ACCESSORS
+#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGun(); \
 	friend struct Z_Construct_UClass_AGun_Statics; \
@@ -36,7 +36,7 @@ public: \
 	DECLARE_SERIALIZER(AGun)
 
 
-#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_ENHANCED_CONSTRUCTORS \
+#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AGun(AGun&&); \
@@ -48,17 +48,17 @@ public: \
 	NO_API virtual ~AGun();
 
 
-#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_26_PROLOG
-#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_GENERATED_BODY \
+#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_30_PROLOG
+#define FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_SPARSE_DATA \
-	FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_ACCESSORS \
-	FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_INCLASS_NO_PURE_DECLS \
-	FID_OUE_Source_OUE_Hero_Gun_Gun_h_29_ENHANCED_CONSTRUCTORS \
+	FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_SPARSE_DATA \
+	FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_ACCESSORS \
+	FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_INCLASS_NO_PURE_DECLS \
+	FID_OUE_Source_OUE_Hero_Gun_Gun_h_33_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

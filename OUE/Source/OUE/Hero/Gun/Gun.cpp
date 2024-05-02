@@ -6,6 +6,7 @@
 #include "Engine/SkeletalMeshSocket.h"
 #include "Hero/GameMode/HeroGameModeBase.h"
 #include "Hero/Character/HeroCharacter.h"
+#include "Hero/Effect/Effect.h"
 
 // Sets default values
 AGun::AGun()
@@ -74,6 +75,8 @@ void AGun::Fire()
 
 	SpawnBullet(ABullet::StaticClass());
 
+	SpawnEffect(GunDataTableRow->Effect);
+
 	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(GetWorld()->GetFirstPlayerController()->GetCharacter());
 	if (HeroCharacter)
 	{
@@ -111,6 +114,29 @@ void AGun::SpawnBullet(TSubclassOf<ABullet> InBullet)
 				{
 					/*NewActor->SetProjectileData(ProjectileRow);*/
 					NewActor->SetBullet(BulletTableRow);
+				}
+			, true, nullptr, nullptr);
+		}
+	}
+}
+
+void AGun::SpawnEffect(TSubclassOf<AEffect> InEffect)
+{
+	if (InEffect)
+	{
+		// 소켓 이름을 통해 현재 메시에서 소켓을 참조
+		const USkeletalMeshSocket* Muzzle = SkeletalMeshComponent->GetSocketByName("Muzzle");
+		ensure(Muzzle);
+		if (Muzzle)
+		{
+			/*ABullet* SpawnBullet = GetWorld()->SpawnActor<ABullet>(InBullet, Muzzle->GetSocketTransform(SkeletalMeshComponent));*/
+			AHeroGameModeBase* GameMode = Cast<AHeroGameModeBase>(GetWorld()->GetAuthGameMode());
+			ensure(GameMode);
+			AEffect* NewEffect = GameMode->GetEffectPool().New<AEffect>(Muzzle->GetSocketTransform(SkeletalMeshComponent),
+				[this](AEffect* NewActor)
+				{
+					/*NewActor->SetProjectileData(ProjectileRow);*/
+					NewActor->SetEffect();
 				}
 			, true, nullptr, nullptr);
 		}

@@ -93,6 +93,15 @@
     <ClInclude Include="..\..\Source\OUE\Hero\Character\AnimInstance\HeroAnimInstance.h">
       <Filter>Source\OUE\Hero\Character\AnimInstance</Filter>
     </ClInclude>
+    <Filter Include="Source\OUE\Hero\Effect">
+      <UniqueIdentifier>{C753A7F5-B596-364B-90AC-2F52FC67B628}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\Effect\Effect.cpp">
+      <Filter>Source\OUE\Hero\Effect</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\Effect\Effect.h">
+      <Filter>Source\OUE\Hero\Effect</Filter>
+    </ClInclude>
     <Filter Include="Source\OUE\Hero\GameMode">
       <UniqueIdentifier>{5E7E9431-C7A0-325C-B46E-5158E4BFE2A8}</UniqueIdentifier>
     </Filter>
