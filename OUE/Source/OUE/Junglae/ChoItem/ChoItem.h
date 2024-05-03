@@ -8,6 +8,13 @@
 UCLASS()
 class UChoItem : public UObject
 {
-	
 	GENERATED_BODY()
+
+	friend class UInventorySubsystem;
+
+protected:
+	virtual void UseChoItem()
+	{
+		int a = 0;
+	}
 };

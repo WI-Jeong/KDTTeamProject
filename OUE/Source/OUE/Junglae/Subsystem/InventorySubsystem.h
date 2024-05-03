@@ -16,4 +16,16 @@ class OUE_API UInventorySubsystem : public ULocalPlayerSubsystem
 {
 	GENERATED_BODY()
 	
+protected:
+	/** Implement this for initialization of instances of the system */
+	virtual void Initialize(FSubsystemCollectionBase& Collection);
+
+	/** Implement this for deinitialization of instances of the system */
+	virtual void Deinitialize();
+
+	bool AddChoItem(const FName& InKey);
+
+protected:
+	TArray<FChoItemData*> Inventory;
+	class UChoDataSubsystem* ChoDataSubsystem;
 };

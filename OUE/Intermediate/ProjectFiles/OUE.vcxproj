@@ -193,6 +193,7 @@
     <None Include="..\..\OUE.uproject"/>
     <None Include="..\..\Source\OUE.Target.cs"/>
     <None Include="..\..\Source\OUEEditor.Target.cs"/>
+    <None Include="..\..\.vsconfig"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
     <None Include="..\..\Config\DefaultEngine.ini"/>
@@ -277,6 +278,20 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\OUE\Hero\Item\Item.h"/>
+    <ClInclude Include="..\..\Source\OUE\Junglae\ChoItem\ChoItem.h"/>
+    <ClCompile Include="..\..\Source\OUE\Junglae\ChoItem\ChoItemData.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Junglae\ChoItem\ChoItemData.h"/>
+    <ClCompile Include="..\..\Source\OUE\Junglae\Subsystem\ChoDataSubsystem.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Junglae\Subsystem\ChoDataSubsystem.h"/>
+    <ClInclude Include="..\..\Source\OUE\Junglae\Subsystem\ChoSubsystem.h"/>
     <ClCompile Include="..\..\Source\OUE\Junglae\Subsystem\InventorySubsystem.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>

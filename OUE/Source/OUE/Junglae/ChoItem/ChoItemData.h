@@ -12,6 +12,9 @@ struct OUE_API FChoItemData : public FTableRowBase
 {
 	GENERATED_BODY()
 
+	FChoItemData(){}
+	/*FChoItemData(const FChoItemData& InOther) {}*/
+	
 	UPROPERTY(EditAnywhere)
 	UTexture2D* ItemImage;
 
@@ -19,7 +22,8 @@ struct OUE_API FChoItemData : public FTableRowBase
 	FText ItemDesc;
 
 	UPROPERTY(EditAnywhere)
-	uint32 BundleCount = 1;
+	uint32 MaxBundleCount = 1;
+	uint32 CurrentBundleCount = 0;
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UChoItem> ItemFunctionClass;
