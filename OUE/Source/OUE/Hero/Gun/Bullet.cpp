@@ -29,7 +29,7 @@ ABullet::ABullet()
 	ProjectileMovement->InitialSpeed = InitialSpeed;
 	ProjectileMovement->MaxSpeed = MaxSpeed;
 	ProjectileMovement->bRotationFollowsVelocity = true;
-	ProjectileMovement->bShouldBounce = true;
+	ProjectileMovement->bShouldBounce = false;
 
 	OnActorHit.AddDynamic(this, &ThisClass::OnActorHitFunction);
 }
@@ -54,8 +54,8 @@ void ABullet::SetBullet(FBulletTableRow* InTableRow)
 
 	GetWorld()->GetTimerManager().SetTimer(InitialLifeSpanTimer, TimerDelegate, InTableRow->InitialLifeSpan, false);
 
-	StaticMeshComponent->SetStaticMesh(InTableRow->StaticMesh);
-	StaticMeshComponent->SetMaterial(0, InTableRow->Material);
+	//StaticMeshComponent->SetStaticMesh(InTableRow->StaticMesh);
+	//StaticMeshComponent->SetMaterial(0, InTableRow->Material);
 
 	ProjectileMovement->Velocity = FVector(1.f, 0.f, 0.f);
 	ProjectileMovement->MaxSpeed = InTableRow->BulletSpeed;

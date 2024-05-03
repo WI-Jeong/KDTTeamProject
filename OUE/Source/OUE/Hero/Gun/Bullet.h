@@ -12,11 +12,11 @@ struct FBulletTableRow : public FTableRowBase
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere)
-	UStaticMesh* StaticMesh;
+	//UPROPERTY(EditAnywhere)
+	//UStaticMesh* StaticMesh;
 
-	UPROPERTY(EditAnywhere)
-	UMaterial* Material;
+	//UPROPERTY(EditAnywhere)
+	//UMaterial* Material;
 
 	UPROPERTY(EditAnywhere)
 	float BulletSpeed = 1000.f;

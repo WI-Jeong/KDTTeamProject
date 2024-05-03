@@ -7,7 +7,6 @@
 #include "Effect.generated.h"
 
 class UParticleSystemComponent;
-class ParticleSystem;
 
 UCLASS()
 class OUE_API AEffect : public AActor
@@ -30,8 +29,8 @@ protected:
 	UPROPERTY(EditAnywhere)
 	UParticleSystemComponent* ParticleSystemComponent;
 
-	UPROPERTY(EditAnywhere)
-	UParticleSystem* ParticleSystem;
+	//UPROPERTY(EditAnywhere)
+	//UParticleSystem* ParticleSystem;
 
 protected:
 	FTimerHandle InitialLifeSpanTimer;

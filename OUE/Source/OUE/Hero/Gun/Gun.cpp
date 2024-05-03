@@ -164,5 +164,6 @@ void AGun::SetGunData()
 {
 	FireDelay = GunDataTableRow->FireDelay;
 	MaxAmmo = GunDataTableRow->MaxAmmo;
+	CurrentAmmo = MaxAmmo;
 }
 

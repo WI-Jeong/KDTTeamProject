@@ -10,11 +10,17 @@
 /**
  * 
  */
-
 UCLASS()
 class OUE_API AHeroGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+protected:
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<class ABullet> Bullet;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<class AEffect> Effect;
 
 protected:
 	FActorPool BulletPool;
