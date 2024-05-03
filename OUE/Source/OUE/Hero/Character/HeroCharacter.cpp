@@ -152,6 +152,13 @@ void AHeroCharacter::PlayRecoilMontage()
 
 void AHeroCharacter::PlayReloadingMontage()
 {
+	if (IsZoomIn)
+	{
+		ZoomInOut();
+	}
+
+	IsReloading = true;
+
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
 	AnimInstance->Montage_Play(WeaponDataTableRow->ReloadingMontage);
 }
@@ -218,6 +225,8 @@ void AHeroCharacter::StopRun()
 
 void AHeroCharacter::ZoomInOut()
 {
+	if (IsReloading) { return; }
+
 	if (SpawnedGun == nullptr) { return; }
 
 	if (CanJump() == false) { return; }

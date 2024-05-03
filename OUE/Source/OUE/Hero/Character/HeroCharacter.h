@@ -129,10 +129,17 @@ protected:
 
 	float CloseUpSpeed = 7.f;
 
+	bool IsReloading = false;
+
 public:
+	void SetIsReloading(bool InIsReloading) { IsReloading = InIsReloading; }
+
 	bool GetIsCrouch() { return IsCrouch; }
+
 	bool GetIsRotateBodyToAim() { return IsRotateBodyToAim; }
+
 	FWeaponDataTableRow* GetWeaponDataTableRow() { return WeaponDataTableRow; }
+
 	AGun* GetSpawnedGun() { return SpawnedGun; }
 
 	void PlayRecoilMontage();

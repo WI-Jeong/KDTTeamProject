@@ -32,6 +32,7 @@ class OUE_API AGun : public AActor
 {
 	GENERATED_BODY()
 
+protected:
 	//�� ���̷�Ż �޽������ͼ� �ѱ� ���� ã������ �ű⼭ ��ȯ�ϵ���
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Gun, meta = (AllowPrivateAccess = "true"))
 	USkeletalMeshComponent* SkeletalMeshComponent;
@@ -67,20 +68,20 @@ protected:
 	//UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Gun, meta = (AllowPrivateAccess = "true"))
 	//TSubclassOf<class ABullet> Bullet;
 
-	void Fire();
+	virtual void Fire();
 
 public:
 	void PullTrigger();
 	void ReleaseTrigger();
 
-	void ChangeFireMode();
+	virtual void ChangeFireMode();
 
 	void Reload();
 
 protected:
 	void SetGunData();
 
-	void SpawnBullet(TSubclassOf<ABullet> InBullet);
+	virtual void SpawnBullet(TSubclassOf<ABullet> InBullet);
 
 	void SpawnEffect();
 

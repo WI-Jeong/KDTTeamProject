@@ -5,6 +5,8 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
 #include "Hero/GameMode/HeroGameModeBase.h"
+#include "OUECharacter.h" //나중에 enemy로 이름 수정하자
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ABullet::ABullet()
@@ -13,11 +15,12 @@ ABullet::ABullet()
 	PrimaryActorTick.bCanEverTick = true;
 
 	SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComponent"));
-	SphereComponent->SetCollisionProfileName("BlockAll");
+	SphereComponent->SetCollisionProfileName("HeroBullet");
 	SetRootComponent(SphereComponent);
 
 	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent"));
 	StaticMeshComponent->SetupAttachment(SphereComponent);
+	StaticMeshComponent->SetCollisionProfileName("HeroBullet");
 
 	// Use a ProjectileMovementComponent to govern this projectile's movement
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileComp"));
@@ -26,14 +29,9 @@ ABullet::ABullet()
 	ProjectileMovement->InitialSpeed = InitialSpeed;
 	ProjectileMovement->MaxSpeed = MaxSpeed;
 	ProjectileMovement->bRotationFollowsVelocity = true;
-	ProjectileMovement->bShouldBounce = true;
+	ProjectileMovement->bShouldBounce = false;
 
-	//프로젝타일 무브먼트 컴포넌트에 발사체를 자체로 딜리트 하는가?
-
-	// Die after 3 seconds by default
-	//InitialLifeSpan = 0;
-
-	//OnActorHit.AddDynamic(this, &ThisClass::OnActorHitFunction);
+	OnActorHit.AddDynamic(this, &ThisClass::OnActorHitFunction);
 }
 
 void ABullet::SetBullet(FBulletTableRow* InTableRow)
@@ -56,7 +54,8 @@ void ABullet::SetBullet(FBulletTableRow* InTableRow)
 
 	GetWorld()->GetTimerManager().SetTimer(InitialLifeSpanTimer, TimerDelegate, InTableRow->InitialLifeSpan, false);
 
-	StaticMeshComponent->SetStaticMesh(InTableRow->StaticMesh);
+	//StaticMeshComponent->SetStaticMesh(InTableRow->StaticMesh);
+	//StaticMeshComponent->SetMaterial(0, InTableRow->Material);
 
 	ProjectileMovement->Velocity = FVector(1.f, 0.f, 0.f);
 	ProjectileMovement->MaxSpeed = InTableRow->BulletSpeed;
@@ -76,5 +75,16 @@ void ABullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
+{
+	//SetActorEnableCollision(false);
+
+	AOUECharacter* Enemy = Cast<AOUECharacter>(OtherActor);
+	if (IsValid(Enemy))
+	{
+		UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr);
+	}
 }
 

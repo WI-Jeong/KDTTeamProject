@@ -8,8 +8,12 @@
 void AHeroGameModeBase::BeginPlay()
 {
 	Super::BeginPlay();
-	BulletPool.Create(GetWorld(), ABullet::StaticClass(), 30);
-	EffectPool.Create(GetWorld(), AEffect::StaticClass(), 5);
+
+	ensure(Bullet);
+	BulletPool.Create(GetWorld(), Bullet, 30);
+
+	ensure(Effect);
+	EffectPool.Create(GetWorld(), Effect, 30);
 }
 
 void AHeroGameModeBase::EndPlay(const EEndPlayReason::Type EndPlayReason)

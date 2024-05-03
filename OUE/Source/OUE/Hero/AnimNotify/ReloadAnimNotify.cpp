@@ -18,5 +18,6 @@ void UReloadAnimNotify::Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBa
 	if (HeroCharacter)
 	{
 		HeroCharacter->GetSpawnedGun()->Reload();
+		HeroCharacter->SetIsReloading(false);
 	}
 }

@@ -13,12 +13,13 @@ AEffect::AEffect()
 	PrimaryActorTick.bCanEverTick = true;
 
 	ParticleSystemComponent = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticleSystemComponent"));
+	SetRootComponent(ParticleSystemComponent);
 
-	{
-		ConstructorHelpers::FObjectFinder<UParticleSystem> Finder(TEXT("/Script/Engine.ParticleSystem'/Engine/Tutorial/SubEditors/TutorialAssets/TutorialParticleSystem.TutorialParticleSystem'"));
-		ensure(Finder.Object);
-		ParticleSystem = Finder.Object;
-	}
+	//{
+	//	ConstructorHelpers::FObjectFinder<UParticleSystem> Finder(TEXT("/Script/Engine.ParticleSystem'/Game/StarterContent/Particles/P_Explosion.P_Explosion'"));
+	//	ensure(Finder.Object);
+	//	ParticleSystem = Finder.Object;
+	//}
 }
 
 // Called when the game starts or when spawned
@@ -55,6 +56,11 @@ void AEffect::SetEffect()
 
 	GetWorld()->GetTimerManager().SetTimer(InitialLifeSpanTimer, TimerDelegate, EffectInitialLifeSpan, false);
 
-	ParticleSystemComponent->SetTemplate(ParticleSystem);
+	ParticleSystemComponent->ActivateSystem();
+
+	//ParticleSystemComponent->SetTemplate(ParticleSystem);
+
+	//FVector NewScale = FVector(0.1f, 0.1f, 0.1f);
+	//ParticleSystemComponent->SetRelativeScale3D(NewScale);
 }
 
