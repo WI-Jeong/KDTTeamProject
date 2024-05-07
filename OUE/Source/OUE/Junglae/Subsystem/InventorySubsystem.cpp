@@ -6,14 +6,18 @@
 
 void UInventorySubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
-	ChoDataSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UChoDataSubsystem>();
-	Inventory.SetNum(20, false);
-
-	AddChoItem(TEXT("Potion_HP"));
 }
 
 void UInventorySubsystem::Deinitialize()
 {
+}
+
+void UInventorySubsystem::MakeInventory()
+{
+	ChoDataSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UChoDataSubsystem>();
+	Inventory.SetNum(20, false);
+
+	AddChoItem(TEXT("Potion_HP"));
 }
 
 bool UInventorySubsystem::AddChoItem(const FName& InKey)

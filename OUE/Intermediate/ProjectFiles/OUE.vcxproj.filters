@@ -162,6 +162,15 @@
     <ClInclude Include="..\..\Source\OUE\Junglae\ChoItem\ChoItemData.h">
       <Filter>Source\OUE\Junglae\ChoItem</Filter>
     </ClInclude>
+    <Filter Include="Source\OUE\Junglae\Controller">
+      <UniqueIdentifier>{4219CCED-4F7E-3070-A9A6-20E710FD9142}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Junglae\Controller\RPGPlayerController.cpp">
+      <Filter>Source\OUE\Junglae\Controller</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Junglae\Controller\RPGPlayerController.h">
+      <Filter>Source\OUE\Junglae\Controller</Filter>
+    </ClInclude>
     <Filter Include="Source\OUE\Junglae\Subsystem">
       <UniqueIdentifier>{CA62937E-4AB0-3D4C-94FC-A28F5802FDDC}</UniqueIdentifier>
     </Filter>
@@ -179,6 +188,21 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\OUE\Junglae\Subsystem\InventorySubsystem.h">
       <Filter>Source\OUE\Junglae\Subsystem</Filter>
+    </ClInclude>
+    <Filter Include="Source\OUE\Junglae\UI">
+      <UniqueIdentifier>{93441698-5A8A-364E-9D8E-4E37672A552A}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Junglae\UI\InventoryItemUserWidget.cpp">
+      <Filter>Source\OUE\Junglae\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Junglae\UI\InventoryItemUserWidget.h">
+      <Filter>Source\OUE\Junglae\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\OUE\Junglae\UI\InventoryUserWidget.cpp">
+      <Filter>Source\OUE\Junglae\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Junglae\UI\InventoryUserWidget.h">
+      <Filter>Source\OUE\Junglae\UI</Filter>
     </ClInclude>
     <Filter Include="Source\OUE\JWI">
       <UniqueIdentifier>{4CABCD43-E988-3051-B972-DBD724EC87AF}</UniqueIdentifier>

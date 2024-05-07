@@ -14,4 +14,6 @@ class OUE_API ARPGPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 	
+public:
+	virtual void OnPossess(APawn* PawnToPossess) override;
 };

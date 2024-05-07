@@ -16,12 +16,19 @@ class OUE_API UInventorySubsystem : public ULocalPlayerSubsystem
 {
 	GENERATED_BODY()
 	
+	friend class ARPGPlayerController;
+	friend class UInventoryUserWidget;
+
+public:
+
 protected:
 	/** Implement this for initialization of instances of the system */
 	virtual void Initialize(FSubsystemCollectionBase& Collection);
 
 	/** Implement this for deinitialization of instances of the system */
 	virtual void Deinitialize();
+
+	void MakeInventory();
 
 	bool AddChoItem(const FName& InKey);
 
