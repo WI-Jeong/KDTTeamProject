@@ -79,7 +79,9 @@ void ABullet::Tick(float DeltaTime)
 
 void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
 {
-	//SetActorEnableCollision(false);
+	//SetActorEnableCollision(false); //<< 이걸 하면 왜 풀이 망가질까
+	
+	//SetActorHiddenInGame(true);// 이건 문제 없음
 
 	AOUECharacter* Enemy = Cast<AOUECharacter>(OtherActor);
 	if (IsValid(Enemy))
