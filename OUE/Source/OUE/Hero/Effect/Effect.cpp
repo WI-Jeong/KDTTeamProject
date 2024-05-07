@@ -60,7 +60,7 @@ void AEffect::SetEffect()
 
 	//ParticleSystemComponent->SetTemplate(ParticleSystem);
 
-	//FVector NewScale = FVector(0.1f, 0.1f, 0.1f);
-	//ParticleSystemComponent->SetRelativeScale3D(NewScale);
+	FVector NewScale = FVector(0.1f, 0.1f, 0.1f);
+	ParticleSystemComponent->SetRelativeScale3D(NewScale);
 }
 
