@@ -7,6 +7,7 @@
 #include "Hero/GameMode/HeroGameModeBase.h"
 #include "OUECharacter.h" //나중에 enemy로 이름 수정하자
 #include "Kismet/GameplayStatics.h"
+#include "Hero/Effect/Effect.h"
 
 // Sets default values
 ABullet::ABullet()
@@ -79,14 +80,29 @@ void ABullet::Tick(float DeltaTime)
 
 void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
 {
-	//SetActorEnableCollision(false); //<< 이걸 하면 왜 풀이 망가질까
-	
-	//SetActorHiddenInGame(true);// 이건 문제 없음
+	SetActorEnableCollision(false); //<< 이걸 하면 왜 풀이 망가질까 //맵 문제 였음 삼인칭맵 액터 떨어지면 삭제하는것때문에	
 
 	AOUECharacter* Enemy = Cast<AOUECharacter>(OtherActor);
 	if (IsValid(Enemy))
 	{
 		UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr);
+
+		SetActorHiddenInGame(true);
+
+		FTransform NewTransform = FTransform(Hit.Location);
+		SpawnHitEffect(NewTransform);
 	}
+}
+
+void ABullet::SpawnHitEffect(FTransform InTransform)
+{
+	AHeroGameModeBase* GameMode = Cast<AHeroGameModeBase>(GetWorld()->GetAuthGameMode());
+	ensure(GameMode);
+	AEffect* NewEffect = GameMode->GetEffectPool().New<AEffect>(InTransform,
+		[this](AEffect* NewActor)
+		{
+			NewActor->SetEffect();
+		}
+	, true, nullptr, nullptr);
 }
 

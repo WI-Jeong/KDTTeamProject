@@ -62,7 +62,7 @@ void AItem::OnCollisionBeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 	UE_LOG(LogTemp, Warning, TEXT("OnCollisionBeginOverlap"));
 
 	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(OtherActor);
-	ensure(HeroCharacter);
+	//ensure(HeroCharacter);
 	if (HeroCharacter == nullptr) { return; }
 
 	if (HeroCharacter->GetSpawnedGun())
