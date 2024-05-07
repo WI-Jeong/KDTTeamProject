@@ -313,6 +313,8 @@ void AHeroCharacter::ChangeFireMode()
 
 void AHeroCharacter::GetItem()
 {
+	if (OverlapItem == nullptr) { return; }
+
 	OverlapItem->ChangeGun(this);
 }
 

@@ -74,6 +74,8 @@ void AItem::OnCollisionBeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 void AItem::OnComponentEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(OtherActor);
+	if (HeroCharacter == nullptr) { return; }
+
 	HeroCharacter->OverlapItem = nullptr;
 }
 
