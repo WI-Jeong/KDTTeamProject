@@ -108,6 +108,15 @@
     <ClInclude Include="..\..\Source\OUE\Hero\Effect\Effect.h">
       <Filter>Source\OUE\Hero\Effect</Filter>
     </ClInclude>
+    <Filter Include="Source\OUE\Hero\EnemySpawner">
+      <UniqueIdentifier>{867D2E2F-3171-32DC-A064-9ED91AA10C2D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\EnemySpawner\EnemySpawner.cpp">
+      <Filter>Source\OUE\Hero\EnemySpawner</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\EnemySpawner\EnemySpawner.h">
+      <Filter>Source\OUE\Hero\EnemySpawner</Filter>
+    </ClInclude>
     <Filter Include="Source\OUE\Hero\GameMode">
       <UniqueIdentifier>{5E7E9431-C7A0-325C-B46E-5158E4BFE2A8}</UniqueIdentifier>
     </Filter>
@@ -161,6 +170,15 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\OUE\Junglae\ChoItem\ChoItemData.h">
       <Filter>Source\OUE\Junglae\ChoItem</Filter>
+    </ClInclude>
+    <Filter Include="Source\OUE\Junglae\Controller">
+      <UniqueIdentifier>{4219CCED-4F7E-3070-A9A6-20E710FD9142}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Junglae\Controller\RPGPlayerController.cpp">
+      <Filter>Source\OUE\Junglae\Controller</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Junglae\Controller\RPGPlayerController.h">
+      <Filter>Source\OUE\Junglae\Controller</Filter>
     </ClInclude>
     <Filter Include="Source\OUE\Junglae\Subsystem">
       <UniqueIdentifier>{CA62937E-4AB0-3D4C-94FC-A28F5802FDDC}</UniqueIdentifier>

@@ -82,7 +82,7 @@ struct FActorPool
 		{
 			InActor->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 		}
-
+		
 		InActor->SetActorEnableCollision(false);
 		InActor->SetActorHiddenInGame(true);
 		InActor->SetActorTickEnabled(false);
