@@ -17,6 +17,7 @@
 #include "Components/ChildActorComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Hero/Item/Item.h"
 
 //DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -137,6 +138,9 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 		// Reload
 		EnhancedInputComponent->BindAction(ReloadModeAction, ETriggerEvent::Completed, this, &AHeroCharacter::PlayReloadingMontage);
+
+		// GetItem
+		EnhancedInputComponent->BindAction(GetItemAction, ETriggerEvent::Completed, this, &AHeroCharacter::GetItem);
 	}
 	else
 	{
@@ -305,6 +309,11 @@ void AHeroCharacter::ChangeFireMode()
 	if (SpawnedGun == nullptr) { return; }
 
 	SpawnedGun->ChangeFireMode();
+}
+
+void AHeroCharacter::GetItem()
+{
+	OverlapItem->ChangeGun(this);
 }
 
 void AHeroCharacter::SetWeaponData(FName InRowName)
