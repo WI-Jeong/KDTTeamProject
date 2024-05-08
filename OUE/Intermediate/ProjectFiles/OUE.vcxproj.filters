@@ -108,6 +108,15 @@
     <ClInclude Include="..\..\Source\OUE\Hero\Effect\Effect.h">
       <Filter>Source\OUE\Hero\Effect</Filter>
     </ClInclude>
+    <Filter Include="Source\OUE\Hero\EnemySpawner">
+      <UniqueIdentifier>{867D2E2F-3171-32DC-A064-9ED91AA10C2D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\EnemySpawner\EnemySpawner.cpp">
+      <Filter>Source\OUE\Hero\EnemySpawner</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\EnemySpawner\EnemySpawner.h">
+      <Filter>Source\OUE\Hero\EnemySpawner</Filter>
+    </ClInclude>
     <Filter Include="Source\OUE\Hero\GameMode">
       <UniqueIdentifier>{5E7E9431-C7A0-325C-B46E-5158E4BFE2A8}</UniqueIdentifier>
     </Filter>
