@@ -92,6 +92,8 @@ void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector 
 		/*FTransform NewTransform = FTransform(Hit.Location);
 		SpawnHitEffect(NewTransform);*/
 	}
+
+	UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr); //나중에 하나없애야함
 }
 
 void ABullet::SpawnHitEffect(FTransform InTransform)
