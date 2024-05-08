@@ -27,4 +27,7 @@ protected:
 	UTextBlock* ItemDesc;
 
 	int32 InvenSize = 0;
+
+	UPROPERTY()
+	TArray<class UInventoryItemUserWidget*> Items;
 };

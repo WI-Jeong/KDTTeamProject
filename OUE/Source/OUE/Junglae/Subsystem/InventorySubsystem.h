@@ -19,8 +19,6 @@ class OUE_API UInventorySubsystem : public ULocalPlayerSubsystem
 	friend class ARPGPlayerController;
 	friend class UInventoryUserWidget;
 
-public:
-
 protected:
 	/** Implement this for initialization of instances of the system */
 	virtual void Initialize(FSubsystemCollectionBase& Collection);
