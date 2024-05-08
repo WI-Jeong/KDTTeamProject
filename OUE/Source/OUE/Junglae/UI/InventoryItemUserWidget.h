@@ -16,6 +16,7 @@ class OUE_API UInventoryItemUserWidget : public UUserWidget
 {
 	GENERATED_BODY()
 
+public:
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
 	UButton* ItemBtn;
 

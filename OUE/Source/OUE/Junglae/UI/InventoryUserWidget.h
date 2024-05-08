@@ -16,9 +16,13 @@ class OUE_API UInventoryUserWidget : public UUserWidget
 {
 	GENERATED_BODY()
 
+	friend class UInventorySubsystem;
+
 protected:
 	virtual void NativeConstruct() override;
 	virtual void NativeDestruct() override;
+
+	void FlushInven();
 
 protected:
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
@@ -30,4 +34,7 @@ protected:
 
 	UPROPERTY()
 	TArray<class UInventoryItemUserWidget*> Items;
+
+
+	UInventorySubsystem* InventorySubsystem;
 };

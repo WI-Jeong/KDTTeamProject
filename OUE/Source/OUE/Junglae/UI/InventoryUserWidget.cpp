@@ -3,7 +3,7 @@
 
 #include "Junglae/UI/InventoryUserWidget.h"
 #include "Junglae/Subsystem/ChoSubsystem.h"
-#include "InventoryItemUserWidget.h"
+#include "Junglae/UI/InventoryItemUserWidget.h"
 
 void UInventoryUserWidget::NativeConstruct()
 {
@@ -64,5 +64,4 @@ void UInventoryUserWidget::FlushInven()
 			Items[i]->ItemImage->SetBrushFromTexture(nullptr, true);
 		}
 	}
-
 }
