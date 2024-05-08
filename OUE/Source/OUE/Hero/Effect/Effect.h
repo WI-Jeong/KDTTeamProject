@@ -39,6 +39,6 @@ protected:
 	float EffectInitialLifeSpan = 3.f;
 
 public:
-	void SetEffect();
+	void SetEffect(struct FGunDataTableRow* GunDataTableRow);
 
 };

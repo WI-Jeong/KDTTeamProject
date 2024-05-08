@@ -5,6 +5,7 @@
 #include "Particles/ParticleSystemComponent.h"
 #include "Particles/ParticleSystem.h"
 #include "Hero/GameMode/HeroGameModeBase.h"
+#include "Hero/Gun/Gun.h"
 
 // Sets default values
 AEffect::AEffect()
@@ -36,7 +37,7 @@ void AEffect::Tick(float DeltaTime)
 
 }
 
-void AEffect::SetEffect()
+void AEffect::SetEffect(FGunDataTableRow* GunDataTableRow)
 {
 	GetWorld()->GetTimerManager().ClearTimer(InitialLifeSpanTimer);
 
@@ -58,9 +59,9 @@ void AEffect::SetEffect()
 
 	ParticleSystemComponent->ActivateSystem();
 
-	//ParticleSystemComponent->SetTemplate(ParticleSystem);
+	ParticleSystemComponent->SetTemplate(GunDataTableRow->FireEffect);
 
-	FVector NewScale = FVector(0.1f, 0.1f, 0.1f);
-	ParticleSystemComponent->SetRelativeScale3D(NewScale);
+	//FVector NewScale = FVector(0.1f, 0.1f, 0.1f);
+	//ParticleSystemComponent->SetRelativeScale3D(NewScale);
 }
 

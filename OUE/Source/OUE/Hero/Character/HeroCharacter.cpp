@@ -17,6 +17,7 @@
 #include "Components/ChildActorComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Hero/Item/Item.h"
 
 //DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -39,7 +40,7 @@ AHeroCharacter::AHeroCharacter()
 
 	// Note: For faster iteration times these variables, and many more, can be tweaked in the Character Blueprint
 	// instead of recompiling to adjust them
-	GetCharacterMovement()->JumpZVelocity = 700.f;
+	GetCharacterMovement()->JumpZVelocity = 500.f;
 	GetCharacterMovement()->AirControl = 0.35f;
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
@@ -137,6 +138,9 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 		// Reload
 		EnhancedInputComponent->BindAction(ReloadModeAction, ETriggerEvent::Completed, this, &AHeroCharacter::PlayReloadingMontage);
+
+		// GetItem
+		EnhancedInputComponent->BindAction(GetItemAction, ETriggerEvent::Completed, this, &AHeroCharacter::GetItem);
 	}
 	else
 	{
@@ -305,6 +309,13 @@ void AHeroCharacter::ChangeFireMode()
 	if (SpawnedGun == nullptr) { return; }
 
 	SpawnedGun->ChangeFireMode();
+}
+
+void AHeroCharacter::GetItem()
+{
+	if (OverlapItem == nullptr) { return; }
+
+	OverlapItem->ChangeGun(this);
 }
 
 void AHeroCharacter::SetWeaponData(FName InRowName)

@@ -71,4 +71,6 @@ protected:
 protected:
 	UFUNCTION()
 	void OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
+	
+	void SpawnHitEffect(FTransform InTransform);
 };

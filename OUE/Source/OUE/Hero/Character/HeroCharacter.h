@@ -96,6 +96,10 @@ class OUE_API AHeroCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* ReloadModeAction;
 
+	/** GetItem Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* GetItemAction;
+
 public:
 	AHeroCharacter();
 
@@ -130,6 +134,8 @@ protected:
 	float CloseUpSpeed = 7.f;
 
 	bool IsReloading = false;
+
+	class AItem* OverlapItem = nullptr; friend AItem;
 
 public:
 	void SetIsReloading(bool InIsReloading) { IsReloading = InIsReloading; }
@@ -169,6 +175,8 @@ protected:
 	void ReleaseTrigger();
 
 	void ChangeFireMode();
+
+	void GetItem();
 
 public:
 	void SetWeaponData(FName InRowName = FName("NoWeapon"));
