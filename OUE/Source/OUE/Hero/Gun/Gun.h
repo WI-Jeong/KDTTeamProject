@@ -23,8 +23,8 @@ public:
 	UPROPERTY(EditAnywhere)
 	int MaxAmmo = 30;
 
-	//UPROPERTY(EditAnywhere)
-	//TSubclassOf<AEffect> Effect;
+	UPROPERTY(EditAnywhere)
+	UParticleSystem* FireEffect;
 };
 
 UCLASS()

@@ -136,7 +136,7 @@ void AGun::SpawnEffect()
 				[this](AEffect* NewActor)
 				{
 					/*NewActor->SetProjectileData(ProjectileRow);*/
-					NewActor->SetEffect();
+					NewActor->SetEffect(GunDataTableRow);
 				}
 			, true, nullptr, nullptr);
 		}

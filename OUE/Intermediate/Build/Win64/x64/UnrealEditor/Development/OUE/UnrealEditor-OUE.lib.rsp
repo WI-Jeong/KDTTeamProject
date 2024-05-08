@@ -8,7 +8,11 @@
 /NODEFAULTLIB
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\OUEEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Module.OUE.cpp.obj"
-"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\HeroCharacter.cpp.obj"
-"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Item.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Effect.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\EnemySpawner.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Bullet.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Gun.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Gun.gen.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\OUE.init.gen.cpp.obj"
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Default.rc2.res"
 /OUT:"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\UnrealEditor-OUE.lib"

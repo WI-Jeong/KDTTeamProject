@@ -89,20 +89,20 @@ void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector 
 
 		SetActorHiddenInGame(true);
 
-		FTransform NewTransform = FTransform(Hit.Location);
-		SpawnHitEffect(NewTransform);
+		/*FTransform NewTransform = FTransform(Hit.Location);
+		SpawnHitEffect(NewTransform);*/
 	}
 }
 
 void ABullet::SpawnHitEffect(FTransform InTransform)
 {
-	AHeroGameModeBase* GameMode = Cast<AHeroGameModeBase>(GetWorld()->GetAuthGameMode());
+	/*AHeroGameModeBase* GameMode = Cast<AHeroGameModeBase>(GetWorld()->GetAuthGameMode());
 	ensure(GameMode);
 	AEffect* NewEffect = GameMode->GetEffectPool().New<AEffect>(InTransform,
 		[this](AEffect* NewActor)
 		{
-			NewActor->SetEffect();
+			NewActor->SetEffect(GunDataTableRow);
 		}
-	, true, nullptr, nullptr);
+	, true, nullptr, nullptr);*/
 }
 
