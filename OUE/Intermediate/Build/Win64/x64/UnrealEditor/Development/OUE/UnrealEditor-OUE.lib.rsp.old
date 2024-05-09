@@ -6,17 +6,12 @@
 /NAME:"UnrealEditor-OUE.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-<<<<<<< HEAD
-"D:\ProjectKDT\OUE\Intermediate\Build\Win64\x64\OUEEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
-"D:\ProjectKDT\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Module.OUE.cpp.obj"
-"D:\ProjectKDT\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\RPGPlayerController.cpp.obj"
-"D:\ProjectKDT\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\InventoryUserWidget.cpp.obj"
-"D:\ProjectKDT\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\OUE.init.gen.cpp.obj"
-"D:\ProjectKDT\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Default.rc2.res"
-/OUT:"D:\ProjectKDT\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\UnrealEditor-OUE.lib"
-=======
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\OUEEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Module.OUE.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Effect.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\EffectNiagara.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\MyNiagaraActor.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Gun.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\OUE.init.gen.cpp.obj"
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Default.rc2.res"
 /OUT:"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\UnrealEditor-OUE.lib"
->>>>>>> main

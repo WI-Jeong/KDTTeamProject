@@ -4,18 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Effect.generated.h"
-
-class UParticleSystemComponent;
+#include "EffectNiagara.generated.h"
 
 UCLASS()
-class OUE_API AEffect : public AActor
+class OUE_API AEffectNiagara : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AEffect();
+	AEffectNiagara();
 
 protected:
 	// Called when the game starts or when spawned
@@ -27,18 +25,6 @@ public:
 
 protected:
 	UPROPERTY(EditAnywhere)
-	UParticleSystemComponent* ParticleSystemComponent;
-
-	UPROPERTY(EditAnywhere)
 	class UNiagaraComponent* NiagaraComponent;
-
-protected:
-	FTimerHandle InitialLifeSpanTimer;
-
-	UPROPERTY(EditAnywhere)
-	float EffectInitialLifeSpan = 3.f;
-
-public:
-	void SetEffect(struct FGunDataTableRow* GunDataTableRow);
 
 };
