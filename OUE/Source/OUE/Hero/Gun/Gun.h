@@ -25,6 +25,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	UParticleSystem* FireEffect;
+
+	UPROPERTY(EditAnywhere)
+	class UNiagaraSystem* FireEffectNiagara;
 };
 
 UCLASS()
