@@ -24,6 +24,10 @@ protected:
 
 	void FlushInven();
 
+	void SetItemDesc(const uint32 InIndex);
+	UFUNCTION()
+	void OnItemBtnClicked(UInventoryItemUserWidget* InWidget);
+
 protected:
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
 	UUniformGridPanel* InventoryPanel;
@@ -31,6 +35,7 @@ protected:
 	UTextBlock* ItemDesc;
 
 	int32 InvenSize = 0;
+	uint32 LastHoveredIndex = (uint32) - 1;
 
 	UPROPERTY()
 	TArray<class UInventoryItemUserWidget*> Items;

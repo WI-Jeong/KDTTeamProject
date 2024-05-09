@@ -18,3 +18,15 @@ protected:
 		int a = 0;
 	}
 };
+
+UCLASS()
+class UChoItem_Potion : public UChoItem
+{
+	GENERATED_BODY()
+	friend class UInventorySubsystem;
+protected:
+	virtual void UseItem()
+	{
+		
+	}
+};

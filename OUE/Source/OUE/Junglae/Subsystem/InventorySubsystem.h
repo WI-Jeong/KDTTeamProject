@@ -29,8 +29,10 @@ protected:
 	void MakeInventory();
 
 	bool AddChoItem(const FName& InKey);
+	void UseChoItem(class UInventoryUserWidget* Widget, uint32 InIndex);
 
 protected:
-	TArray<FChoItemData*> Inventory;
+	TArray<TSharedPtr<FChoItemData>> Inventory;
+
 	class UChoDataSubsystem* ChoDataSubsystem;
 };

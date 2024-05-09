@@ -26,7 +26,7 @@ void UInventoryUserWidget::NativeConstruct()
 	UClass* InventoryItemWidgetClass = FindObject<UClass>
 		(ANY_PACKAGE, TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/Junglae/UI_InventoryItem.UI_InventoryItem_C'"));
 
-	int32 Col = 5;
+	int32 Col = 6;
 	int32 Row = InvenSize / Col;
 
 	for (int32 i = 0; i < Row; ++i)
@@ -35,6 +35,20 @@ void UInventoryUserWidget::NativeConstruct()
 		{
 			UInventoryItemUserWidget* Widget = Cast<UInventoryItemUserWidget>(CreateWidget(this, InventoryItemWidgetClass));
 			ensure(Widget);
+
+			Widget->ItemIndex = k + i * Col;
+
+			Widget->ItemBtnHovered.BindLambda(
+				[this](UInventoryItemUserWidget* ItemWidget)
+				{
+					const uint32 Index = ItemWidget->ItemIndex;
+					LastHoveredIndex = Index;
+					SetItemDesc(Index);
+				}
+			);
+
+			Widget->ItemBtnClicked.BindUFunction(this, TEXT("OnItemBtnClicked"));
+
 			Items.Add(Widget);
 			InventoryPanel->AddChildToUniformGrid(Widget, i, k);
 		}
@@ -52,16 +66,48 @@ void UInventoryUserWidget::FlushInven()
 {
 	for (int32 i = 0; i < InvenSize; ++i)
 	{
-		if (InventorySubsystem->Inventory[i] == nullptr) continue;
+		if (InventorySubsystem->Inventory[i] == nullptr)
+		{
+			Items[i]->ItemImage->SetBrushFromTexture(nullptr, false);
+			continue;
+		}
 
 		UTexture2D* Texture = InventorySubsystem->Inventory[i]->ItemImage;
 		if (Texture)
 		{
-			Items[i]->ItemImage->SetBrushFromTexture(Texture, true);
+			Items[i]->ItemImage->SetBrushFromTexture(Texture, false);
 		}
 		else
 		{
-			Items[i]->ItemImage->SetBrushFromTexture(nullptr, true);
+			Items[i]->ItemImage->SetBrushFromTexture(nullptr, false);
 		}
+	}
+
+	SetItemDesc(LastHoveredIndex);
+}
+
+void UInventoryUserWidget::SetItemDesc(const uint32 InIndex)
+{
+	if (InIndex == (uint32)-1) { return; }
+
+	TWeakPtr<FChoItemData> ItemData = InventorySubsystem->Inventory[InIndex];
+	if (ItemData.IsValid())
+	{
+		ItemDesc->SetText(ItemData.Pin()->ItemDesc);
+	}
+	else
+	{
+		ItemDesc->SetText(FText());
+	}
+}
+
+void UInventoryUserWidget::OnItemBtnClicked(UInventoryItemUserWidget* InWidget)
+{
+	const uint32 Index = InWidget->ItemIndex;
+	
+	TWeakPtr<FChoItemData> ItemData = InventorySubsystem->Inventory[Index];
+	if (ItemData.IsValid())
+	{
+		InventorySubsystem->UseChoItem(this, Index);
 	}
 }
