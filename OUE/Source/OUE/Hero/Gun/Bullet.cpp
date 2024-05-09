@@ -8,6 +8,7 @@
 #include "OUECharacter.h" //나중에 enemy로 이름 수정하자
 #include "Kismet/GameplayStatics.h"
 #include "Hero/Effect/Effect.h"
+#include "Particles/ParticleSystemComponent.h"
 
 // Sets default values
 ABullet::ABullet()
@@ -25,6 +26,9 @@ ABullet::ABullet()
 
 	// Use a ProjectileMovementComponent to govern this projectile's movement
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileComp"));
+
+	ParticleSystemComponent = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticleSystemComponent"));
+	ParticleSystemComponent->SetupAttachment(RootComponent);
 
 	//ProjectileMovement->UpdatedComponent = CollisionComp;
 	ProjectileMovement->InitialSpeed = InitialSpeed;
@@ -62,6 +66,8 @@ void ABullet::SetBullet(FBulletTableRow* InTableRow)
 	ProjectileMovement->MaxSpeed = InTableRow->BulletSpeed;
 	ProjectileMovement->InitialSpeed = InTableRow->BulletSpeed;
 	ProjectileMovement->ProjectileGravityScale = InTableRow->BulletGravityScale;
+
+	ParticleSystemComponent->Activate();
 }
 
 // Called when the game starts or when spawned
