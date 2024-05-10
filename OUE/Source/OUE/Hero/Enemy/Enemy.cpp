@@ -2,6 +2,7 @@
 
 
 #include "Hero/Enemy/Enemy.h"
+#include "AIController.h"
 
 // Sets default values
 AEnemy::AEnemy()
@@ -42,12 +43,21 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 
 	if (HP <= 0 || FMath::IsNearlyZero(HP))
 	{
-		SetActorEnableCollision(false);
-		GetController()->StopMovement();
+		//SetActorEnableCollision(false);
+		if (GetController() != nullptr)
+		{
+			GetController()->StopMovement();
+			Controller = nullptr;
+		}
+
+		APawn* Pawn = Cast<APawn>(this);
+		Pawn->UnPossessed();
+		Pawn->AIControllerClass = nullptr;
+		/*AAIController* AIController = Cast<AAIController>(Pawn->AIControllerClass);
+		AIController->BrainComponent = nullptr;*/
 		
-		UPrimitiveComponent* PrimitiveComponent = Cast<UPrimitiveComponent>(GetMesh());
-		PrimitiveComponent->SetSimulatePhysics(true);
-		PrimitiveComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+		GetMesh()->SetSimulatePhysics(true);
+		//PrimitiveComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 	}
 	return Damage;
 }

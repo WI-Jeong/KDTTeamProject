@@ -398,12 +398,14 @@ float AHeroCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageE
 
 	if (HP <= 0 || FMath::IsNearlyZero(HP))
 	{
-		SetActorEnableCollision(false);
+		//SetActorEnableCollision(false);
 		GetController()->StopMovement();
 
-		UPrimitiveComponent* PrimitiveComponent = Cast<UPrimitiveComponent>(GetMesh());
-		PrimitiveComponent->SetSimulatePhysics(true);
-		PrimitiveComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+		//UPrimitiveComponent* PrimitiveComponent = Cast<UPrimitiveComponent>(GetMesh());
+		//PrimitiveComponent->SetSimulatePhysics(true);
+		//PrimitiveComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+
+		GetMesh()->SetSimulatePhysics(true);
 	}
 	return Damage;
 }
