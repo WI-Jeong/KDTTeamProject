@@ -15,7 +15,6 @@ void UInventorySubsystem::Deinitialize()
 void UInventorySubsystem::MakeInventory()
 {
 	ChoDataSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UChoDataSubsystem>();
-	Inventory.Reserve(MaxInvenSize);
 	Inventory.SetNum(60, false);
 
 	AddChoItem(TEXT("Potion_HP"));
