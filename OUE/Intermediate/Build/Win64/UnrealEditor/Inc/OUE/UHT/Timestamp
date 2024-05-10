@@ -1,3 +1,30 @@
+<<<<<<< HEAD
+D:\ProjectKDT\OUE\Source\OUE\CharacterSelectGameMode.h
+D:\ProjectKDT\OUE\Source\OUE\OUECharacter.h
+D:\ProjectKDT\OUE\Source\OUE\OUEGameMode.h
+D:\ProjectKDT\OUE\Source\OUE\Hero\Character\HeroCharacter.h
+D:\ProjectKDT\OUE\Source\OUE\Hero\AnimNotify\ReloadAnimNotify.h
+D:\ProjectKDT\OUE\Source\OUE\Hero\Character\AnimInstance\HeroAnimInstance.h
+D:\ProjectKDT\OUE\Source\OUE\Hero\EnemySpawner\EnemySpawner.h
+D:\ProjectKDT\OUE\Source\OUE\Hero\GameMode\HeroGameModeBase.h
+D:\ProjectKDT\OUE\Source\OUE\Hero\Effect\Effect.h
+D:\ProjectKDT\OUE\Source\OUE\Hero\Gun\Bullet.h
+D:\ProjectKDT\OUE\Source\OUE\Hero\Gun\Gun.h
+D:\ProjectKDT\OUE\Source\OUE\Hero\Gun\Shotgun.h
+D:\ProjectKDT\OUE\Source\OUE\Hero\Item\Item.h
+D:\ProjectKDT\OUE\Source\OUE\Junglae\ChoItem\ChoItem.h
+D:\ProjectKDT\OUE\Source\OUE\Junglae\ChoItem\ChoItemData.h
+D:\ProjectKDT\OUE\Source\OUE\Junglae\Controller\RPGPlayerController.h
+D:\ProjectKDT\OUE\Source\OUE\Junglae\Subsystem\ChoDataSubsystem.h
+D:\ProjectKDT\OUE\Source\OUE\Junglae\Subsystem\InventorySubsystem.h
+D:\ProjectKDT\OUE\Source\OUE\Junglae\UI\InventoryUserWidget.h
+D:\ProjectKDT\OUE\Source\OUE\Junglae\UI\InventoryItemUserWidget.h
+D:\ProjectKDT\OUE\Source\OUE\JWI\PlayerSelect\SelectPlayer.h
+D:\ProjectKDT\OUE\Source\OUE\UI\CharacterSelectWidget.h
+D:\ProjectKDT\OUE\Source\OUE\UI\MainWidget.h
+D:\ProjectKDT\OUE\Source\OUE\UI\StartGameModeBase.h
+D:\ProjectKDT\OUE\Source\OUE\UI\StartWidget.h
+=======
 D:\Han\Team\OUE\Source\OUE\CharacterSelectGameMode.h
 D:\Han\Team\OUE\Source\OUE\OUECharacter.h
 D:\Han\Team\OUE\Source\OUE\OUEGameMode.h
@@ -23,3 +50,4 @@ D:\Han\Team\OUE\Source\OUE\UI\StartWidget.h
 D:\Han\Team\OUE\Source\OUE\UI\CharacterSelectWidget.h
 D:\Han\Team\OUE\Source\OUE\Hero\Gun\Bullet.h
 D:\Han\Team\OUE\Source\OUE\Junglae\Controller\RPGPlayerController.h
+>>>>>>> main

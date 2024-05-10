@@ -19,8 +19,6 @@ class OUE_API UInventorySubsystem : public ULocalPlayerSubsystem
 	friend class ARPGPlayerController;
 	friend class UInventoryUserWidget;
 
-public:
-
 protected:
 	/** Implement this for initialization of instances of the system */
 	virtual void Initialize(FSubsystemCollectionBase& Collection);
@@ -31,8 +29,10 @@ protected:
 	void MakeInventory();
 
 	bool AddChoItem(const FName& InKey);
+	void UseChoItem(class UInventoryUserWidget* Widget, uint32 InIndex);
 
 protected:
-	TArray<FChoItemData*> Inventory;
+	TArray<TSharedPtr<FChoItemData>> Inventory;
+
 	class UChoDataSubsystem* ChoDataSubsystem;
 };
