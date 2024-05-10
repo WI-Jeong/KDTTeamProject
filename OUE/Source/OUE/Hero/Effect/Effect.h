@@ -29,8 +29,8 @@ protected:
 	UPROPERTY(EditAnywhere)
 	UParticleSystemComponent* ParticleSystemComponent;
 
-	//UPROPERTY(EditAnywhere)
-	//UParticleSystem* ParticleSystem;
+	UPROPERTY(EditAnywhere)
+	class UNiagaraComponent* NiagaraComponent;
 
 protected:
 	FTimerHandle InitialLifeSpanTimer;
