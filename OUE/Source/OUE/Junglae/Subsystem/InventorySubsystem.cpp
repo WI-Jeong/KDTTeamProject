@@ -15,7 +15,7 @@ void UInventorySubsystem::Deinitialize()
 void UInventorySubsystem::MakeInventory()
 {
 	ChoDataSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UChoDataSubsystem>();
-	Inventory.SetNum(20, false);
+	Inventory.SetNum(60, false);
 
 	AddChoItem(TEXT("Potion_HP"));
 }
@@ -35,10 +35,9 @@ bool UInventorySubsystem::AddChoItem(const FName& InKey)
 	{
 		if (Inventory[i] == nullptr)
 		{
-			FChoItemData* NewChoItemData = new FChoItemData(*ChoData);
+			TSharedPtr<FChoItemData> NewChoItemData = MakeShared<FChoItemData>(*ChoData);
+			++NewChoItemData->CurrentBundleCount;
 			Inventory[i] = NewChoItemData;
-
-			Inventory[i]->ItemFunctionClass->GetDefaultObject<UChoItem>()->UseChoItem();
 
 			bAdded = true;
 			break;
@@ -46,4 +45,26 @@ bool UInventorySubsystem::AddChoItem(const FName& InKey)
 	}
 
 	return bAdded;
+}
+#include "Junglae/UI/InventoryUserWidget.h"
+
+void UInventorySubsystem::UseChoItem(UInventoryUserWidget* Widget, uint32 InIndex)
+{
+	TWeakPtr<FChoItemData> ItemData = Inventory[InIndex];
+	if (!ItemData.IsValid()) {return;}
+
+	UChoItem* Item = ItemData.Pin()->ItemFunctionClass->GetDefaultObject<UChoItem>();
+	UChoItem_Potion* Potion = Cast<UChoItem_Potion>(Item);
+	if (Potion)
+	{
+		--ItemData.Pin()->CurrentBundleCount;
+		Potion->UseItem();
+
+		if (ItemData.Pin()->CurrentBundleCount == 0)
+		{
+			Inventory[InIndex] = nullptr;
+		}
+	}
+
+	Widget->FlushInven();
 }

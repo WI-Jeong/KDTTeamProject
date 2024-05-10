@@ -8,17 +8,31 @@
 #include "Components/Image.h"
 #include "InventoryItemUserWidget.generated.h"
 
-/**
- * 
- */
+DECLARE_DELEGATE_OneParam(FOnInvenButtonEvent, UInventoryItemUserWidget*);
+
 UCLASS()
 class OUE_API UInventoryItemUserWidget : public UUserWidget
 {
 	GENERATED_BODY()
 
+protected:
+	virtual void NativeOnInitialized() override;
+
+	UFUNCTION()
+	void OnItemBtnHovered();
+	UFUNCTION()
+	void OnItemBtnClicked();
+
+
+public:
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
 	UButton* ItemBtn;
 
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
 	UImage* ItemImage;
+
+	uint32 ItemIndex = (uint32)-1;
+	
+	FOnInvenButtonEvent ItemBtnHovered;
+	FOnInvenButtonEvent ItemBtnClicked;
 };
