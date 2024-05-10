@@ -137,6 +137,8 @@ protected:
 
 	class AItem* OverlapItem = nullptr; friend AItem;
 
+	float HP = 10.f;
+
 public:
 	void SetIsReloading(bool InIsReloading) { IsReloading = InIsReloading; }
 
@@ -188,6 +190,8 @@ protected:
 	virtual void Jump() override;
 
 	void CloseUpAim(float DeltaSeconds);
+
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 
 protected:
 	virtual void OnConstruction(const FTransform& Transform) override;

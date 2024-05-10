@@ -388,6 +388,26 @@ void AHeroCharacter::CloseUpAim(float DeltaSeconds)
 	}
 }
 
+float AHeroCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	float Damage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+
+	UE_LOG(LogTemp, Warning, TEXT("Hit Player!: %f"), Damage);
+
+	HP -= Damage;
+
+	if (HP <= 0 || FMath::IsNearlyZero(HP))
+	{
+		SetActorEnableCollision(false);
+		GetController()->StopMovement();
+
+		UPrimitiveComponent* PrimitiveComponent = Cast<UPrimitiveComponent>(GetMesh());
+		PrimitiveComponent->SetSimulatePhysics(true);
+		PrimitiveComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	}
+	return Damage;
+}
+
 void AHeroCharacter::OnConstruction(const FTransform& Transform)
 {
 	Super::OnConstruction(Transform);

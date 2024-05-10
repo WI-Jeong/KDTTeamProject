@@ -230,6 +230,12 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\OUE\Hero\ActorPool\ActorPool.h"/>
+    <ClCompile Include="..\..\Source\OUE\Hero\AnimNotify\EnemyAttackAnimNotify.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\AnimNotify\EnemyAttackAnimNotify.h"/>
     <ClCompile Include="..\..\Source\OUE\Hero\AnimNotify\ReloadAnimNotify.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -254,18 +260,12 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\OUE\Hero\Effect\Effect.h"/>
-    <ClCompile Include="..\..\Source\OUE\Hero\Effect\EffectNiagara.cpp">
+    <ClCompile Include="..\..\Source\OUE\Hero\Enemy\Enemy.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
-    <ClInclude Include="..\..\Source\OUE\Hero\Effect\EffectNiagara.h"/>
-    <ClCompile Include="..\..\Source\OUE\Hero\Effect\MyNiagaraActor.cpp">
-      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
-      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\OUE\Hero\Effect\MyNiagaraActor.h"/>
+    <ClInclude Include="..\..\Source\OUE\Hero\Enemy\Enemy.h"/>
     <ClCompile Include="..\..\Source\OUE\Hero\EnemySpawner\EnemySpawner.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
