@@ -68,7 +68,12 @@ protected:
 
 	FTimerHandle InitialLifeSpanTimer;
 
+	UPROPERTY(EditAnywhere)
+	class UParticleSystemComponent* ParticleSystemComponent;
+
 protected:
 	UFUNCTION()
 	void OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);
+	
+	void SpawnHitEffect(FTransform InTransform);
 };

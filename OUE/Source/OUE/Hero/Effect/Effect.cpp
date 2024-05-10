@@ -5,6 +5,8 @@
 #include "Particles/ParticleSystemComponent.h"
 #include "Particles/ParticleSystem.h"
 #include "Hero/GameMode/HeroGameModeBase.h"
+#include "Hero/Gun/Gun.h"
+#include "NiagaraComponent.h"
 
 // Sets default values
 AEffect::AEffect()
@@ -13,8 +15,12 @@ AEffect::AEffect()
 	PrimaryActorTick.bCanEverTick = true;
 
 	ParticleSystemComponent = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticleSystemComponent"));
-	SetRootComponent(ParticleSystemComponent);
+	ParticleSystemComponent->SetupAttachment(RootComponent);
 
+	NiagaraComponent = CreateDefaultSubobject<UNiagaraComponent>(TEXT("NiagaraComponent"));
+	NiagaraComponent->SetupAttachment(RootComponent);
+
+	NiagaraComponent->SetForceSolo(true);
 	//{
 	//	ConstructorHelpers::FObjectFinder<UParticleSystem> Finder(TEXT("/Script/Engine.ParticleSystem'/Game/StarterContent/Particles/P_Explosion.P_Explosion'"));
 	//	ensure(Finder.Object);
@@ -26,7 +32,6 @@ AEffect::AEffect()
 void AEffect::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -36,7 +41,7 @@ void AEffect::Tick(float DeltaTime)
 
 }
 
-void AEffect::SetEffect()
+void AEffect::SetEffect(FGunDataTableRow* GunDataTableRow)
 {
 	GetWorld()->GetTimerManager().ClearTimer(InitialLifeSpanTimer);
 
@@ -58,9 +63,13 @@ void AEffect::SetEffect()
 
 	ParticleSystemComponent->ActivateSystem();
 
-	//ParticleSystemComponent->SetTemplate(ParticleSystem);
+	ParticleSystemComponent->SetTemplate(GunDataTableRow->FireEffect);
 
-	FVector NewScale = FVector(0.1f, 0.1f, 0.1f);
-	ParticleSystemComponent->SetRelativeScale3D(NewScale);
+	NiagaraComponent->SetAsset(GunDataTableRow->FireEffectNiagara);
+	NiagaraComponent->Activate();
+	NiagaraComponent->SetRelativeLocation(GetActorLocation());
+
+	//FVector NewScale = FVector(0.1f, 0.1f, 0.1f);
+	//ParticleSystemComponent->SetRelativeScale3D(NewScale);
 }
 

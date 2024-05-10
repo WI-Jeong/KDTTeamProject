@@ -20,6 +20,7 @@ AItem::AItem()
 	SkeletalMeshComponent->SetupAttachment(SphereComponent);
 
 	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &ThisClass::OnCollisionBeginOverlap);
+	SphereComponent->OnComponentEndOverlap.AddDynamic(this, &ThisClass::OnComponentEndOverlap);
 }
 
 // Called when the game starts or when spawned
@@ -62,15 +63,32 @@ void AItem::OnCollisionBeginOverlap(UPrimitiveComponent* OverlappedComponent, AA
 	UE_LOG(LogTemp, Warning, TEXT("OnCollisionBeginOverlap"));
 
 	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(OtherActor);
-	ensure(HeroCharacter);
+	//ensure(HeroCharacter);
 	if (HeroCharacter == nullptr) { return; }
 
-	if (HeroCharacter->GetSpawnedGun())
+	//ChangeGun(HeroCharacter);
+
+	HeroCharacter->OverlapItem = this;
+}
+
+void AItem::OnComponentEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(OtherActor);
+	if (HeroCharacter == nullptr) { return; }
+
+	HeroCharacter->OverlapItem = nullptr;
+}
+
+void AItem::ChangeGun(AHeroCharacter* InHeroCharacter)
+{
+	if (InHeroCharacter == nullptr) { return; }
+
+	if (InHeroCharacter->GetSpawnedGun())
 	{
-		HeroCharacter->GetSpawnedGun()->Destroy();
+		InHeroCharacter->GetSpawnedGun()->Destroy();
 	}
 
-	HeroCharacter->SetWeaponData(WeaponName);
-	HeroCharacter->SpawnGun(HeroCharacter->GetWeaponDataTableRow()->Gun);
+	InHeroCharacter->SetWeaponData(WeaponName);
+	InHeroCharacter->SpawnGun(InHeroCharacter->GetWeaponDataTableRow()->Gun);
 }
 

@@ -27,7 +27,7 @@ protected:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<class AOUECharacter> Enemy;
 
-	float SpawnDelayTime = 1.f;
+	float SpawnDelayTime = 10.f;
 
 	FTimerHandle TimerHandle;
 

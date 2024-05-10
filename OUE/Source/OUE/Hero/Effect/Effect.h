@@ -29,8 +29,8 @@ protected:
 	UPROPERTY(EditAnywhere)
 	UParticleSystemComponent* ParticleSystemComponent;
 
-	//UPROPERTY(EditAnywhere)
-	//UParticleSystem* ParticleSystem;
+	UPROPERTY(EditAnywhere)
+	class UNiagaraComponent* NiagaraComponent;
 
 protected:
 	FTimerHandle InitialLifeSpanTimer;
@@ -39,6 +39,6 @@ protected:
 	float EffectInitialLifeSpan = 3.f;
 
 public:
-	void SetEffect();
+	void SetEffect(struct FGunDataTableRow* GunDataTableRow);
 
 };
