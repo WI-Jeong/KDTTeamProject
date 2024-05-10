@@ -32,7 +32,9 @@ protected:
 	void UseChoItem(class UInventoryUserWidget* Widget, uint32 InIndex);
 
 protected:
+	const uint32 MaxInvenSize = 60;
 	TArray<TSharedPtr<FChoItemData>> Inventory;
+	TMap<FName, TWeakPtr<FChoItemData>> InventoryMap;
 
 	class UChoDataSubsystem* ChoDataSubsystem;
 };

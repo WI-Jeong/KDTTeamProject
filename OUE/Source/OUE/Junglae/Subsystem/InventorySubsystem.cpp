@@ -15,7 +15,8 @@ void UInventorySubsystem::Deinitialize()
 void UInventorySubsystem::MakeInventory()
 {
 	ChoDataSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UChoDataSubsystem>();
-	Inventory.SetNum(60, false);
+	Inventory.Reserve(MaxInvenSize);
+	Inventory.SetNum(MaxInvenSize, false);
 
 	AddChoItem(TEXT("Potion_HP"));
 }
@@ -29,6 +30,15 @@ bool UInventorySubsystem::AddChoItem(const FName& InKey)
 		return false;
 	}
 	
+	if (InventoryMap.Find(InKey))
+	{
+		if (InventoryMap[InKey].IsValid())
+		{
+			++InventoryMap[InKey].Pin()->CurrentBundleCount;
+		}
+		return true;
+	}
+
 	bool bAdded = false;
 	const uint32 InvenSize = Inventory.Num();
 	for (uint32 i = 0; i < InvenSize; ++i)
@@ -36,8 +46,10 @@ bool UInventorySubsystem::AddChoItem(const FName& InKey)
 		if (Inventory[i] == nullptr)
 		{
 			TSharedPtr<FChoItemData> NewChoItemData = MakeShared<FChoItemData>(*ChoData);
+			NewChoItemData->ItemName = InKey;
 			++NewChoItemData->CurrentBundleCount;
 			Inventory[i] = NewChoItemData;
+			InventoryMap.Add(InKey, NewChoItemData);
 
 			bAdded = true;
 			break;
@@ -47,23 +59,31 @@ bool UInventorySubsystem::AddChoItem(const FName& InKey)
 	return bAdded;
 }
 #include "Junglae/UI/InventoryUserWidget.h"
+#include "Junglae/Controller/RPGPlayerController.h"
 
 void UInventorySubsystem::UseChoItem(UInventoryUserWidget* Widget, uint32 InIndex)
 {
 	TWeakPtr<FChoItemData> ItemData = Inventory[InIndex];
-	if (!ItemData.IsValid()) {return;}
+	if (!ItemData.IsValid()) { return; }
+
+	ARPGPlayerController* RPGPlayerController = Cast<ARPGPlayerController>(Widget->GetOwningPlayer());
+	ensure(RPGPlayerController);
 
 	UChoItem* Item = ItemData.Pin()->ItemFunctionClass->GetDefaultObject<UChoItem>();
+
 	UChoItem_Potion* Potion = Cast<UChoItem_Potion>(Item);
 	if (Potion)
 	{
 		--ItemData.Pin()->CurrentBundleCount;
-		Potion->UseItem();
+	}
 
-		if (ItemData.Pin()->CurrentBundleCount == 0)
-		{
-			Inventory[InIndex] = nullptr;
-		}
+	Item->UseChoItem(RPGPlayerController);
+
+	if (ItemData.Pin()->CurrentBundleCount == 0)
+	{
+		InventoryMap.Remove(Inventory[InIndex]->ItemName);
+		Inventory[InIndex] = nullptr;
+
 	}
 
 	Widget->FlushInven();
