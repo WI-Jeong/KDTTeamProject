@@ -30,6 +30,9 @@ protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	float HP = 10.f;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	bool bIsDead = false;
+
 protected:
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 

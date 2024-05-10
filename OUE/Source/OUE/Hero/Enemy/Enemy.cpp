@@ -3,6 +3,7 @@
 
 #include "Hero/Enemy/Enemy.h"
 #include "AIController.h"
+#include "Components/CapsuleComponent.h"
 
 // Sets default values
 AEnemy::AEnemy()
@@ -58,6 +59,10 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 		
 		GetMesh()->SetSimulatePhysics(true);
 		//PrimitiveComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+
+		bIsDead = true;
+
+		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 	}
 	return Damage;
 }
