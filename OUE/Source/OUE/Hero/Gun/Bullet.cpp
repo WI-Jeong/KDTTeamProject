@@ -9,6 +9,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Hero/Effect/Effect.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "NiagaraComponent.h"
 
 // Sets default values
 ABullet::ABullet()
@@ -29,6 +30,9 @@ ABullet::ABullet()
 
 	ParticleSystemComponent = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticleSystemComponent"));
 	ParticleSystemComponent->SetupAttachment(RootComponent);
+
+	NiagaraComponent = CreateDefaultSubobject<UNiagaraComponent>(TEXT("NiagaraComponent"));
+	NiagaraComponent->SetupAttachment(RootComponent);
 
 	//ProjectileMovement->UpdatedComponent = CollisionComp;
 	ProjectileMovement->InitialSpeed = InitialSpeed;
