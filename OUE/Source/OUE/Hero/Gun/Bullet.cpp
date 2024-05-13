@@ -5,7 +5,7 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
 #include "Hero/GameMode/HeroGameModeBase.h"
-#include "OUECharacter.h" //나중에 enemy로 이름 수정하자
+#include "Hero/Enemy/Enemy.h" //나중에 enemy로 이름 수정하자
 #include "Kismet/GameplayStatics.h"
 #include "Hero/Effect/Effect.h"
 #include "Particles/ParticleSystemComponent.h"
@@ -88,7 +88,7 @@ void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector 
 {
 	SetActorEnableCollision(false); //<< 이걸 하면 왜 풀이 망가질까 //맵 문제 였음 삼인칭맵 액터 떨어지면 삭제하는것때문에	
 
-	AOUECharacter* Enemy = Cast<AOUECharacter>(OtherActor);
+	AEnemy* Enemy = Cast<AEnemy>(OtherActor);
 	if (IsValid(Enemy))
 	{
 		UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr);
@@ -99,7 +99,7 @@ void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector 
 		SpawnHitEffect(NewTransform);*/
 	}
 
-	UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr); //나중에 하나없애야함
+	//UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr); //나중에 하나없애야함
 }
 
 void ABullet::SpawnHitEffect(FTransform InTransform)
