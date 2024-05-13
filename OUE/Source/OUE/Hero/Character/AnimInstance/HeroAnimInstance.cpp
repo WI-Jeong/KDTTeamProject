@@ -72,6 +72,7 @@ void UHeroAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	if (HeroCharacter)
 	{
 		IsRotateBodyToAim = HeroCharacter->GetIsRotateBodyToAim();
+		bIsRolling = HeroCharacter->GetIsRolling();
 	}
 
 	// Rotator

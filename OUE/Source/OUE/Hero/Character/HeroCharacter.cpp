@@ -96,6 +96,8 @@ void AHeroCharacter::Tick(float DeltaSeconds)
 	}
 
 	CloseUpAim(DeltaSeconds);
+
+	Timeline.TickTimeline(DeltaSeconds);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -143,6 +145,9 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 		// GetItem
 		EnhancedInputComponent->BindAction(GetItemAction, ETriggerEvent::Completed, this, &AHeroCharacter::GetItem);
+
+		// Roll
+		EnhancedInputComponent->BindAction(RollAction, ETriggerEvent::Started, this, &AHeroCharacter::Roll);
 	}
 	else
 	{
@@ -318,6 +323,29 @@ void AHeroCharacter::GetItem()
 	if (OverlapItem == nullptr) { return; }
 
 	OverlapItem->ChangeGun(this);
+}
+
+void AHeroCharacter::Roll()
+{
+	bIsRolling = true;
+
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	AnimInstance->Montage_Play(RollingMontage);
+
+	if (RollCurve)
+	{
+		FOnTimelineFloat CurveCallback;
+		CurveCallback.BindUFunction(this, FName("RollMove"));
+
+		Timeline.AddInterpFloat(RollCurve, CurveCallback);
+		Timeline.SetTimelineLength(1.f);
+		Timeline.PlayFromStart();
+	}
+}
+
+void AHeroCharacter::RollMove(float InRollCurve)
+{
+	GetCharacterMovement()->Velocity = GetActorForwardVector() * 1000.f * InRollCurve;
 }
 
 void AHeroCharacter::SetWeaponData(FName InRowName)

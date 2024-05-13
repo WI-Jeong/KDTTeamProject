@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "Components/TimelineComponent.h"
 #include "HeroCharacter.generated.h"
 
 class USpringArmComponent;
@@ -14,6 +15,7 @@ class UInputAction;
 struct FInputActionValue;
 class UHeroAnimInstance;
 class AGun;
+//struct FTimeline;
 
 USTRUCT()
 struct OUE_API FWeaponDataTableRow : public FTableRowBase
@@ -100,6 +102,10 @@ class OUE_API AHeroCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* GetItemAction;
 
+	/** Roll Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* RollAction;
+
 public:
 	AHeroCharacter();
 
@@ -141,7 +147,21 @@ protected:
 
 	float MaxHP = 100.f;
 
+	bool bIsRolling = false;
+
+	UPROPERTY(EditAnywhere)
+	UAnimMontage* RollingMontage;
+
+	UPROPERTY(EditAnywhere)
+	UCurveFloat* RollCurve;
+
+	FTimeline Timeline;
+
 public:
+	void SetIsRolling(bool InIsRolling) { bIsRolling = InIsRolling; }
+
+	bool GetIsRolling() { return bIsRolling; }
+
 	void SetIsReloading(bool InIsReloading) { IsReloading = InIsReloading; }
 
 	bool GetIsCrouch() { return IsCrouch; }
@@ -187,6 +207,11 @@ protected:
 	void ChangeFireMode();
 
 	void GetItem();
+
+	void Roll();
+
+	UFUNCTION()
+	void RollMove(float InRollCurve);
 
 public:
 	void SetWeaponData(FName InRowName = FName("NoWeapon"));
