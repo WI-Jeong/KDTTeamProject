@@ -31,8 +31,9 @@ ABullet::ABullet()
 	ParticleSystemComponent = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticleSystemComponent"));
 	ParticleSystemComponent->SetupAttachment(RootComponent);
 
-	NiagaraComponent = CreateDefaultSubobject<UNiagaraComponent>(TEXT("NiagaraComponent"));
-	NiagaraComponent->SetupAttachment(RootComponent);
+	//NiagaraComponent = CreateDefaultSubobject<UNiagaraComponent>(TEXT("NiagaraComponent"));
+	//NiagaraComponent->SetupAttachment(RootComponent);
+	//NiagaraComponent->SetForceSolo(true);
 
 	//ProjectileMovement->UpdatedComponent = CollisionComp;
 	ProjectileMovement->InitialSpeed = InitialSpeed;
@@ -72,6 +73,7 @@ void ABullet::SetBullet(FBulletTableRow* InTableRow)
 	ProjectileMovement->ProjectileGravityScale = InTableRow->BulletGravityScale;
 
 	ParticleSystemComponent->Activate();
+	//NiagaraComponent->Activate();
 }
 
 // Called when the game starts or when spawned
