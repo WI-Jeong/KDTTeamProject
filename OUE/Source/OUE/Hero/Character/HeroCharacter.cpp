@@ -82,6 +82,8 @@ void AHeroCharacter::BeginPlay()
 	{
 		SpawnGun(WeaponDataTableRow->Gun);
 	}
+
+	HP = MaxHP;
 }
 
 void AHeroCharacter::Tick(float DeltaSeconds)

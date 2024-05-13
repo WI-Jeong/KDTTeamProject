@@ -139,6 +139,8 @@ protected:
 
 	float HP = 10.f;
 
+	float MaxHP = 100.f;
+
 public:
 	void SetIsReloading(bool InIsReloading) { IsReloading = InIsReloading; }
 
@@ -153,6 +155,12 @@ public:
 	void PlayRecoilMontage();
 
 	void PlayReloadingMontage();
+
+	UFUNCTION(BlueprintCallable)
+	float GetHP() { return HP; }
+	
+	UFUNCTION(BlueprintCallable)
+	float GetMaxHP() { return MaxHP; }
 
 protected:
 
