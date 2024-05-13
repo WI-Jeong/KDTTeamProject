@@ -88,16 +88,20 @@ void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector 
 {
 	SetActorEnableCollision(false); //<< 이걸 하면 왜 풀이 망가질까 //맵 문제 였음 삼인칭맵 액터 떨어지면 삭제하는것때문에	
 
-	AEnemy* Enemy = Cast<AEnemy>(OtherActor);
-	if (IsValid(Enemy))
-	{
-		UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr);
+	UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr);
 
-		SetActorHiddenInGame(true);
+	//SetActorHiddenInGame(true);
 
-		/*FTransform NewTransform = FTransform(Hit.Location);
-		SpawnHitEffect(NewTransform);*/
-	}
+	//AEnemy* Enemy = Cast<AEnemy>(OtherActor);
+	//if (IsValid(Enemy))
+	//{
+	//	UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr);
+
+	//	SetActorHiddenInGame(true);
+
+	//	/*FTransform NewTransform = FTransform(Hit.Location);
+	//	SpawnHitEffect(NewTransform);*/
+	//}
 
 	//UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr); //나중에 하나없애야함
 }
