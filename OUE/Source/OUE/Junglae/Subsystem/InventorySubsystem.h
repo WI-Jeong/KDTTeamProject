@@ -33,8 +33,8 @@ protected:
 
 protected:
 	const uint32 MaxInvenSize = 60;
+	// 스마트포인터 TSharedPtr
 	TArray<TSharedPtr<FChoItemData>> Inventory;
-	TMap<FName, TWeakPtr<FChoItemData>> InventoryMap;
 
 	class UChoDataSubsystem* ChoDataSubsystem;
 };
