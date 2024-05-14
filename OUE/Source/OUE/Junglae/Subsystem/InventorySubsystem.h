@@ -32,6 +32,8 @@ protected:
 	void UseChoItem(class UInventoryUserWidget* Widget, uint32 InIndex);
 
 protected:
+	const uint32 MaxInvenSize = 60;
+	// 스마트포인터 TSharedPtr
 	TArray<TSharedPtr<FChoItemData>> Inventory;
 
 	class UChoDataSubsystem* ChoDataSubsystem;
