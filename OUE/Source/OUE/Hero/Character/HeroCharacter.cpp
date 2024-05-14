@@ -163,6 +163,8 @@ void AHeroCharacter::PlayRecoilMontage()
 
 void AHeroCharacter::PlayReloadingMontage()
 {
+	if (bIsRolling) { return; }
+
 	if (IsZoomIn)
 	{
 		ZoomInOut();
@@ -236,6 +238,8 @@ void AHeroCharacter::StopRun()
 
 void AHeroCharacter::ZoomInOut()
 {
+	if (bIsRolling) { return; }
+
 	if (IsReloading) { return; }
 
 	if (SpawnedGun == nullptr) { return; }
@@ -327,6 +331,10 @@ void AHeroCharacter::GetItem()
 
 void AHeroCharacter::Roll()
 {
+	if (bIsRolling) { return; }
+
+	if (CanJump() == false) { return; }
+
 	bIsRolling = true;
 
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
@@ -398,6 +406,8 @@ void AHeroCharacter::RotateBodyToAim(float DeltaSeconds)
 
 void AHeroCharacter::Jump()
 {
+	if (bIsRolling) { return; }
+
 	Super::Jump();
 
 	if (IsZoomIn)
