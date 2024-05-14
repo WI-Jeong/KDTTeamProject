@@ -80,6 +80,8 @@ void AGun::Fire()
 	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(GetWorld()->GetFirstPlayerController()->GetCharacter());
 	if (HeroCharacter)
 	{
+		if (HeroCharacter->GetIsRolling()) { return; }
+
 		HeroCharacter->PlayRecoilMontage();
 	}
 }
