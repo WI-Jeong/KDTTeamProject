@@ -71,8 +71,8 @@ protected:
 	UPROPERTY(EditAnywhere)
 	class UParticleSystemComponent* ParticleSystemComponent;
 
-	//UPROPERTY(EditAnywhere)
-	//class UNiagaraComponent* NiagaraComponent;
+	UPROPERTY(EditAnywhere)
+	class UNiagaraComponent* NiagaraComponent;
 
 protected:
 	UFUNCTION()
