@@ -85,7 +85,7 @@ struct FActorPool
 		
 		InActor->SetActorEnableCollision(false);
 		InActor->SetActorHiddenInGame(true);
-		InActor->SetActorTickEnabled(false);
+		//InActor->SetActorTickEnabled(false);
 		const TSet<UActorComponent*>& Components = InActor->GetComponents();
 		for (UActorComponent* It : Components)
 		{
