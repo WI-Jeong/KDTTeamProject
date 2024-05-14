@@ -71,6 +71,9 @@ protected:
 	UPROPERTY(EditAnywhere)
 	class UParticleSystemComponent* ParticleSystemComponent;
 
+	UPROPERTY(EditAnywhere)
+	class UNiagaraComponent* NiagaraComponent;
+
 protected:
 	UFUNCTION()
 	void OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit);

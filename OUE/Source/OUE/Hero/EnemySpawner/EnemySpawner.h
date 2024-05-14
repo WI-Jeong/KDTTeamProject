@@ -25,7 +25,7 @@ public:
 
 protected:
 	UPROPERTY(EditAnywhere)
-	TSubclassOf<class AOUECharacter> Enemy;
+	TSubclassOf<class AEnemy> Enemy;
 
 	float SpawnDelayTime = 10.f;
 

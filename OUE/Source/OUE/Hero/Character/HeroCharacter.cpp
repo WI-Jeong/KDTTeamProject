@@ -82,6 +82,8 @@ void AHeroCharacter::BeginPlay()
 	{
 		SpawnGun(WeaponDataTableRow->Gun);
 	}
+
+	HP = MaxHP;
 }
 
 void AHeroCharacter::Tick(float DeltaSeconds)
@@ -94,6 +96,8 @@ void AHeroCharacter::Tick(float DeltaSeconds)
 	}
 
 	CloseUpAim(DeltaSeconds);
+
+	Timeline.TickTimeline(DeltaSeconds);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -141,6 +145,9 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 		// GetItem
 		EnhancedInputComponent->BindAction(GetItemAction, ETriggerEvent::Completed, this, &AHeroCharacter::GetItem);
+
+		// Roll
+		EnhancedInputComponent->BindAction(RollAction, ETriggerEvent::Started, this, &AHeroCharacter::Roll);
 	}
 	else
 	{
@@ -156,6 +163,8 @@ void AHeroCharacter::PlayRecoilMontage()
 
 void AHeroCharacter::PlayReloadingMontage()
 {
+	if (bIsRolling) { return; }
+
 	if (IsZoomIn)
 	{
 		ZoomInOut();
@@ -229,6 +238,8 @@ void AHeroCharacter::StopRun()
 
 void AHeroCharacter::ZoomInOut()
 {
+	if (bIsRolling) { return; }
+
 	if (IsReloading) { return; }
 
 	if (SpawnedGun == nullptr) { return; }
@@ -274,6 +285,8 @@ void AHeroCharacter::ZoomInOut()
 
 void AHeroCharacter::StartAim()
 {
+	if (bIsRolling) { return; }
+
 	GetCharacterMovement()->bOrientRotationToMovement = false;
 
 	IsRotateBodyToAim = true;
@@ -316,6 +329,33 @@ void AHeroCharacter::GetItem()
 	if (OverlapItem == nullptr) { return; }
 
 	OverlapItem->ChangeGun(this);
+}
+
+void AHeroCharacter::Roll()
+{
+	if (bIsRolling) { return; }
+
+	if (CanJump() == false) { return; }
+
+	bIsRolling = true;
+
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	AnimInstance->Montage_Play(RollingMontage);
+
+	if (RollCurve)
+	{
+		FOnTimelineFloat CurveCallback;
+		CurveCallback.BindUFunction(this, FName("RollMove"));
+
+		Timeline.AddInterpFloat(RollCurve, CurveCallback);
+		Timeline.SetTimelineLength(1.f);
+		Timeline.PlayFromStart();
+	}
+}
+
+void AHeroCharacter::RollMove(float InRollCurve)
+{
+	GetCharacterMovement()->Velocity = GetActorForwardVector() * 1000.f * InRollCurve;
 }
 
 void AHeroCharacter::SetWeaponData(FName InRowName)
@@ -368,6 +408,8 @@ void AHeroCharacter::RotateBodyToAim(float DeltaSeconds)
 
 void AHeroCharacter::Jump()
 {
+	if (bIsRolling) { return; }
+
 	Super::Jump();
 
 	if (IsZoomIn)
@@ -386,6 +428,28 @@ void AHeroCharacter::CloseUpAim(float DeltaSeconds)
 	{
 		CameraBoom->TargetArmLength = FMath::Lerp(CameraBoom->TargetArmLength, TargetArmLengthDefault, DeltaSeconds * CloseUpSpeed);
 	}
+}
+
+float AHeroCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	float Damage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+
+	UE_LOG(LogTemp, Warning, TEXT("Hit Player!: %f"), Damage);
+
+	HP -= Damage;
+
+	if (HP <= 0 || FMath::IsNearlyZero(HP))
+	{
+		//SetActorEnableCollision(false);
+		GetController()->StopMovement();
+
+		//UPrimitiveComponent* PrimitiveComponent = Cast<UPrimitiveComponent>(GetMesh());
+		//PrimitiveComponent->SetSimulatePhysics(true);
+		//PrimitiveComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+
+		GetMesh()->SetSimulatePhysics(true);
+	}
+	return Damage;
 }
 
 void AHeroCharacter::OnConstruction(const FTransform& Transform)

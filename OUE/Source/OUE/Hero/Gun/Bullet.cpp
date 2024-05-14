@@ -5,10 +5,11 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
 #include "Hero/GameMode/HeroGameModeBase.h"
-#include "OUECharacter.h" //나중에 enemy로 이름 수정하자
+#include "Hero/Enemy/Enemy.h" //나중에 enemy로 이름 수정하자
 #include "Kismet/GameplayStatics.h"
 #include "Hero/Effect/Effect.h"
 #include "Particles/ParticleSystemComponent.h"
+#include "NiagaraComponent.h"
 
 // Sets default values
 ABullet::ABullet()
@@ -30,6 +31,10 @@ ABullet::ABullet()
 	ParticleSystemComponent = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("ParticleSystemComponent"));
 	ParticleSystemComponent->SetupAttachment(RootComponent);
 
+	NiagaraComponent = CreateDefaultSubobject<UNiagaraComponent>(TEXT("NiagaraComponent"));
+	NiagaraComponent->SetupAttachment(RootComponent);
+	NiagaraComponent->SetForceSolo(true);
+
 	//ProjectileMovement->UpdatedComponent = CollisionComp;
 	ProjectileMovement->InitialSpeed = InitialSpeed;
 	ProjectileMovement->MaxSpeed = MaxSpeed;
@@ -41,6 +46,10 @@ ABullet::ABullet()
 
 void ABullet::SetBullet(FBulletTableRow* InTableRow)
 {
+	UNiagaraSystem* temp = NiagaraComponent->GetAsset();
+	NiagaraComponent->SetAsset(nullptr);
+	//NiagaraComponent->Activate(false);
+
 	GetWorld()->GetTimerManager().ClearTimer(InitialLifeSpanTimer);
 
 	if (InTableRow->InitialLifeSpan == 0.f)
@@ -68,6 +77,8 @@ void ABullet::SetBullet(FBulletTableRow* InTableRow)
 	ProjectileMovement->ProjectileGravityScale = InTableRow->BulletGravityScale;
 
 	ParticleSystemComponent->Activate();
+	//NiagaraComponent->Activate();
+	NiagaraComponent->SetAsset(temp);
 }
 
 // Called when the game starts or when spawned
@@ -88,18 +99,22 @@ void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector 
 {
 	SetActorEnableCollision(false); //<< 이걸 하면 왜 풀이 망가질까 //맵 문제 였음 삼인칭맵 액터 떨어지면 삭제하는것때문에	
 
-	AOUECharacter* Enemy = Cast<AOUECharacter>(OtherActor);
-	if (IsValid(Enemy))
-	{
-		UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr);
+	UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr);
 
-		SetActorHiddenInGame(true);
+	//SetActorHiddenInGame(true);
 
-		/*FTransform NewTransform = FTransform(Hit.Location);
-		SpawnHitEffect(NewTransform);*/
-	}
+	//AEnemy* Enemy = Cast<AEnemy>(OtherActor);
+	//if (IsValid(Enemy))
+	//{
+	//	UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr);
 
-	UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr); //나중에 하나없애야함
+	//	SetActorHiddenInGame(true);
+
+	//	/*FTransform NewTransform = FTransform(Hit.Location);
+	//	SpawnHitEffect(NewTransform);*/
+	//}
+
+	//UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr); //나중에 하나없애야함
 }
 
 void ABullet::SpawnHitEffect(FTransform InTransform)

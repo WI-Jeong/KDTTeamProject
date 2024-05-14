@@ -2,7 +2,7 @@
 
 
 #include "Hero/EnemySpawner/EnemySpawner.h"
-#include "OUECharacter.h"
+#include "Hero/Enemy/Enemy.h"
 
 // Sets default values
 AEnemySpawner::AEnemySpawner()

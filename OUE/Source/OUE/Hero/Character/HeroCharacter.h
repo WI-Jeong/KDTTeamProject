@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "Components/TimelineComponent.h"
 #include "HeroCharacter.generated.h"
 
 class USpringArmComponent;
@@ -14,6 +15,7 @@ class UInputAction;
 struct FInputActionValue;
 class UHeroAnimInstance;
 class AGun;
+//struct FTimeline;
 
 USTRUCT()
 struct OUE_API FWeaponDataTableRow : public FTableRowBase
@@ -100,6 +102,10 @@ class OUE_API AHeroCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* GetItemAction;
 
+	/** Roll Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* RollAction;
+
 public:
 	AHeroCharacter();
 
@@ -137,7 +143,25 @@ protected:
 
 	class AItem* OverlapItem = nullptr; friend AItem;
 
+	float HP = 10.f;
+
+	float MaxHP = 100.f;
+
+	bool bIsRolling = false;
+
+	UPROPERTY(EditAnywhere)
+	UAnimMontage* RollingMontage;
+
+	UPROPERTY(EditAnywhere)
+	UCurveFloat* RollCurve;
+
+	FTimeline Timeline;
+
 public:
+	void SetIsRolling(bool InIsRolling) { bIsRolling = InIsRolling; }
+
+	bool GetIsRolling() { return bIsRolling; }
+
 	void SetIsReloading(bool InIsReloading) { IsReloading = InIsReloading; }
 
 	bool GetIsCrouch() { return IsCrouch; }
@@ -151,6 +175,12 @@ public:
 	void PlayRecoilMontage();
 
 	void PlayReloadingMontage();
+
+	UFUNCTION(BlueprintCallable)
+	float GetHP() { return HP; }
+	
+	UFUNCTION(BlueprintCallable)
+	float GetMaxHP() { return MaxHP; }
 
 protected:
 
@@ -178,6 +208,11 @@ protected:
 
 	void GetItem();
 
+	void Roll();
+
+	UFUNCTION()
+	void RollMove(float InRollCurve);
+
 public:
 	void SetWeaponData(FName InRowName = FName("NoWeapon"));
 
@@ -188,6 +223,8 @@ protected:
 	virtual void Jump() override;
 
 	void CloseUpAim(float DeltaSeconds);
+
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 
 protected:
 	virtual void OnConstruction(const FTransform& Transform) override;

@@ -44,6 +44,9 @@ protected:
 	UPROPERTY(BlueprintReadWrite)
 	bool IsRotateBodyToAim = false;
 
+	UPROPERTY(BlueprintReadWrite)
+	bool bIsRolling = false;
+
 protected:
 	virtual void NativeInitializeAnimation() override;
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
