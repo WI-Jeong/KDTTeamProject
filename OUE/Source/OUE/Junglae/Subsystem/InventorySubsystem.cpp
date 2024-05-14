@@ -39,7 +39,7 @@ bool UInventorySubsystem::AddChoItem(const FName& InKey)
 		TSharedPtr<FChoItemData> ItemData = Inventory[i];
 		if (ItemData == nullptr) { continue; }
 
-		if (ItemData->ItemName == NewItemData->ItemName) { continue; }
+		if (ItemData->ItemName != NewItemData->ItemName) { continue; }
 
 		if (ItemData->MaxBundleCount > ItemData->CurrentBundleCount)
 		{
