@@ -285,6 +285,8 @@ void AHeroCharacter::ZoomInOut()
 
 void AHeroCharacter::StartAim()
 {
+	if (bIsRolling) { return; }
+
 	GetCharacterMovement()->bOrientRotationToMovement = false;
 
 	IsRotateBodyToAim = true;
