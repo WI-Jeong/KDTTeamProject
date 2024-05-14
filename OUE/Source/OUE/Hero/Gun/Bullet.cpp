@@ -46,8 +46,8 @@ ABullet::ABullet()
 
 void ABullet::SetBullet(FBulletTableRow* InTableRow)
 {
-	UNiagaraSystem* temp = NiagaraComponent->GetAsset();
-	NiagaraComponent->SetAsset(nullptr);
+	//UNiagaraSystem* temp = NiagaraComponent->GetAsset();
+	//NiagaraComponent->SetAsset(nullptr);
 	//NiagaraComponent->Activate(false);
 
 	GetWorld()->GetTimerManager().ClearTimer(InitialLifeSpanTimer);
@@ -76,9 +76,10 @@ void ABullet::SetBullet(FBulletTableRow* InTableRow)
 	ProjectileMovement->InitialSpeed = InTableRow->BulletSpeed;
 	ProjectileMovement->ProjectileGravityScale = InTableRow->BulletGravityScale;
 
-	ParticleSystemComponent->Activate();
+	//ParticleSystemComponent->Activate();
 	//NiagaraComponent->Activate();
-	NiagaraComponent->SetAsset(temp);
+	//NiagaraComponent->SetAsset(InTableRow->);
+	NiagaraComponent->ReinitializeSystem();
 }
 
 // Called when the game starts or when spawned

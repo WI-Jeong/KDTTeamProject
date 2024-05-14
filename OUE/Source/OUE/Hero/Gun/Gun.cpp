@@ -116,6 +116,8 @@ void AGun::SpawnBullet(TSubclassOf<ABullet> InBullet)
 					NewActor->SetBullet(BulletTableRow);
 				}
 			, true, nullptr, nullptr);
+
+			//NewBullet->SetBullet(BulletTableRow);
 		}
 	}
 }
