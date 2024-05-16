@@ -1,6 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
+// Fill out your copyright notice in the Description page of Project Settings.
+
+
 #include "Junglae/Controller/RPGPlayerController.h"
 #include "Junglae/Subsystem/ChoSubsystem.h"
 
@@ -31,8 +34,6 @@ void ARPGPlayerController::OnPossess(APawn* PawnToPossess)
     }
 }
 
-<<<<<<< HEAD
-=======
 void ARPGPlayerController::BeginPlay()
 {
     Super::BeginPlay();
@@ -48,4 +49,3 @@ void ARPGPlayerController::BeginPlay()
         }
     }
 }
->>>>>>> 6bbe29829c7adb2d0b8aed12c12bb400114b9ef7
