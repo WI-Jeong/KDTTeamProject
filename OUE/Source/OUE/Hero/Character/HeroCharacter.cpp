@@ -326,11 +326,28 @@ void AHeroCharacter::ChangeFireMode()
 	SpawnedGun->ChangeFireMode();
 }
 
+#include "Junglae/Subsystem/InventorySubsystem.h"
+#include "Junglae/Subsystem/ChoSubsystem.h"
 void AHeroCharacter::GetItem()
 {
 	if (OverlapItem == nullptr) { return; }
 
 	OverlapItem->ChangeGun(this);
+	
+	UGameInstanceSubsystem* GameInstanceSubsystem2 = GetGameInstance()->GetSubsystemBase(UChoDataSubsystem::StaticClass());
+	UChoDataSubsystem* ChoDataSubsystem = Cast<UChoDataSubsystem>(GameInstanceSubsystem2);
+	
+	//UGameInstanceSubsystem* GameInstanceSubsystem = GetGameInstance()->GetSubsystemBase(UInventorySubsystem::StaticClass());
+	//Cast<UInventorySubsystem>(GameInstanceSubsystem)->AddChoItem(TEXT("Gun"), ChoDataSubsystem);
+
+	UInventorySubsystem* GameInstanceSubsystem = ULocalPlayer::GetSubsystem<UInventorySubsystem>(
+		Cast<APlayerController>(GetController())->GetLocalPlayer());
+	GameInstanceSubsystem->AddChoItem(TEXT("Gun"));
+
+	// 
+	//UGameInstance* GameInstance = GetGameInstance();
+	//UInventorySubsystem* MySubsystem = GameInstance->GetSubsystem<UInventorySubsystem>();
+	//MySubsystem->AddChoItem(TEXT("Gun"));
 }
 
 void AHeroCharacter::Roll()

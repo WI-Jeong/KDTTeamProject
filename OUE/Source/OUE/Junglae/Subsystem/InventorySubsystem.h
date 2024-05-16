@@ -27,7 +27,7 @@ protected:
 	virtual void Deinitialize();
 
 	void MakeInventory();
-
+public:
 	bool AddChoItem(const FName& InKey);
 	void UseChoItem(class UInventoryUserWidget* Widget, uint32 InIndex);
 

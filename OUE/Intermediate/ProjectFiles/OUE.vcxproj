@@ -75,7 +75,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{BB83FD2F-ABDF-3089-9D51-12E9031080AE}</ProjectGuid>
+    <ProjectGuid>{76044CE0-72D2-32EE-BAC8-561F62F3BD3F}</ProjectGuid>
     <RootNamespace>OUE</RootNamespace>
   </PropertyGroup>
   <Import Project="UECommon.props" />
@@ -254,6 +254,15 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\OUE\Hero\Effect\Effect.h"/>
+<<<<<<< HEAD
+    <ClCompile Include="..\..\Source\OUE\Hero\Enemy\Enemy.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\Enemy\Enemy.h"/>
+=======
+>>>>>>> main
     <ClCompile Include="..\..\Source\OUE\Hero\EnemySpawner\EnemySpawner.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
