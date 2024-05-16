@@ -37,6 +37,7 @@
 /NATVIS:"..\Plugins\FX\Niagara\Intermediate\Build\Win64\x64\UnrealEditor\Development\Niagara\Niagara.natvis"
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\OUEEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.obj"
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Module.OUE.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Effect.cpp.obj"
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Bullet.cpp.obj"
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Gun.cpp.obj"
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Gun.gen.cpp.obj"
