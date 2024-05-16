@@ -23,9 +23,17 @@ void UInventorySubsystem::MakeInventory()
 	}
 }
 
+
+#include "Junglae/UI/InventoryUserWidget.h"
+#include "Junglae/Controller/RPGPlayerController.h"
+
+
 bool UInventorySubsystem::AddChoItem(const FName& InKey)
 {
-	const FChoItemData* ChoData = ChoDataSubsystem->FindChoItem(InKey);
+	const FChoItemData* ChoData;
+
+	ChoData = ChoDataSubsystem->FindChoItem(InKey);
+
 	if (!ChoData)
 	{
 		check(false);
@@ -64,9 +72,6 @@ bool UInventorySubsystem::AddChoItem(const FName& InKey)
 
 	return bAdded;
 }
-// 이제부터 파일 쓸거기 때문에 include 지금 해줘도 상관 없음.
-#include "Junglae/UI/InventoryUserWidget.h"
-#include "Junglae/Controller/RPGPlayerController.h"
 
 void UInventorySubsystem::UseChoItem(UInventoryUserWidget* Widget, uint32 InIndex)
 {
