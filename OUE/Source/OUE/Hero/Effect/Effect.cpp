@@ -54,13 +54,15 @@ void AEffect::Tick(float DeltaTime)
 
 }
 
-void AEffect::SetEffect(FGunDataTableRow* GunDataTableRow)
+void AEffect::SetEffect(UParticleSystem* ParticleSystem/*, float InEffectInitialLifeSpan*/)
 {
 	GetWorld()->GetTimerManager().ClearTimer(InitialLifeSpanTimer);
 
+	//EffectInitialLifeSpan = InEffectInitialLifeSpan;
+
 	if (EffectInitialLifeSpan == 0.f)
 	{
-		ensure(false);
+		//ensure(false);
 		return;
 	}
 	auto TimerDelegate = [this]()
@@ -76,7 +78,7 @@ void AEffect::SetEffect(FGunDataTableRow* GunDataTableRow)
 
 	ParticleSystemComponent->ActivateSystem();
 
-	ParticleSystemComponent->SetTemplate(GunDataTableRow->FireEffect);
+	ParticleSystemComponent->SetTemplate(ParticleSystem);
 
 	/*NiagaraComponent->SetAsset(GunDataTableRow->FireEffectNiagara);
 	NiagaraComponent->Activate();

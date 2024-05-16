@@ -32,7 +32,18 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\timelinecomponent.generated.h",
             "d:\\han\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\herocharacter.generated.h",
             "d:\\han\\team\\oue\\source\\oue\\hero\\effect\\effect.h",
-            "d:\\han\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\effect.generated.h"
+            "d:\\han\\team\\oue\\intermediate\\build\\win64\\unrealeditor\\inc\\oue\\uht\\effect.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\audiocomponent.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\public\\audio\\soundparametercontrollerinterface.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\soundparametercontrollerinterface.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\audioextensions\\public\\iaudioparametertransmitter.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\audiomixer\\public\\quartz\\audiomixerquantizedcommands.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\audiomixer\\public\\quartz\\audiomixerclock.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\audiomixer\\public\\quartz\\quartzmetronome.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\sound\\quartzsubscription.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\sound\\quartzsubscriptiontoken.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\containers\\consumeallmpmcqueue.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\audiocomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

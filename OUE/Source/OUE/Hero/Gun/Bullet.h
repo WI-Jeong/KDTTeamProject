@@ -26,6 +26,24 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	float InitialLifeSpan = 1.f;
+
+	UPROPERTY(EditAnywhere)
+	FVector StaticMeshSize = FVector(0.1f, 0.1f, 0.1f);
+
+	UPROPERTY(EditAnywhere)
+	FVector ColliderSize = FVector(0.05f, 0.05f, 0.05f);
+
+	UPROPERTY(EditAnywhere)
+	bool bShouldBounce = false;
+
+	UPROPERTY(EditAnywhere)
+	float Damage = 1.f;
+
+	UPROPERTY(EditAnywhere)
+	bool bIsGrenade = false;
+
+	UPROPERTY(EditAnywhere)
+	UParticleSystem* ExplosionEffect;
 };
 
 UCLASS()
@@ -73,6 +91,10 @@ protected:
 
 	UPROPERTY(EditAnywhere)
 	class UNiagaraComponent* NiagaraComponent;
+
+	bool bIsGrenade = false;
+
+	UParticleSystem* ExplosionEffect;
 
 protected:
 	UFUNCTION()

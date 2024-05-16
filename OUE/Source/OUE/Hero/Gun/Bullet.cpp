@@ -10,6 +10,7 @@
 #include "Hero/Effect/Effect.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "NiagaraComponent.h"
+#include "Components/CapsuleComponent.h"
 
 // Sets default values
 ABullet::ABullet()
@@ -80,6 +81,16 @@ void ABullet::SetBullet(FBulletTableRow* InTableRow)
 	//NiagaraComponent->Activate();
 	//NiagaraComponent->SetAsset(InTableRow->);
 	NiagaraComponent->ReinitializeSystem();
+
+	StaticMeshComponent->SetRelativeScale3D(InTableRow->StaticMeshSize);
+
+	ProjectileMovement->bShouldBounce = InTableRow->bShouldBounce;
+
+	Damage = InTableRow->Damage;
+
+	bIsGrenade = InTableRow->bIsGrenade;
+
+	ExplosionEffect = InTableRow->ExplosionEffect;
 }
 
 // Called when the game starts or when spawned
@@ -98,9 +109,27 @@ void ABullet::Tick(float DeltaTime)
 
 void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector NormalImpulse, const FHitResult& Hit)
 {
-	SetActorEnableCollision(false); //<< 이걸 하면 왜 풀이 망가질까 //맵 문제 였음 삼인칭맵 액터 떨어지면 삭제하는것때문에	
+	ACharacter * Character = Cast<ACharacter>(OtherActor);
+	if (Character)
+	{
+		if (Character->GetCapsuleComponent()->GetCollisionObjectType() == ECollisionChannel::ECC_Pawn)
+		{
+			SetActorEnableCollision(false); //<< 이걸 하면 왜 풀이 망가질까 //맵 문제 였음 삼인칭맵 액터 떨어지면 삭제하는것때문에	
+		}
 
+		if (bIsGrenade)
+		{
+			const TArray<AActor*>& IgnoreActors = TArray<AActor*>();
+			UGameplayStatics::ApplyRadialDamage(GetWorld(), Damage, Hit.ImpactPoint, 500.f, nullptr, IgnoreActors);
+			DrawDebugSphere(GetWorld(), Hit.ImpactPoint, 500.f, 32, FColor::Blue);
+
+			FTransform NewTransform = FTransform(Hit.Location);
+			SpawnHitEffect(NewTransform);
+		}
+	}
+	
 	UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, nullptr);
+
 
 	//SetActorHiddenInGame(true);
 
@@ -120,13 +149,14 @@ void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector 
 
 void ABullet::SpawnHitEffect(FTransform InTransform)
 {
-	/*AHeroGameModeBase* GameMode = Cast<AHeroGameModeBase>(GetWorld()->GetAuthGameMode());
+	AHeroGameModeBase* GameMode = Cast<AHeroGameModeBase>(GetWorld()->GetAuthGameMode());
 	ensure(GameMode);
 	AEffect* NewEffect = GameMode->GetEffectPool().New<AEffect>(InTransform,
 		[this](AEffect* NewActor)
 		{
-			NewActor->SetEffect(GunDataTableRow);
+			//NewActor->SetEffectInitialLifeSpan(3.f);
+			NewActor->SetEffect(ExplosionEffect);
 		}
-	, true, nullptr, nullptr);*/
+	, true, nullptr, nullptr);
 }
 

@@ -99,4 +99,7 @@ protected:
 
 	FGunDataTableRow* GunDataTableRow;
 
+	UPROPERTY(EditAnywhere)
+	UAudioComponent* AudioComponent;
+
 };
