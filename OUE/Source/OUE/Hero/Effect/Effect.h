@@ -39,6 +39,7 @@ protected:
 	float EffectInitialLifeSpan = 3.f;
 
 public:
-	void SetEffect(struct FGunDataTableRow* GunDataTableRow);
+	void SetEffect(UParticleSystem* ParticleSystem/*, float InEffectInitialLifeSpan = 3.f*/);
 
+	//void SetEffectInitialLifeSpan(float InLifeSpan) { EffectInitialLifeSpan = InLifeSpan; }
 };

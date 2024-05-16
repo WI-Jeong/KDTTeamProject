@@ -7,6 +7,7 @@
 #include "Hero/GameMode/HeroGameModeBase.h"
 #include "Hero/Character/HeroCharacter.h"
 #include "Hero/Effect/Effect.h"
+#include "Components/AudioComponent.h"
 
 // Sets default values
 AGun::AGun()
@@ -20,6 +21,9 @@ AGun::AGun()
 	//ī�޶� ���� ������ ���� �ڼ� �������۳�Ʈ
 	ChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("ChildActorComponent"));
 	ChildActorComponent->SetupAttachment(SkeletalMeshComponent);
+
+	AudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("AudioComponent"));
+	AudioComponent->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned
@@ -84,6 +88,8 @@ void AGun::Fire()
 
 		HeroCharacter->PlayRecoilMontage();
 	}
+
+	AudioComponent->Play();
 }
 
 void AGun::PullTrigger()
@@ -140,7 +146,7 @@ void AGun::SpawnEffect()
 				[this](AEffect* NewActor)
 				{
 					/*NewActor->SetProjectileData(ProjectileRow);*/
-					NewActor->SetEffect(GunDataTableRow);
+					NewActor->SetEffect(GunDataTableRow->FireEffect);
 				}
 			, true, nullptr, nullptr);
 		}

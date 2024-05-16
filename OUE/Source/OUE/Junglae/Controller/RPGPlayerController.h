@@ -8,7 +8,7 @@
 #include "RPGPlayerController.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class OUE_API ARPGPlayerController : public APlayerController
@@ -17,7 +17,7 @@ class OUE_API ARPGPlayerController : public APlayerController
 
 public:
 	ARPGPlayerController();
-	
+
 public:
 	virtual void OnPossess(APawn* PawnToPossess) override;
 	virtual void BeginPlay() override;
