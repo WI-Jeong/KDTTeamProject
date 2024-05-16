@@ -80,6 +80,8 @@ void AGun::Fire()
 	AHeroCharacter* HeroCharacter = Cast<AHeroCharacter>(GetWorld()->GetFirstPlayerController()->GetCharacter());
 	if (HeroCharacter)
 	{
+		if (HeroCharacter->GetIsRolling()) { return; }
+
 		HeroCharacter->PlayRecoilMontage();
 	}
 }
@@ -116,6 +118,8 @@ void AGun::SpawnBullet(TSubclassOf<ABullet> InBullet)
 					NewActor->SetBullet(BulletTableRow);
 				}
 			, true, nullptr, nullptr);
+
+			//NewBullet->SetBullet(BulletTableRow);
 		}
 	}
 }

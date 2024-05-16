@@ -8,5 +8,9 @@
 /NODEFAULTLIB
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\OUEEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Module.OUE.cpp.obj"
+<<<<<<< HEAD
+=======
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\HeroCharacter.cpp.obj"
+>>>>>>> 6bbe29829c7adb2d0b8aed12c12bb400114b9ef7
 "D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Default.rc2.res"
 /OUT:"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\UnrealEditor-OUE.lib"

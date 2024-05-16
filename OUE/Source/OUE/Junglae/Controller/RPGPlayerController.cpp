@@ -4,6 +4,16 @@
 #include "Junglae/Controller/RPGPlayerController.h"
 #include "Junglae/Subsystem/ChoSubsystem.h"
 
+ARPGPlayerController::ARPGPlayerController()
+{
+    // 블루프린트 클래스를 받아온다
+    static ConstructorHelpers::FClassFinder<UMainWidget> MainHUDWidgetAsset(TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/JWI/UI/UI_Main.UI_Main_C'"));
+
+    // TSubclassOf 템플릿 클래스 객체에 블루프린트 클래스를 넣어준다
+    if (MainHUDWidgetAsset.Succeeded())
+        MainHUDWidgetClass = MainHUDWidgetAsset.Class;
+}
+
 void ARPGPlayerController::OnPossess(APawn* PawnToPossess)
 {
     UInventorySubsystem* InventorySubsystem =
@@ -21,3 +31,21 @@ void ARPGPlayerController::OnPossess(APawn* PawnToPossess)
     }
 }
 
+<<<<<<< HEAD
+=======
+void ARPGPlayerController::BeginPlay()
+{
+    Super::BeginPlay();
+
+    if (IsValid(MainHUDWidgetClass))
+    {
+        MainWidget = Cast<UMainWidget>(CreateWidget(GetWorld(), MainHUDWidgetClass));
+
+        if (IsValid(MainWidget))
+        {
+            // 위젯을 뷰포트에 띄우는 함수
+            MainWidget->AddToViewport();
+        }
+    }
+}
+>>>>>>> 6bbe29829c7adb2d0b8aed12c12bb400114b9ef7

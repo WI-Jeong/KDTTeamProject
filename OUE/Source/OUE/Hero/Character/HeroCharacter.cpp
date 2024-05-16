@@ -130,11 +130,11 @@ void AHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		EnhancedInputComponent->BindAction(ZoomAction, ETriggerEvent::Completed, this, &AHeroCharacter::ZoomInOut);
 
 		// Aim
-		EnhancedInputComponent->BindAction(AimAction, ETriggerEvent::Started, this, &AHeroCharacter::StartAim);
+		EnhancedInputComponent->BindAction(AimAction, ETriggerEvent::Triggered, this, &AHeroCharacter::StartAim);
 		EnhancedInputComponent->BindAction(AimAction, ETriggerEvent::Completed, this, &AHeroCharacter::StopAim);
 
 		// Trigger
-		EnhancedInputComponent->BindAction(TriggerAction, ETriggerEvent::Started, this, &AHeroCharacter::PullTrigger);
+		EnhancedInputComponent->BindAction(TriggerAction, ETriggerEvent::Triggered, this, &AHeroCharacter::PullTrigger);
 		EnhancedInputComponent->BindAction(TriggerAction, ETriggerEvent::Completed, this, &AHeroCharacter::ReleaseTrigger);
 
 		// ChangeFireMode
@@ -303,6 +303,8 @@ void AHeroCharacter::StopAim()
 
 void AHeroCharacter::PullTrigger()
 {
+	if (bIsRolling) { return; }
+
 	//UE_LOG(LogTemp, Warning, TEXT("PullTrigger"));
 	if (SpawnedGun == nullptr) { return; }
 
@@ -333,13 +335,20 @@ void AHeroCharacter::GetItem()
 
 void AHeroCharacter::Roll()
 {
+
+
+	if (IsZoomIn) { return; }
+
 	if (bIsRolling) { return; }
 
 	if (CanJump() == false) { return; }
 
 	bIsRolling = true;
 
+	ReleaseTrigger();
+
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	AnimInstance->Montage_Stop(0);
 	AnimInstance->Montage_Play(RollingMontage);
 
 	if (RollCurve)
