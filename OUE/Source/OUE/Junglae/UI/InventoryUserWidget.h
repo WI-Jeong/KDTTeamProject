@@ -34,6 +34,9 @@ protected:
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
 	UTextBlock* ItemDesc;
 
+	UPROPERTY(EditAnywhere, meta = (BindWidget))
+	class UInventoryItemUserWidget* Weapon;
+
 	int32 InvenSize = 0;
 	uint32 LastHoveredIndex = (uint32) - 1;
 

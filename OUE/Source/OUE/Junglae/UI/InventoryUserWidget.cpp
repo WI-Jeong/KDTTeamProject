@@ -37,7 +37,7 @@ void UInventoryUserWidget::NativeConstruct()
 			ensure(Widget);
 
 			Widget->ItemIndex = k + i * Col;
-
+			// 마우스가 아이템 위로 올라갔을 때 텍스트가 뜨게함.
 			Widget->ItemBtnHovered.BindLambda(
 				[this](UInventoryItemUserWidget* ItemWidget)
 				{
@@ -62,8 +62,9 @@ void UInventoryUserWidget::NativeDestruct()
 	Super::NativeDestruct();
 }
 
+//인벤토리 비우는 함수
 void UInventoryUserWidget::FlushInven()
-{
+{   // 인벤토리 크기만큼 실행
 	for (int32 i = 0; i < InvenSize; ++i)
 	{
 		if (InventorySubsystem->Inventory[i] == nullptr)
