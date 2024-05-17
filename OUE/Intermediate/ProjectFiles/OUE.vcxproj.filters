@@ -75,10 +75,22 @@
     <Filter Include="Source\OUE\Hero\AnimNotify">
       <UniqueIdentifier>{8196E992-424C-3735-8AA8-A25C5DB2AB79}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\OUE\Hero\AnimNotify\EnemyAttackAnimNotify.cpp">
+      <Filter>Source\OUE\Hero\AnimNotify</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\AnimNotify\EnemyAttackAnimNotify.h">
+      <Filter>Source\OUE\Hero\AnimNotify</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\OUE\Hero\AnimNotify\ReloadAnimNotify.cpp">
       <Filter>Source\OUE\Hero\AnimNotify</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\OUE\Hero\AnimNotify\ReloadAnimNotify.h">
+      <Filter>Source\OUE\Hero\AnimNotify</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\OUE\Hero\AnimNotify\RollEndAnimNotify.cpp">
+      <Filter>Source\OUE\Hero\AnimNotify</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\AnimNotify\RollEndAnimNotify.h">
       <Filter>Source\OUE\Hero\AnimNotify</Filter>
     </ClInclude>
     <Filter Include="Source\OUE\Hero\Character">
@@ -108,7 +120,6 @@
     <ClInclude Include="..\..\Source\OUE\Hero\Effect\Effect.h">
       <Filter>Source\OUE\Hero\Effect</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <Filter Include="Source\OUE\Hero\Enemy">
       <UniqueIdentifier>{D69E8550-97B2-3F1D-91EB-0FC787ABF995}</UniqueIdentifier>
     </Filter>
@@ -118,8 +129,6 @@
     <ClInclude Include="..\..\Source\OUE\Hero\Enemy\Enemy.h">
       <Filter>Source\OUE\Hero\Enemy</Filter>
     </ClInclude>
-=======
->>>>>>> main
     <Filter Include="Source\OUE\Hero\EnemySpawner">
       <UniqueIdentifier>{867D2E2F-3171-32DC-A064-9ED91AA10C2D}</UniqueIdentifier>
     </Filter>
@@ -174,6 +183,9 @@
     <Filter Include="Source\OUE\Junglae\ChoItem">
       <UniqueIdentifier>{AB3F2DF9-6EB2-3D05-93E9-88C1883D2F92}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\OUE\Junglae\ChoItem\ChoItem.cpp">
+      <Filter>Source\OUE\Junglae\ChoItem</Filter>
+    </ClCompile>
     <ClInclude Include="..\..\Source\OUE\Junglae\ChoItem\ChoItem.h">
       <Filter>Source\OUE\Junglae\ChoItem</Filter>
     </ClInclude>

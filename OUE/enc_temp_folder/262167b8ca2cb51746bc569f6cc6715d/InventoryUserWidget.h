@@ -6,7 +6,6 @@
 #include "Blueprint/UserWidget.h"
 #include "Components/TextBlock.h"
 #include "Components/UniformGridPanel.h"
-#include "Junglae/ChoItem/ChoItem.h"
 #include "InventoryUserWidget.generated.h"
 
 /**
@@ -36,7 +35,7 @@ protected:
 	UTextBlock* ItemDesc;
 
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
-	class UInventoryItemUserWidget* Weapon; friend UChoItem_Gun;
+	class UInventoryItemUserWidget* Weapon;
 
 	int32 InvenSize = 0;
 	uint32 LastHoveredIndex = (uint32) - 1;

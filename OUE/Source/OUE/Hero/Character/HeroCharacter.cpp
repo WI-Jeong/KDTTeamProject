@@ -62,6 +62,16 @@ AHeroCharacter::AHeroCharacter()
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
 
+void AHeroCharacter::Heal(float HealAmount)
+{
+	HP += HealAmount;
+
+	if (HP > MaxHP)
+	{
+		HP = MaxHP;
+	}
+}
+
 void AHeroCharacter::BeginPlay()
 {
 	// Call the base class  

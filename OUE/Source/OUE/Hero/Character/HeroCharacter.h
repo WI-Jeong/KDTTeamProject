@@ -109,6 +109,9 @@ class OUE_API AHeroCharacter : public ACharacter
 public:
 	AHeroCharacter();
 
+	UFUNCTION(BlueprintCallable, Category = "Health")
+	void Heal(float HealAmount);
+
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	bool IsCrouch = false;
