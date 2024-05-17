@@ -120,8 +120,8 @@ void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector 
 		if (bIsGrenade)
 		{
 			const TArray<AActor*>& IgnoreActors = TArray<AActor*>();
-			UGameplayStatics::ApplyRadialDamage(GetWorld(), Damage, Hit.ImpactPoint, 500.f, nullptr, IgnoreActors);
-			DrawDebugSphere(GetWorld(), Hit.ImpactPoint, 500.f, 32, FColor::Blue);
+			UGameplayStatics::ApplyRadialDamage(GetWorld(), Damage, Hit.ImpactPoint, 100.f, nullptr, IgnoreActors);
+			DrawDebugSphere(GetWorld(), Hit.ImpactPoint, 100.f, 32, FColor::Blue);
 
 			FTransform NewTransform = FTransform(Hit.Location);
 			SpawnHitEffect(NewTransform);

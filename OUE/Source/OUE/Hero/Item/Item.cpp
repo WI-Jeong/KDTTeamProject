@@ -21,6 +21,8 @@ AItem::AItem()
 
 	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &ThisClass::OnCollisionBeginOverlap);
 	SphereComponent->OnComponentEndOverlap.AddDynamic(this, &ThisClass::OnComponentEndOverlap);
+
+	//SphereComponent->SetSphereRadius(100.f);
 }
 
 // Called when the game starts or when spawned
