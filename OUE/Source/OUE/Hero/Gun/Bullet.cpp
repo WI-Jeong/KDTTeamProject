@@ -132,6 +132,8 @@ void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector 
 
 			FTransform NewTransform = FTransform(Hit.Location);
 			SpawnHitEffect(NewTransform);
+
+			AudioComponent->Play();
 		}
 	}
 	

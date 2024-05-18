@@ -18,6 +18,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Hero/Item/Item.h"
+#include "Components/AudioComponent.h"
 
 //DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -60,6 +61,9 @@ AHeroCharacter::AHeroCharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+
+	AudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("AudioComponent"));
+	AudioComponent->SetupAttachment(RootComponent);
 }
 
 void AHeroCharacter::Heal(float HealAmount)

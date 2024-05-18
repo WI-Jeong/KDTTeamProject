@@ -81,6 +81,12 @@
     <ClInclude Include="..\..\Source\OUE\Hero\AnimNotify\EnemyAttackAnimNotify.h">
       <Filter>Source\OUE\Hero\AnimNotify</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\OUE\Hero\AnimNotify\FootSoundAnimNotify.cpp">
+      <Filter>Source\OUE\Hero\AnimNotify</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Hero\AnimNotify\FootSoundAnimNotify.h">
+      <Filter>Source\OUE\Hero\AnimNotify</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\OUE\Hero\AnimNotify\ReloadAnimNotify.cpp">
       <Filter>Source\OUE\Hero\AnimNotify</Filter>
     </ClCompile>
