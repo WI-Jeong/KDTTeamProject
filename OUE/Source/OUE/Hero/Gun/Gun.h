@@ -98,8 +98,4 @@ protected:
 	FDataTableRowHandle GunDataTableRowHandle;
 
 	FGunDataTableRow* GunDataTableRow;
-
-	UPROPERTY(EditAnywhere)
-	UAudioComponent* AudioComponent;
-
 };

@@ -21,9 +21,6 @@ AGun::AGun()
 	//ī�޶� ���� ������ ���� �ڼ� �������۳�Ʈ
 	ChildActorComponent = CreateDefaultSubobject<UChildActorComponent>(TEXT("ChildActorComponent"));
 	ChildActorComponent->SetupAttachment(SkeletalMeshComponent);
-
-	AudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("AudioComponent"));
-	AudioComponent->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned
@@ -88,8 +85,6 @@ void AGun::Fire()
 
 		HeroCharacter->PlayRecoilMontage();
 	}
-
-	AudioComponent->Play();
 }
 
 void AGun::PullTrigger()
