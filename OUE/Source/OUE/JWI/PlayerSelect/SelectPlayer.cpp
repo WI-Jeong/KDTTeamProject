@@ -2,13 +2,13 @@
 
 
 #include "SelectPlayer.h"
+#include "../../CharacterSelectGameMode.h"
 
 // Sets default values
 ASelectPlayer::ASelectPlayer()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 // Called when the game starts or when spawned
@@ -29,6 +29,5 @@ void ASelectPlayer::Tick(float DeltaTime)
 void ASelectPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
 }
 
