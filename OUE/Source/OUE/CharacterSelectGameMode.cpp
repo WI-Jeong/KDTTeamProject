@@ -19,6 +19,7 @@ ACharacterSelectGameMode::ACharacterSelectGameMode()
 
 void ACharacterSelectGameMode::EnableStartButton(bool Enable)
 {
+	mSelectWidget->EnableStartButton(Enable);
 }
 
 void ACharacterSelectGameMode::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)
