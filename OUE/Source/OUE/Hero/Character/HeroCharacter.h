@@ -119,8 +119,6 @@ private:
 	UPROPERTY()
 	TObjectPtr<class UDiedWidget>	mDiedWidget;
 
-	ARPGPlayerController* RPGPlayerController;
-
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	bool IsCrouch = false;
@@ -157,7 +155,8 @@ protected:
 
 	float HP = 10.f;
 
-	float MaxHP = 100.f;
+	//float MaxHP = 100.f;
+	float MaxHP = 10.f;
 
 	bool bIsRolling = false;
 
@@ -257,4 +256,5 @@ public:
 
 private:
 	void ShowDiedUI();
+	void SetGameInputMode();
 };

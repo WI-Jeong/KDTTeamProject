@@ -9,7 +9,6 @@ AStartGameModeBase::AStartGameModeBase()
 	//DefaultPawn nullptr
 	DefaultPawnClass = nullptr;
 
-	//UI 가져오기
 	static ConstructorHelpers::FClassFinder<UUserWidget>	StartUIClass(TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/JWI/UI/UI_Start.UI_Start_C'"));
 
 	if (StartUIClass.Succeeded())
@@ -26,16 +25,6 @@ void AStartGameModeBase::InitGameState()
 	Super::InitGameState();
 }
 
-void AStartGameModeBase::PostLogin(APlayerController* NewPlayer)
-{
-	Super::PostLogin(NewPlayer);
-
-	//마우스 커서 보이게
-	NewPlayer->SetShowMouseCursor(true);
-
-	FInputModeUIOnly	input;
-	NewPlayer->SetInputMode(input);
-}
 
 void AStartGameModeBase::BeginPlay()
 {
