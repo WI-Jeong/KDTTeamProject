@@ -126,6 +126,7 @@ protected:
 	FDataTableRowHandle WeaponDataTableRowHandle;
 	FWeaponDataTableRow* WeaponDataTableRow;
 
+	UPROPERTY(BlueprintReadOnly)
 	AGun* SpawnedGun;
 
 	AActor* MainCameraActor;
@@ -148,6 +149,7 @@ protected:
 
 	float HP = 10.f;
 
+	UPROPERTY(EditAnywhere)
 	float MaxHP = 100.f;
 
 	bool bIsRolling = false;
@@ -162,6 +164,11 @@ protected:
 
 	UPROPERTY(EditAnywhere)
 	class UAudioComponent* AudioComponent; friend class UFootSoundAnimNotify;
+
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<class UUserWidget> AmmoWidget;
+
+	class UUserWidget* CurrentWidget;
 
 public:
 	void SetIsRolling(bool InIsRolling) { bIsRolling = InIsRolling; }

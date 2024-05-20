@@ -6,7 +6,11 @@
 /NAME:"UnrealEditor-OUE.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\OUEEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.obj"
-"C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Module.OUE.cpp.obj"
-"C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Default.rc2.res"
-/OUT:"C:\assortrock\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\UnrealEditor-OUE.lib"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\OUEEditor\Development\UnrealEd\SharedPCH.UnrealEd.Cpp20.h.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Module.OUE.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\HeroCharacter.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Gun.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Gun.gen.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\OUE.init.gen.cpp.obj"
+"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\Default.rc2.res"
+/OUT:"D:\Han\Team\OUE\Intermediate\Build\Win64\x64\UnrealEditor\Development\OUE\UnrealEditor-OUE.lib"

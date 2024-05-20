@@ -19,6 +19,7 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "Hero/Item/Item.h"
 #include "Components/AudioComponent.h"
+#include "Blueprint/UserWidget.h"
 
 //DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -98,6 +99,12 @@ void AHeroCharacter::BeginPlay()
 	}
 
 	HP = MaxHP;
+
+	CurrentWidget = CreateWidget(GetWorld(), AmmoWidget);
+	if (CurrentWidget)
+	{
+		CurrentWidget->AddToViewport();
+	}
 }
 
 void AHeroCharacter::Tick(float DeltaSeconds)

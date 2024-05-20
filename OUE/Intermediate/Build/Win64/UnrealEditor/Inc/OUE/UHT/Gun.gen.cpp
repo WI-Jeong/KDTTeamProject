@@ -151,6 +151,14 @@ template<> OUE_API UScriptStruct* StaticStruct<FGunDataTableRow>()
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_ChildActorComponent;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MaxAmmo_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_MaxAmmo;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CurrentAmmo_MetaData[];
+#endif
+		static const UECodeGen_Private::FIntPropertyParams NewProp_CurrentAmmo;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BulletDataTableRowHandle_MetaData[];
 #endif
 		static const UECodeGen_Private::FStructPropertyParams NewProp_BulletDataTableRowHandle;
@@ -197,6 +205,20 @@ template<> OUE_API UScriptStruct* StaticStruct<FGunDataTableRow>()
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AGun_Statics::NewProp_ChildActorComponent = { "ChildActorComponent", nullptr, (EPropertyFlags)0x0020080000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AGun, ChildActorComponent), Z_Construct_UClass_UChildActorComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AGun_Statics::NewProp_ChildActorComponent_MetaData), Z_Construct_UClass_AGun_Statics::NewProp_ChildActorComponent_MetaData) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGun_Statics::NewProp_MaxAmmo_MetaData[] = {
+		{ "Category", "Gun" },
+		{ "ModuleRelativePath", "Hero/Gun/Gun.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AGun_Statics::NewProp_MaxAmmo = { "MaxAmmo", nullptr, (EPropertyFlags)0x0020080000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AGun, MaxAmmo), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AGun_Statics::NewProp_MaxAmmo_MetaData), Z_Construct_UClass_AGun_Statics::NewProp_MaxAmmo_MetaData) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGun_Statics::NewProp_CurrentAmmo_MetaData[] = {
+		{ "Category", "Gun" },
+		{ "ModuleRelativePath", "Hero/Gun/Gun.h" },
+	};
+#endif
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AGun_Statics::NewProp_CurrentAmmo = { "CurrentAmmo", nullptr, (EPropertyFlags)0x0020080000000014, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AGun, CurrentAmmo), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AGun_Statics::NewProp_CurrentAmmo_MetaData), Z_Construct_UClass_AGun_Statics::NewProp_CurrentAmmo_MetaData) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AGun_Statics::NewProp_BulletDataTableRowHandle_MetaData[] = {
 		{ "Category", "Gun" },
 		{ "ModuleRelativePath", "Hero/Gun/Gun.h" },
@@ -213,6 +235,8 @@ template<> OUE_API UScriptStruct* StaticStruct<FGunDataTableRow>()
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGun_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGun_Statics::NewProp_SkeletalMeshComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGun_Statics::NewProp_ChildActorComponent,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGun_Statics::NewProp_MaxAmmo,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGun_Statics::NewProp_CurrentAmmo,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGun_Statics::NewProp_BulletDataTableRowHandle,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGun_Statics::NewProp_GunDataTableRowHandle,
 	};
@@ -249,19 +273,19 @@ template<> OUE_API UScriptStruct* StaticStruct<FGunDataTableRow>()
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AGun);
 	AGun::~AGun() {}
-	struct Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Gun_Gun_h_Statics
+	struct Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Gun_Gun_h_Statics
 	{
 		static const FStructRegisterCompiledInInfo ScriptStructInfo[];
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Gun_Gun_h_Statics::ScriptStructInfo[] = {
+	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Gun_Gun_h_Statics::ScriptStructInfo[] = {
 		{ FGunDataTableRow::StaticStruct, Z_Construct_UScriptStruct_FGunDataTableRow_Statics::NewStructOps, TEXT("GunDataTableRow"), &Z_Registration_Info_UScriptStruct_GunDataTableRow, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FGunDataTableRow), 1618593808U) },
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Gun_Gun_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AGun, AGun::StaticClass, TEXT("AGun"), &Z_Registration_Info_UClass_AGun, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGun), 960664544U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Gun_Gun_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_AGun, AGun::StaticClass, TEXT("AGun"), &Z_Registration_Info_UClass_AGun, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AGun), 1573913728U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Gun_Gun_h_3652003097(TEXT("/Script/OUE"),
-		Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Gun_Gun_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Gun_Gun_h_Statics::ClassInfo),
-		Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Gun_Gun_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_assortrock_Team_OUE_Source_OUE_Hero_Gun_Gun_h_Statics::ScriptStructInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Gun_Gun_h_1026082420(TEXT("/Script/OUE"),
+		Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Gun_Gun_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Gun_Gun_h_Statics::ClassInfo),
+		Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Gun_Gun_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_OUE_Source_OUE_Hero_Gun_Gun_h_Statics::ScriptStructInfo),
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
