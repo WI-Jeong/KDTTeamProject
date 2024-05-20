@@ -63,7 +63,14 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 		bIsDead = true;
 
 		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+		GetWorldTimerManager().SetTimer(DestroyTimerHandle, this, &AEnemy::DelayDestroy, 1.0f, true, 3.0f);
 	}
 	return Damage;
+}
+
+void AEnemy::DelayDestroy()
+{
+	Destroy();
 }
 
