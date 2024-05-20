@@ -119,15 +119,25 @@ void AHeroCharacter::ShowDiedUI()
 		{
 			mDiedWidget->AddToViewport();
 
-			if (RPGPlayerController)
-			{
-				//마우스 커서 보이게
-				RPGPlayerController->SetShowMouseCursor(true);
-				FInputModeUIOnly	input;
-				RPGPlayerController->SetInputMode(input);
-			}
+			ARPGPlayerController* RPGPlayerController = Cast<ARPGPlayerController>(GetController());
+
+			RPGPlayerController->SetShowMouseCursor(true);
+
+			FInputModeUIOnly	input;
+			RPGPlayerController->SetInputMode(input);
 		}
 	}
+
+}
+
+void AHeroCharacter::SetGameInputMode()
+{
+	ARPGPlayerController* RPGPlayerController = Cast<ARPGPlayerController>(GetController());
+
+	RPGPlayerController->SetShowMouseCursor(false);
+
+	FInputModeGameOnly inputmode;
+	RPGPlayerController->SetInputMode(inputmode);
 
 }
 
