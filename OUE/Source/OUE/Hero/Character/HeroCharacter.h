@@ -155,8 +155,7 @@ protected:
 
 	float HP = 10.f;
 
-	//float MaxHP = 100.f;
-	float MaxHP = 10.f;
+	float MaxHP = 100.f;
 
 	bool bIsRolling = false;
 
