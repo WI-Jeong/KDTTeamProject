@@ -3,6 +3,7 @@
 
 #include "CharacterSelectGameMode.h"
 #include "UI/CharacterSelectWidget.h" 
+#include "JWI/PlayerSelect/CSPlayerController.h" 
 
 ACharacterSelectGameMode::ACharacterSelectGameMode()
 {
@@ -12,10 +13,13 @@ ACharacterSelectGameMode::ACharacterSelectGameMode()
 
 	if (SelectUIClass.Succeeded())
 		mSelectUIClass = SelectUIClass.Class;
+
+	PlayerControllerClass = ACSPlayerController::StaticClass();
 }
 
 void ACharacterSelectGameMode::EnableStartButton(bool Enable)
 {
+	mSelectWidget->EnableStartButton(Enable);
 }
 
 void ACharacterSelectGameMode::InitGame(const FString& MapName, const FString& Options, FString& ErrorMessage)
