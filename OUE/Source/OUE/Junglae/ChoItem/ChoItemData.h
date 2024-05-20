@@ -16,7 +16,7 @@ struct OUE_API FChoItemData : public FTableRowBase
 	/*FChoItemData(const FChoItemData& InOther) {}*/
 
 	FName ItemName;
-	
+
 	UPROPERTY(EditAnywhere)
 	UTexture2D* ItemImage;
 

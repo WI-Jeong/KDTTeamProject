@@ -44,6 +44,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	UParticleSystem* ExplosionEffect;
+
+	UPROPERTY(EditAnywhere)
+	USoundBase* FireSoundBase;
 };
 
 UCLASS()
@@ -95,6 +98,9 @@ protected:
 	bool bIsGrenade = false;
 
 	UParticleSystem* ExplosionEffect;
+
+	UPROPERTY(EditAnywhere)
+	class UAudioComponent* AudioComponent;
 
 protected:
 	UFUNCTION()

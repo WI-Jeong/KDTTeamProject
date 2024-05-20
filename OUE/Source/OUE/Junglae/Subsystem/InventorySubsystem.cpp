@@ -3,6 +3,7 @@
 
 #include "Junglae/Subsystem/InventorySubsystem.h"
 #include "ChoDataSubsystem.h"
+#include "Hero/Character/HeroCharacter.h"
 
 void UInventorySubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
@@ -90,6 +91,16 @@ void UInventorySubsystem::UseChoItem(UInventoryUserWidget* Widget, uint32 InInde
 	{
 
 		--ItemData.Pin()->CurrentBundleCount;
+		//AHeroCharacter::Heal(HealAmount)
+		Potion->UseItem(Cast<ARPGPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(),0)));
+	
+	}
+	UChoItem_Gun* Gun = Cast<UChoItem_Gun>(Item);
+	if (Gun)
+	{
+		--ItemData.Pin()->CurrentBundleCount;
+		//AHeroCharacter::Heal(HealAmount)
+		Gun->UseItem(Cast<ARPGPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(), 0)), Widget, Inventory[InIndex]->ItemImage);
 	}
 
 	Item->UseChoItem(RPGPlayerController);

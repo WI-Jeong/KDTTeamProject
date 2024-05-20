@@ -65,7 +65,10 @@ protected:
 	bool IsTriggered = false;
 	bool IsAutoFire = true;
 	
+	UPROPERTY(BlueprintReadOnly)
 	int MaxAmmo = 30;
+
+	UPROPERTY(BlueprintReadOnly)
 	int CurrentAmmo = MaxAmmo;
 
 	//UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Gun, meta = (AllowPrivateAccess = "true"))
@@ -98,8 +101,4 @@ protected:
 	FDataTableRowHandle GunDataTableRowHandle;
 
 	FGunDataTableRow* GunDataTableRow;
-
-	UPROPERTY(EditAnywhere)
-	UAudioComponent* AudioComponent;
-
 };

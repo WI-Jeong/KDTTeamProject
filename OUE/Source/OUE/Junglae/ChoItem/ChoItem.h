@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Junglae/Controller/RPGPlayerController.h"
+#include "Hero/Character/HeroCharacter.h"
 #include "ChoItem.generated.h"
 
 UCLASS()
@@ -26,8 +27,14 @@ class UChoItem_Potion : public UChoItem
 	GENERATED_BODY()
 	friend class UInventorySubsystem;
 protected:
-	virtual void UseItem(ARPGPlayerController* Controller)
-	{
-		
-	}
+	virtual void UseItem(ARPGPlayerController* Controller);
+};
+
+UCLASS()
+class UChoItem_Gun : public UChoItem
+{
+	GENERATED_BODY()
+	friend class UInventorySubsystem;
+protected:
+	virtual void UseItem(ARPGPlayerController* Controller, class UInventoryUserWidget* InInventoryUserWidget, UTexture2D* Texture);
 };
