@@ -31,3 +31,24 @@ void ASelectPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputCompon
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
+void ASelectPlayer::Pick()
+{
+	// 먼저 GameMode를 얻어온다.
+	ACharacterSelectGameMode* GameMode = GetWorld()->GetAuthGameMode<ACharacterSelectGameMode>();
+
+	if (IsValid(mCursorPickActor))
+	{
+		mSelectActor = mCursorPickActor;
+
+		//캐릭터가 선택되면 버튼 활성화
+		GameMode->EnableStartButton(true);
+	}
+
+	else
+	{
+		//캐릭터가 선택안되면 버튼 비활성화 
+		GameMode->EnableStartButton(false);
+	}
+
+}
+
