@@ -12,11 +12,9 @@ void UStartWidget::NativePreConstruct()
 {
     Super::NativePreConstruct();
 
-    //버튼 생성해서 
-    mStartButton = Cast<UButton>(GetWidgetFromName(TEXT("StartButton")));
+     mStartButton = Cast<UButton>(GetWidgetFromName(TEXT("StartButton")));
     mExitButton = Cast<UButton>(GetWidgetFromName(TEXT("ExitButton")));
 
-    //이벤트 일어나면 함수 호출) 
     mStartButton->OnClicked.AddDynamic(this, &UStartWidget::StartButtonClick);
     mStartButton->OnHovered.AddDynamic(this, &UStartWidget::StartButtonHovered);
     mStartButton->OnUnhovered.AddDynamic(this, &UStartWidget::StartButtonUnHovered);
@@ -25,8 +23,7 @@ void UStartWidget::NativePreConstruct()
     mExitButton->OnHovered.AddDynamic(this, &UStartWidget::ExitButtonHovered);
     mExitButton->OnUnhovered.AddDynamic(this, &UStartWidget::ExitButtonUnHovered);
 
-    // UserWidget이 가지고 있는 모든 Animation을 반복하며 찾는다.
-    UWidgetBlueprintGeneratedClass* WidgetClass = GetWidgetTreeOwningClass();
+     UWidgetBlueprintGeneratedClass* WidgetClass = GetWidgetTreeOwningClass();
 
     for (int32 i = 0; i < WidgetClass->Animations.Num(); ++i)
     {
@@ -269,7 +266,7 @@ void UStartWidget::ExitButtonHovered()
     {
         FString Name = WidgetClass->Animations[i]->GetName();
 
-        if (Name == TEXT("ExitButtonScaleAnim_INST")) //이름은 로그 한번 찍어보면 _INST 붙는거 알 수 있
+        if (Name == TEXT("ExitButtonScaleAnim_INST")) 
         {
             PlayAnimation(WidgetClass->Animations[i]);
             break;

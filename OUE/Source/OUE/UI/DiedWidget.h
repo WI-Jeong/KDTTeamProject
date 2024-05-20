@@ -14,6 +14,13 @@ UCLASS()
 class OUE_API UDiedWidget : public UUserWidget
 {
 	GENERATED_BODY()
+
+private:
+	UButton* mReStartButton;
+	UButton* mExitButton;
+
+	UPROPERTY(meta = (BindWidgetAnim), Transient)
+	UWidgetAnimation* ReStartButtonScaleAnim;
 	
 
 public:
@@ -48,4 +55,23 @@ protected:
 	virtual FReply NativeOnTouchEnded(const FGeometry& InGeometry, const FPointerEvent& InGestureEvent);
 	virtual FReply NativeOnMotionDetected(const FGeometry& InGeometry, const FMotionEvent& InMotionEvent);
 	virtual FReply NativeOnTouchForceChanged(const FGeometry& MyGeometry, const FPointerEvent& TouchEvent);
+
+private:
+	UFUNCTION(BlueprintCallable, Category = "UI")
+	void ReStartButtonClick();
+
+	UFUNCTION()
+	void ReStartButtonHovered();
+
+	UFUNCTION()
+	void ReStartButtonUnHovered();
+
+	UFUNCTION(BlueprintCallable, Category = "UI")
+	void ExitButtonClick();
+
+	UFUNCTION()
+	void ExitButtonHovered();
+
+	UFUNCTION()
+	void ExitButtonUnHovered();
 };

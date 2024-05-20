@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "../../Junglae/Controller/RPGPlayerController.h"
 #include "Hero/ActorPool/ActorPool.h"
 #include "HeroGameModeBase.generated.h"
 

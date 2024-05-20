@@ -60,6 +60,13 @@ AHeroCharacter::AHeroCharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+
+	static ConstructorHelpers::FClassFinder<UUserWidget> DiedUIClassFinder(TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/JWI/UI/UI_Defeated.UI_Defeated_C'"));
+	if (DiedUIClassFinder.Succeeded())
+	{
+		mDiedUIClass = DiedUIClassFinder.Class;
+	}
+
 }
 
 void AHeroCharacter::BeginPlay()
@@ -98,6 +105,30 @@ void AHeroCharacter::Tick(float DeltaSeconds)
 	CloseUpAim(DeltaSeconds);
 
 	Timeline.TickTimeline(DeltaSeconds);
+}
+
+
+
+void AHeroCharacter::ShowDiedUI()
+{
+	if (IsValid(mDiedUIClass))
+	{
+		mDiedWidget = CreateWidget<UDiedWidget>(GetWorld(), mDiedUIClass);
+
+		if (IsValid(mDiedWidget))
+		{
+			mDiedWidget->AddToViewport();
+
+			if (RPGPlayerController)
+			{
+				//마우스 커서 보이게
+				RPGPlayerController->SetShowMouseCursor(true);
+				FInputModeUIOnly	input;
+				RPGPlayerController->SetInputMode(input);
+			}
+		}
+	}
+
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -328,6 +359,7 @@ void AHeroCharacter::ChangeFireMode()
 
 #include "Junglae/Subsystem/InventorySubsystem.h"
 #include "Junglae/Subsystem/ChoSubsystem.h"
+#include "HeroCharacter.h"
 void AHeroCharacter::GetItem()
 {
 	if (OverlapItem == nullptr) { return; }
@@ -474,8 +506,16 @@ float AHeroCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageE
 		//PrimitiveComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 
 		GetMesh()->SetSimulatePhysics(true);
+
+		// Show Died UI if not already shown
+		if (mDiedWidget == nullptr)
+		{
+			ShowDiedUI();
+		}
 	}
+
 	return Damage;
+
 }
 
 void AHeroCharacter::OnConstruction(const FTransform& Transform)
