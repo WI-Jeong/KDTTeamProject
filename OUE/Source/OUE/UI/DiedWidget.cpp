@@ -28,6 +28,8 @@ void UDiedWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaTime)
 	Super::NativeTick(MyGeometry, InDeltaTime);
 }
 
+
+
 FReply UDiedWidget::NativeOnKeyChar(const FGeometry& InGeometry, const FCharacterEvent& InCharEvent)
 {
 	FReply Reply = Super::NativeOnKeyChar(InGeometry, InCharEvent);
@@ -194,4 +196,57 @@ FReply UDiedWidget::NativeOnTouchForceChanged(const FGeometry& MyGeometry, const
 		TouchEvent);
 
 	return Reply;
+}
+
+void UDiedWidget::ReStartButtonClick()
+{
+	UGameplayStatics::OpenLevel(GetWorld(), TEXT("BaseLevel"));
+}
+
+void UDiedWidget::ReStartButtonHovered()
+{
+	PlayAnimation(ReStartButtonScaleAnim);
+}
+
+void UDiedWidget::ReStartButtonUnHovered()
+{
+	PlayAnimation(ReStartButtonScaleAnim, 0.f, 1, EUMGSequencePlayMode::Reverse);
+}
+
+void UDiedWidget::ExitButtonClick()
+{
+	UKismetSystemLibrary::QuitGame(GetWorld(), GetWorld()->GetFirstPlayerController(),
+		EQuitPreference::Quit, true);
+}
+
+void UDiedWidget::ExitButtonHovered()
+{
+	UWidgetBlueprintGeneratedClass* WidgetClass = GetWidgetTreeOwningClass();
+
+	for (int32 i = 0; i < WidgetClass->Animations.Num(); ++i)
+	{
+		FString Name = WidgetClass->Animations[i]->GetName();
+
+		if (Name == TEXT("ExitButtonScaleAnim_INST")) //이름은 로그 한번 찍어보면 _INST 붙는거 알 수 있
+		{
+			PlayAnimation(WidgetClass->Animations[i]);
+			break;
+		}
+	}
+}
+
+void UDiedWidget::ExitButtonUnHovered()
+{
+	UWidgetBlueprintGeneratedClass* WidgetClass = GetWidgetTreeOwningClass();
+
+	for (int32 i = 0; i < WidgetClass->Animations.Num(); ++i)
+	{
+		FString Name = WidgetClass->Animations[i]->GetName();
+
+		if (Name == TEXT("ExitButtonScaleAnim_INST"))
+		{
+			PlayAnimation(WidgetClass->Animations[i], 0.f, 1, EUMGSequencePlayMode::Reverse);
+			break;
+		}
+	}
 }
