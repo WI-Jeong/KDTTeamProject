@@ -32,7 +32,7 @@ public:
 	UImage* ItemImage;
 
 	uint32 ItemIndex = (uint32)-1;
-	
+
 	FOnInvenButtonEvent ItemBtnHovered;
 	FOnInvenButtonEvent ItemBtnClicked;
 };

@@ -9,7 +9,7 @@
 
 struct FChoItemData;
 /**
- * 
+ *
  */
 UCLASS()
 class OUE_API UChoDataSubsystem : public UGameInstanceSubsystem
@@ -29,5 +29,5 @@ protected:
 
 	UPROPERTY()
 	UDataTable* ItemDataTable;
-	
+
 };

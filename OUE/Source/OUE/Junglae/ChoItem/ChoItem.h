@@ -15,10 +15,12 @@ class UChoItem : public UObject
 	friend class UInventorySubsystem;
 
 protected:
-	virtual void UseChoItem(ARPGPlayerController* Controller)
+	virtual void UseChoItem(ARPGPlayerController* Controller, FChoItemData& ItemData)
 	{
 		int a = 0;
 	}
+	virtual void UnEquipItem(ARPGPlayerController* Controller, FChoItemData& ItemData) {}
+
 };
 
 UCLASS()
@@ -37,4 +39,6 @@ class UChoItem_Gun : public UChoItem
 	friend class UInventorySubsystem;
 protected:
 	virtual void UseItem(ARPGPlayerController* Controller, class UInventoryUserWidget* InInventoryUserWidget, UTexture2D* Texture);
+	virtual void UnEquipItem(ARPGPlayerController* Controller, FChoItemData& ItemData);
+
 };

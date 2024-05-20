@@ -10,7 +10,7 @@
 #include "InventoryUserWidget.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class OUE_API UInventoryUserWidget : public UUserWidget
@@ -26,8 +26,13 @@ protected:
 	void FlushInven();
 
 	void SetItemDesc(const uint32 InIndex);
+	void SetItemDesc(TWeakPtr<FChoItemData> InData);
 	UFUNCTION()
 	void OnItemBtnClicked(UInventoryItemUserWidget* InWidget);
+	UFUNCTION()
+	void OnWeaponBtnClicked(UInventoryItemUserWidget* InWidget);
+	UFUNCTION()
+	void OnWeaponBtnHovered(UInventoryItemUserWidget* InWidget);
 
 protected:
 	UPROPERTY(EditAnywhere, meta = (BindWidget))
@@ -39,7 +44,7 @@ protected:
 	class UInventoryItemUserWidget* Weapon; friend UChoItem_Gun;
 
 	int32 InvenSize = 0;
-	uint32 LastHoveredIndex = (uint32) - 1;
+	uint32 LastHoveredIndex = (uint32)-1;
 
 	UPROPERTY()
 	TArray<class UInventoryItemUserWidget*> Items;

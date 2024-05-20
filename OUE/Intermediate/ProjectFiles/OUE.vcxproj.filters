@@ -204,6 +204,15 @@
     <ClInclude Include="..\..\Source\OUE\Junglae\Controller\RPGPlayerController.h">
       <Filter>Source\OUE\Junglae\Controller</Filter>
     </ClInclude>
+    <Filter Include="Source\OUE\Junglae\LocalSaveLoad">
+      <UniqueIdentifier>{CB2560FE-B346-3ECA-89AE-04AC401098A1}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\OUE\Junglae\LocalSaveLoad\RPGSaveGame.cpp">
+      <Filter>Source\OUE\Junglae\LocalSaveLoad</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\OUE\Junglae\LocalSaveLoad\RPGSaveGame.h">
+      <Filter>Source\OUE\Junglae\LocalSaveLoad</Filter>
+    </ClInclude>
     <Filter Include="Source\OUE\Junglae\Subsystem">
       <UniqueIdentifier>{CA62937E-4AB0-3D4C-94FC-A28F5802FDDC}</UniqueIdentifier>
     </Filter>

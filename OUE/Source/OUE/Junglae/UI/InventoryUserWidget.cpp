@@ -19,12 +19,18 @@ void UInventoryUserWidget::NativeConstruct()
 	InventorySubsystem = ULocalPlayer::GetSubsystem<UInventorySubsystem>(LocalPlayer);
 	InvenSize = InventorySubsystem->Inventory.Num();
 	Items.Reserve(InvenSize);
-	
+
 	//게임에서 참조된 적이 없어서 로드가 안됨.
 	LoadClass<UClass>(ANY_PACKAGE, TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/Junglae/UI_InventoryItem.UI_InventoryItem_C'"),
 		nullptr, LOAD_None, nullptr);
 	UClass* InventoryItemWidgetClass = FindObject<UClass>
 		(ANY_PACKAGE, TEXT("/Script/UMGEditor.WidgetBlueprint'/Game/Junglae/UI_InventoryItem.UI_InventoryItem_C'"));
+
+	// Weapon
+	{
+		Weapon->ItemBtnHovered.BindUFunction(this, TEXT("OnWeaponBtnHovered"));
+		Weapon->ItemBtnClicked.BindUFunction(this, TEXT("OnWeaponBtnClicked"));
+	}
 
 	int32 Col = 6;
 	int32 Row = InvenSize / Col;
@@ -64,7 +70,18 @@ void UInventoryUserWidget::NativeDestruct()
 
 //인벤토리 비우는 함수
 void UInventoryUserWidget::FlushInven()
-{   // 인벤토리 크기만큼 실행
+{
+	if (InventorySubsystem->Weapon)
+	{
+		UTexture2D* Texture = InventorySubsystem->Weapon->ItemImage;
+		Weapon->ItemImage->SetBrushFromTexture(Texture, false);
+	}
+	else
+	{
+		Weapon->ItemImage->SetBrushFromTexture(nullptr, false);
+	}
+
+	// 인벤토리 크기만큼 실행
 	for (int32 i = 0; i < InvenSize; ++i)
 	{
 		if (InventorySubsystem->Inventory[i] == nullptr)
@@ -74,14 +91,7 @@ void UInventoryUserWidget::FlushInven()
 		}
 
 		UTexture2D* Texture = InventorySubsystem->Inventory[i]->ItemImage;
-		if (Texture)
-		{
-			Items[i]->ItemImage->SetBrushFromTexture(Texture, false);
-		}
-		else
-		{
-			Items[i]->ItemImage->SetBrushFromTexture(nullptr, false);
-		}
+		Items[i]->ItemImage->SetBrushFromTexture(Texture, false);
 	}
 
 	SetItemDesc(LastHoveredIndex);
@@ -91,10 +101,23 @@ void UInventoryUserWidget::SetItemDesc(const uint32 InIndex)
 {
 	if (InIndex == (uint32)-1) { return; }
 
-	TWeakPtr<FChoItemData> ItemData = InventorySubsystem->Inventory[InIndex];
-	if (ItemData.IsValid())
+	TWeakPtr<FChoItemData> ItemData;
+	if (InIndex == (uint32)-2)
 	{
-		ItemDesc->SetText(ItemData.Pin()->ItemDesc);
+		ItemData = InventorySubsystem->Weapon;
+	}
+	else
+	{
+		ItemData = InventorySubsystem->Inventory[InIndex];
+	}
+	SetItemDesc(ItemData);
+}
+
+void UInventoryUserWidget::SetItemDesc(TWeakPtr<FChoItemData> InData)
+{
+	if (InData.IsValid())
+	{
+		ItemDesc->SetText(InData.Pin()->ItemDesc);
 	}
 	else
 	{
@@ -105,10 +128,23 @@ void UInventoryUserWidget::SetItemDesc(const uint32 InIndex)
 void UInventoryUserWidget::OnItemBtnClicked(UInventoryItemUserWidget* InWidget)
 {
 	const uint32 Index = InWidget->ItemIndex;
-	
+
 	TWeakPtr<FChoItemData> ItemData = InventorySubsystem->Inventory[Index];
 	if (ItemData.IsValid())
 	{
 		InventorySubsystem->UseChoItem(this, Index);
 	}
+}
+
+void UInventoryUserWidget::OnWeaponBtnClicked(UInventoryItemUserWidget* InWidget)
+{
+	if (!InventorySubsystem->Weapon) { return; }
+
+	InventorySubsystem->UnEquipWeapon(this);
+}
+
+void UInventoryUserWidget::OnWeaponBtnHovered(UInventoryItemUserWidget* InWidget)
+{
+	LastHoveredIndex = (uint32)-2;
+	SetItemDesc(LastHoveredIndex);
 }

@@ -4,13 +4,52 @@
 #include "Junglae/Subsystem/InventorySubsystem.h"
 #include "ChoDataSubsystem.h"
 #include "Hero/Character/HeroCharacter.h"
+#include "Junglae/LocalSaveLoad/RPGSaveGame.h"
 
 void UInventorySubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
+	Super::Initialize(Collection);
 }
 
 void UInventorySubsystem::Deinitialize()
 {
+	Super::Deinitialize();
+}
+
+void UInventorySubsystem::Save(URPGSaveGame* SaveGame)
+{
+	SaveGame->InventoryItems.Empty();
+	SaveGame->Weapon = FChoItemData();
+
+	for (TSharedPtr<FChoItemData> It : Inventory)
+	{
+		if (It)
+		{
+			SaveGame->InventoryItems.Add(*It);
+		}
+	}
+
+	if (Weapon)
+	{
+		SaveGame->Weapon = *Weapon;
+	}
+}
+
+void UInventorySubsystem::Load(ARPGPlayerController* Controller, URPGSaveGame* SaveGame)
+{
+	for (FChoItemData& It : SaveGame->InventoryItems)
+	{
+		TSharedPtr<FChoItemData> NewItemData = MakeShared<FChoItemData>(It);
+		MoveItemToInventory(NewItemData);
+	}
+
+	if (SaveGame->Weapon.ItemName != NAME_None)
+	{
+		TSharedPtr<FChoItemData> NewItemData = MakeShared<FChoItemData>(SaveGame->Weapon);
+		Weapon = NewItemData;
+		UChoItem* Item = SaveGame->Weapon.ItemFunctionClass->GetDefaultObject<UChoItem>();
+		Item->UseChoItem(Controller, *Weapon);
+	}
 }
 
 void UInventorySubsystem::MakeInventory()
@@ -18,10 +57,24 @@ void UInventorySubsystem::MakeInventory()
 	ChoDataSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UChoDataSubsystem>();
 	Inventory.SetNum(MaxInvenSize, false);
 
-	for (int32 i = 0; i < 10; ++i)
-	{
-		AddChoItem(TEXT("Potion_HP"));
-	}
+	//for (int32 i = 0; i < 10; ++i)
+	//{
+	//	AddChoItem(TEXT("Potion_HP"));
+	//}
+}
+
+void UInventorySubsystem::ClearInventory()
+{
+	Inventory.Empty();
+	Weapon = nullptr;
+}
+
+void UInventorySubsystem::UnEquipWeapon(UInventoryUserWidget* Widget)
+{
+	UChoItem* Item = Weapon->ItemFunctionClass->GetDefaultObject<UChoItem>();
+	Item->UnEquipItem(Cast<ARPGPlayerController>(Widget->GetOwningPlayer()), *Weapon);
+	MoveItemToInventory(Weapon);
+	Widget->FlushInven();
 }
 
 
@@ -42,13 +95,19 @@ bool UInventorySubsystem::AddChoItem(const FName& InKey)
 	}
 	TSharedPtr<FChoItemData>NewItemData = MakeShared<FChoItemData>(*ChoData);
 	NewItemData->ItemName = InKey;
+	NewItemData->CurrentBundleCount = 1;
 
+	return MoveItemToInventory(NewItemData);
+}
+
+bool UInventorySubsystem::MoveItemToInventory(TSharedPtr<FChoItemData>& InItem)
+{
 	for (uint32 i = 0; i < MaxInvenSize; ++i)
 	{
 		TSharedPtr<FChoItemData> ItemData = Inventory[i];
 		if (ItemData == nullptr) { continue; }
 
-		if (ItemData->ItemName != NewItemData->ItemName) { continue; }
+		if (ItemData->ItemName != InItem->ItemName) { continue; }
 
 		if (ItemData->MaxBundleCount > ItemData->CurrentBundleCount)
 		{
@@ -62,14 +121,13 @@ bool UInventorySubsystem::AddChoItem(const FName& InKey)
 	for (uint32 i = 0; i < MaxInvenSize; ++i)
 	{
 		if (Inventory[i] == nullptr)
-		{	//복사생성자를 통해 SharedPtr이 만들어짐. *ChoData는 FChoItemData의 복사본을 만든다.
-			++NewItemData->CurrentBundleCount;
-			Inventory[i] = NewItemData;
-
+		{
+			Inventory[i] = InItem;
 			bAdded = true;
 			break;
 		}
 	}
+	InItem = nullptr;
 
 	return bAdded;
 }
@@ -85,16 +143,7 @@ void UInventorySubsystem::UseChoItem(UInventoryUserWidget* Widget, uint32 InInde
 
 	//아이템 꺼내오기
 	UChoItem* Item = ItemData.Pin()->ItemFunctionClass->GetDefaultObject<UChoItem>();
-	// 아이템을 아이템포션 타입으로 캐스팅하면 다이나믹 캐스트가 기본적으로 동작함. 관련성 있는 타입일때만 변환한다.
-	UChoItem_Potion* Potion = Cast<UChoItem_Potion>(Item);
-	if (Potion)
-	{
 
-		--ItemData.Pin()->CurrentBundleCount;
-		//AHeroCharacter::Heal(HealAmount)
-		Potion->UseItem(Cast<ARPGPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(),0)));
-	
-	}
 	UChoItem_Gun* Gun = Cast<UChoItem_Gun>(Item);
 	if (Gun)
 	{
@@ -102,9 +151,11 @@ void UInventorySubsystem::UseChoItem(UInventoryUserWidget* Widget, uint32 InInde
 		//AHeroCharacter::Heal(HealAmount)
 		Gun->UseItem(Cast<ARPGPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(), 0)), Widget, Inventory[InIndex]->ItemImage);
 	}
-
-	Item->UseChoItem(RPGPlayerController);
-
+	else
+	{
+		Gun->UseItem(Cast<ARPGPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(), 0)), Widget, Inventory[InIndex]->ItemImage);
+		--ItemData.Pin()->CurrentBundleCount;
+	}
 	if (ItemData.Pin()->CurrentBundleCount == 0)
 	{
 		Inventory[InIndex] = nullptr;
