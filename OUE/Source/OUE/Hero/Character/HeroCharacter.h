@@ -5,6 +5,9 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
+#include "../../UI/MainWidget.h"
+#include "../../UI/DiedWidget.h"
+#include "../../Junglae/Controller/RPGPlayerController.h"
 #include "Components/TimelineComponent.h"
 #include "HeroCharacter.generated.h"
 
@@ -109,8 +112,12 @@ class OUE_API AHeroCharacter : public ACharacter
 public:
 	AHeroCharacter();
 
-	UFUNCTION(BlueprintCallable, Category = "Health")
-	void Heal(float HealAmount);
+private:
+	UPROPERTY(EditAnywhere, Category = "UI")
+	TSubclassOf<UUserWidget>	mDiedUIClass;
+
+	UPROPERTY()
+	TObjectPtr<class UDiedWidget>	mDiedWidget;
 
 protected:
 	UPROPERTY(BlueprintReadOnly)
@@ -245,4 +252,8 @@ public:
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+private:
+	void ShowDiedUI();
+	void SetGameInputMode();
 };

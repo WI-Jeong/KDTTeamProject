@@ -5,6 +5,7 @@
 #include "Hero/Gun/Bullet.h"
 #include "Hero/Effect/Effect.h"
 
+
 void AHeroGameModeBase::BeginPlay()
 {
 	Super::BeginPlay();

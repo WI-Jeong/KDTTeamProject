@@ -11,6 +11,7 @@
 #include "Particles/ParticleSystemComponent.h"
 #include "NiagaraComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Components/AudioComponent.h"
 
 // Sets default values
 ABullet::ABullet()
@@ -43,6 +44,9 @@ ABullet::ABullet()
 	ProjectileMovement->bShouldBounce = false;
 
 	OnActorHit.AddDynamic(this, &ThisClass::OnActorHitFunction);
+
+	AudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("AudioComponent"));
+	AudioComponent->SetupAttachment(RootComponent);
 }
 
 void ABullet::SetBullet(FBulletTableRow* InTableRow)
@@ -91,6 +95,9 @@ void ABullet::SetBullet(FBulletTableRow* InTableRow)
 	bIsGrenade = InTableRow->bIsGrenade;
 
 	ExplosionEffect = InTableRow->ExplosionEffect;
+
+	AudioComponent->SetSound(InTableRow->FireSoundBase);
+	AudioComponent->Play();
 }
 
 // Called when the game starts or when spawned
@@ -125,6 +132,8 @@ void ABullet::OnActorHitFunction(AActor* SelfActor, AActor* OtherActor, FVector 
 
 			FTransform NewTransform = FTransform(Hit.Location);
 			SpawnHitEffect(NewTransform);
+
+			AudioComponent->Play();
 		}
 	}
 	
