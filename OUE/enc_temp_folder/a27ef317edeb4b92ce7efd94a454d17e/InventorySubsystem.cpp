@@ -95,13 +95,11 @@ void UInventorySubsystem::UseChoItem(UInventoryUserWidget* Widget, uint32 InInde
 		Potion->UseItem(Cast<ARPGPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(),0)));
 	
 	}
-	UChoItem_Gun* Gun = Cast<UChoItem_Gun>(Item);
-	if (Gun)
-	{
-		--ItemData.Pin()->CurrentBundleCount;
-		//AHeroCharacter::Heal(HealAmount)
-		Gun->UseItem(Cast<ARPGPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(), 0)), Widget, Inventory[InIndex]->ItemImage);
-	}
+
+	//if (Gun)
+	//{
+
+	//}
 
 	Item->UseChoItem(RPGPlayerController);
 
