@@ -69,6 +69,16 @@ AHeroCharacter::AHeroCharacter()
 
 }
 
+void AHeroCharacter::Heal(float HealAmount)
+{
+	HP += HealAmount;
+
+	if (HP > MaxHP)
+	{
+		HP = MaxHP;
+	}
+}
+
 void AHeroCharacter::BeginPlay()
 {
 	// Call the base class  

@@ -112,6 +112,9 @@ class OUE_API AHeroCharacter : public ACharacter
 public:
 	AHeroCharacter();
 
+	UFUNCTION(BlueprintCallable, Category = "Health")
+	void Heal(float HealAmount);
+
 private:
 	UPROPERTY(EditAnywhere, Category = "UI")
 	TSubclassOf<UUserWidget>	mDiedUIClass;
