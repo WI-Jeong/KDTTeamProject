@@ -7,6 +7,8 @@
 
 void UInventorySubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
+	Super::Initialize(Collection);
+	ChoDataSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UChoDataSubsystem>();
 }
 
 void UInventorySubsystem::Deinitialize()
