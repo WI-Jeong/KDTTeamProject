@@ -18,6 +18,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Hero/Item/Item.h"
+#include "Components/AudioComponent.h"
 
 //DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -67,6 +68,7 @@ AHeroCharacter::AHeroCharacter()
 		mDiedUIClass = DiedUIClassFinder.Class;
 	}
 
+	AudioComponent = CreateDefaultSubobject<UAudioComponent>(TEXT("Audio"));
 }
 
 void AHeroCharacter::Heal(float HealAmount)
