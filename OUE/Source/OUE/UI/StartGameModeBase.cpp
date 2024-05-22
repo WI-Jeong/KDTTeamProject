@@ -25,6 +25,10 @@ void AStartGameModeBase::InitGameState()
 	Super::InitGameState();
 }
 
+void AStartGameModeBase::PostLogin(APlayerController* NewPlayer)
+{
+}
+
 
 void AStartGameModeBase::BeginPlay()
 {

@@ -7,6 +7,9 @@
 
 void UInventorySubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
+	Super::Initialize(Collection);
+	ChoDataSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UChoDataSubsystem>();
+	Inventory.Init(nullptr,MaxInvenSize);
 }
 
 void UInventorySubsystem::Deinitialize()
@@ -17,11 +20,6 @@ void UInventorySubsystem::MakeInventory()
 {
 	ChoDataSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UChoDataSubsystem>();
 	Inventory.SetNum(MaxInvenSize, false);
-
-	for (int32 i = 0; i < 10; ++i)
-	{
-		AddChoItem(TEXT("Potion_HP"));
-	}
 }
 
 
@@ -45,8 +43,17 @@ bool UInventorySubsystem::AddChoItem(const FName& InKey)
 
 	for (uint32 i = 0; i < MaxInvenSize; ++i)
 	{
+
+		
 		TSharedPtr<FChoItemData> ItemData = Inventory[i];
-		if (ItemData == nullptr) { continue; }
+		if (ItemData == nullptr) 
+		{ 
+			for (int32 i = 0; i < 10; ++i)
+			{
+				AddChoItem(TEXT("Potion_HP"));
+			}
+			return; 
+		}
 
 		if (ItemData->ItemName != NewItemData->ItemName) { continue; }
 

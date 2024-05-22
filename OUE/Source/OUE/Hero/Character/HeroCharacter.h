@@ -170,6 +170,9 @@ protected:
 
 	FTimeline Timeline;
 
+	UPROPERTY(EditAnywhere)
+	class UAudioComponent* AudioComponent; friend class UFootSoundAnimNotify;
+
 public:
 	void SetIsRolling(bool InIsRolling) { bIsRolling = InIsRolling; }
 
