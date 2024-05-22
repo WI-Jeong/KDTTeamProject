@@ -314,6 +314,21 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\OUE\Hero\Item\Item.h"/>
+    <None Include="..\..\Source\OUE\Junglae\BP_PlayerImage.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\IMC_Character1.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\MT_PlayerImage.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\RT_PlayerImage.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\RT_PlayerImage1.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\UI_BackgroundMain.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\UI_Backpack.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\UI_Inventory.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\UI_InventoryItem.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\UI_PlayerImage.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\UI_RPGMain.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\UI_Setting.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\UI_StatusPage.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\UI_TabBtn.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\ChoInventory\DT_ChoItem.uasset"/>
     <ClCompile Include="..\..\Source\OUE\Junglae\ChoItem\ChoItem.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -332,6 +347,10 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\OUE\Junglae\Controller\RPGPlayerController.h"/>
+    <None Include="..\..\Source\OUE\Junglae\image\HP.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\image\shotgun.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\Input\BPPC_ForInventroy.uasset"/>
+    <None Include="..\..\Source\OUE\Junglae\Input\IA_Backpack.uasset"/>
     <ClCompile Include="..\..\Source\OUE\Junglae\Subsystem\ChoDataSubsystem.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>

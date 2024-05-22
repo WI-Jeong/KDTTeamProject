@@ -9,6 +9,9 @@ void UInventorySubsystem::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 	ChoDataSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UChoDataSubsystem>();
+	Inventory.Init(nullptr, MaxInvenSize);
+
+	MakeInventory();
 }
 
 void UInventorySubsystem::Deinitialize()
@@ -20,10 +23,12 @@ void UInventorySubsystem::MakeInventory()
 	ChoDataSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UChoDataSubsystem>();
 	Inventory.SetNum(MaxInvenSize, false);
 
-	for (int32 i = 0; i < 10; ++i)
+	
+	for (int i = 0; i < 10; ++i)
 	{
 		AddChoItem(TEXT("Potion_HP"));
 	}
+
 }
 
 
@@ -47,7 +52,18 @@ bool UInventorySubsystem::AddChoItem(const FName& InKey)
 
 	for (uint32 i = 0; i < MaxInvenSize; ++i)
 	{
+
+
 		TSharedPtr<FChoItemData> ItemData = Inventory[i];
+		/*if (ItemData == nullptr)
+		{
+			for (i = 0; i < 10; ++i)
+			{
+				AddChoItem(TEXT("Potion_HP"));
+			}
+			return true;
+		}*/
+
 		if (ItemData == nullptr) { continue; }
 
 		if (ItemData->ItemName != NewItemData->ItemName) { continue; }
@@ -81,7 +97,9 @@ void UInventorySubsystem::UseChoItem(UInventoryUserWidget* Widget, uint32 InInde
 	TWeakPtr<FChoItemData> ItemData = Inventory[InIndex];
 	if (!ItemData.IsValid()) { return; }
 
-	ARPGPlayerController* RPGPlayerController = Cast<ARPGPlayerController>(Widget->GetOwningPlayer());
+	//auto a = Widget->GetOwningPlayer();
+
+	ARPGPlayerController* RPGPlayerController = Cast<ARPGPlayerController>(/*Widget->GetOwningPlayer()*/UGameplayStatics::GetPlayerController(GetWorld(), 0));
 	//캐스트한 결과가 유효한지 확인.
 	ensure(RPGPlayerController);
 
@@ -94,8 +112,8 @@ void UInventorySubsystem::UseChoItem(UInventoryUserWidget* Widget, uint32 InInde
 
 		--ItemData.Pin()->CurrentBundleCount;
 		//AHeroCharacter::Heal(HealAmount)
-		Potion->UseItem(Cast<ARPGPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(),0)));
-	
+		Potion->UseItem(Cast<ARPGPlayerController>(UGameplayStatics::GetPlayerController(GetWorld(), 0)));
+
 	}
 	UChoItem_Gun* Gun = Cast<UChoItem_Gun>(Item);
 	if (Gun)

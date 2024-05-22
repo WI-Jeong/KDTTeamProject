@@ -186,6 +186,54 @@
     <Filter Include="Source\OUE\Junglae">
       <UniqueIdentifier>{1C5BFED1-6DD3-30CB-81A9-AF847867AC1D}</UniqueIdentifier>
     </Filter>
+    <None Include="..\..\Source\OUE\Junglae\BP_PlayerImage.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\IMC_Character1.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\MT_PlayerImage.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\RT_PlayerImage.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\RT_PlayerImage1.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\UI_BackgroundMain.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\UI_Backpack.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\UI_Inventory.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\UI_InventoryItem.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\UI_PlayerImage.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\UI_RPGMain.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\UI_Setting.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\UI_StatusPage.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\UI_TabBtn.uasset">
+      <Filter>Source\OUE\Junglae</Filter>
+    </None>
+    <Filter Include="Source\OUE\Junglae\ChoInventory">
+      <UniqueIdentifier>{8F321E10-063D-3F4A-B826-ECBAAF285574}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\OUE\Junglae\ChoInventory\DT_ChoItem.uasset">
+      <Filter>Source\OUE\Junglae\ChoInventory</Filter>
+    </None>
     <Filter Include="Source\OUE\Junglae\ChoItem">
       <UniqueIdentifier>{AB3F2DF9-6EB2-3D05-93E9-88C1883D2F92}</UniqueIdentifier>
     </Filter>
@@ -210,6 +258,24 @@
     <ClInclude Include="..\..\Source\OUE\Junglae\Controller\RPGPlayerController.h">
       <Filter>Source\OUE\Junglae\Controller</Filter>
     </ClInclude>
+    <Filter Include="Source\OUE\Junglae\image">
+      <UniqueIdentifier>{68EE9ECF-D64D-3B0B-8CC4-C6A32BAE23BF}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\OUE\Junglae\image\HP.uasset">
+      <Filter>Source\OUE\Junglae\image</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\image\shotgun.uasset">
+      <Filter>Source\OUE\Junglae\image</Filter>
+    </None>
+    <Filter Include="Source\OUE\Junglae\Input">
+      <UniqueIdentifier>{DC93A6FA-6A74-351C-8FDE-4D1BF2534D99}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\OUE\Junglae\Input\BPPC_ForInventroy.uasset">
+      <Filter>Source\OUE\Junglae\Input</Filter>
+    </None>
+    <None Include="..\..\Source\OUE\Junglae\Input\IA_Backpack.uasset">
+      <Filter>Source\OUE\Junglae\Input</Filter>
+    </None>
     <Filter Include="Source\OUE\Junglae\Subsystem">
       <UniqueIdentifier>{CA62937E-4AB0-3D4C-94FC-A28F5802FDDC}</UniqueIdentifier>
     </Filter>
