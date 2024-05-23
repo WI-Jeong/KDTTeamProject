@@ -32,10 +32,10 @@ struct OUE_API FWeaponDataTableRow : public FTableRowBase
 	TSubclassOf<AGun> Gun;
 
 	UPROPERTY(EditAnywhere)
-	FVector GunLocation;
+	FVector GunLocation = FVector::Zero();
 
 	UPROPERTY(EditAnywhere)
-	FRotator GunRotation;
+	FRotator GunRotation = FRotator::ZeroRotator;
 
 	UPROPERTY(EditAnywhere)
 	UAnimMontage* RecoilMontage;
