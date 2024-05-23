@@ -2,6 +2,7 @@
 
 
 #include "StartGameModeBase.h"
+#include "../Junglae/Controller/RPGPlayerController.h"
 #include "StartWidget.h"
 
 AStartGameModeBase::AStartGameModeBase()
@@ -41,6 +42,14 @@ void AStartGameModeBase::BeginPlay()
 
 		if (IsValid(mStartWidget))
 			mStartWidget->AddToViewport();
+
+		APlayerController* RPGPlayerController = GetWorld()->GetFirstPlayerController();
+
+		RPGPlayerController->SetShowMouseCursor(true);
+
+		FInputModeUIOnly	input;
+		RPGPlayerController->SetInputMode(input);
+
 	}
 }
 
