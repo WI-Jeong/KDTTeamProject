@@ -11,6 +11,24 @@ void UDiedWidget::NativeOnInitialized()
 void UDiedWidget::NativePreConstruct()
 {
 	Super::NativePreConstruct();
+
+	mRestartButton = Cast<UButton>(GetWidgetFromName(TEXT("RestartButton")));
+	mExitButton = Cast<UButton>(GetWidgetFromName(TEXT("ExitButton")));
+
+	mRestartButton->OnClicked.AddDynamic(this, &UDiedWidget::RestartButtonClick);
+	mRestartButton->OnHovered.AddDynamic(this, &UDiedWidget::RestartButtonHovered);
+	mRestartButton->OnUnhovered.AddDynamic(this, &UDiedWidget::RestartButtonUnHovered);
+
+	mExitButton->OnClicked.AddDynamic(this, &UDiedWidget::ExitButtonClick);
+	mExitButton->OnHovered.AddDynamic(this, &UDiedWidget::ExitButtonHovered);
+	mExitButton->OnUnhovered.AddDynamic(this, &UDiedWidget::ExitButtonUnHovered);
+
+	UWidgetBlueprintGeneratedClass* WidgetClass = GetWidgetTreeOwningClass();
+
+	for (int32 i = 0; i < WidgetClass->Animations.Num(); ++i)
+	{
+		FString Name = WidgetClass->Animations[i]->GetName();
+	}
 }
 
 void UDiedWidget::NativeConstruct()
@@ -198,20 +216,21 @@ FReply UDiedWidget::NativeOnTouchForceChanged(const FGeometry& MyGeometry, const
 	return Reply;
 }
 
-void UDiedWidget::ReStartButtonClick()
+void UDiedWidget::RestartButtonClick()
 {
 	UGameplayStatics::OpenLevel(GetWorld(), TEXT("BaseLevel"));
 }
 
-void UDiedWidget::ReStartButtonHovered()
+void UDiedWidget::RestartButtonHovered()
 {
-	PlayAnimation(ReStartButtonScaleAnim);
+	PlayAnimation(RestartButtonScaleAnim);
 }
 
-void UDiedWidget::ReStartButtonUnHovered()
+void UDiedWidget::RestartButtonUnHovered()
 {
-	PlayAnimation(ReStartButtonScaleAnim, 0.f, 1, EUMGSequencePlayMode::Reverse);
+	PlayAnimation(RestartButtonScaleAnim, 0.f, 1, EUMGSequencePlayMode::Reverse);
 }
+
 
 void UDiedWidget::ExitButtonClick()
 {
