@@ -16,11 +16,11 @@ class OUE_API UDiedWidget : public UUserWidget
 	GENERATED_BODY()
 
 private:
-	UButton* mReStartButton;
+	UButton* mRestartButton;
 	UButton* mExitButton;
 
 	UPROPERTY(meta = (BindWidgetAnim), Transient)
-	UWidgetAnimation* ReStartButtonScaleAnim;
+	UWidgetAnimation* RestartButtonScaleAnim;
 	
 
 public:
@@ -57,16 +57,15 @@ protected:
 	virtual FReply NativeOnTouchForceChanged(const FGeometry& MyGeometry, const FPointerEvent& TouchEvent);
 
 private:
-	UFUNCTION(BlueprintCallable, Category = "UI")
-	void ReStartButtonClick();
+	UFUNCTION()
+	void RestartButtonClick();
 
 	UFUNCTION()
-	void ReStartButtonHovered();
+	void RestartButtonHovered();
 
 	UFUNCTION()
-	void ReStartButtonUnHovered();
+	void RestartButtonUnHovered();
 
-	UFUNCTION(BlueprintCallable, Category = "UI")
 	void ExitButtonClick();
 
 	UFUNCTION()
