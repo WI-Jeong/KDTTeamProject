@@ -253,9 +253,9 @@ void UStartWidget::StartButtonUnHovered()
 
 void UStartWidget::ExitButtonClick()
 {
-
     UKismetSystemLibrary::QuitGame(GetWorld(), GetWorld()->GetFirstPlayerController(),
         EQuitPreference::Quit, true);
+
 }
 
 void UStartWidget::ExitButtonHovered()

@@ -237,6 +237,11 @@ void AHeroCharacter::PlayReloadingMontage()
 	AnimInstance->Montage_Play(WeaponDataTableRow->ReloadingMontage);
 }
 
+void AHeroCharacter::FellOutOfWorld(const UDamageType& dmgType)
+{
+	UGameplayStatics::ApplyDamage(this, 100.f, nullptr, nullptr, nullptr);
+}
+
 void AHeroCharacter::Move(const FInputActionValue& Value)
 {
 	// input is a Vector2D
