@@ -24,7 +24,7 @@ void UEnemyAttackAnimNotify::Notify(USkeletalMeshComponent* MeshComp, UAnimSeque
 
 	UKismetSystemLibrary::CapsuleTraceMulti(Actor, ActorLocation, End,
 		WeaponRadius, 0.f, TraceTypeQuery, false, IgnoreActors,
-		EDrawDebugTrace::ForDuration, HitResults, true);
+		EDrawDebugTrace::None, HitResults, true);
 
 	for (auto& It : HitResults)
 	{
