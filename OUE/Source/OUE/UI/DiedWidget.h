@@ -17,6 +17,7 @@ class OUE_API UDiedWidget : public UUserWidget
 
 private:
 	UButton* mRestartButton;
+
 	UButton* mExitButton;
 
 	UPROPERTY(meta = (BindWidgetAnim), Transient)
@@ -66,6 +67,7 @@ private:
 	UFUNCTION()
 	void RestartButtonUnHovered();
 
+	UFUNCTION()
 	void ExitButtonClick();
 
 	UFUNCTION()

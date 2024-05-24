@@ -206,6 +206,8 @@ public:
 	UFUNCTION(BlueprintCallable)
 	float GetMaxHP() { return MaxHP; }
 
+	void FellOutOfWorld(const UDamageType& dmgType);
+
 protected:
 
 	/** Called for movement input */
