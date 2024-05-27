@@ -28,7 +28,7 @@ public:
 
 protected:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	float HP = 10.f;
+	float HP = 30.f;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	bool bIsDead = false;
